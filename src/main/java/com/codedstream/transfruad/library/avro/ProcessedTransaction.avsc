@@ -1,7 +1,7 @@
 {
   "type": "record",
   "name": "ProcessedTransaction",
-  "namespace": "ccom.codedstream.transfruad.library.schema",
+  "namespace": "com.codedstream.transfruad.library.schema",
   "doc": "Schema for processed transaction outputs",
   "fields": [
     {
