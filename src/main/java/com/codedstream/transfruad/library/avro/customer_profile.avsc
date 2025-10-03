@@ -1,0 +1,67 @@
+{
+  "type": "record",
+  "name": "CustomerProfile",
+  "namespace": "com.codedstream.transfruad.library.schema",
+  "doc": "Schema for customer behavioral profiles",
+  "fields": [
+    {
+      "name": "customerId",
+      "type": "string",
+      "doc": "Unique customer identifier"
+    },
+    {
+      "name": "profileTimestamp",
+      "type": "long",
+      "doc": "Profile last update timestamp"
+    },
+    {
+      "name": "averageTransactionAmount",
+      "type": "double",
+      "doc": "Average transaction amount"
+    },
+    {
+      "name": "typicalTransactionHours",
+      "type": {
+        "type": "array",
+        "items": "int"
+      },
+      "doc": "Typical hours when customer transacts"
+    },
+    {
+      "name": "frequentMerchants",
+      "type": {
+        "type": "array",
+        "items": "string"
+      },
+      "doc": "List of frequently used merchant IDs"
+    },
+    {
+      "name": "homeLocation",
+      "type": "Location",
+      "doc": "Customer's home location"
+    },
+    {
+      "name": "transactionVelocity1h",
+      "type": "double",
+      "doc": "Typical transaction velocity per hour"
+    },
+    {
+      "name": "transactionVelocity24h",
+      "type": "double",
+      "doc": "Typical transaction velocity per day"
+    },
+    {
+      "name": "preferredCategories",
+      "type": {
+        "type": "array",
+        "items": "string"
+      },
+      "doc": "Preferred merchant categories"
+    },
+    {
+      "name": "riskScore",
+      "type": "double",
+      "doc": "Overall customer risk score"
+    }
+  ]
+}

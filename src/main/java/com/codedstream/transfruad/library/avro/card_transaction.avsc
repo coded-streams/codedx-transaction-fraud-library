@@ -1,0 +1,130 @@
+{
+  "type": "record",
+  "name": "CardTransaction",
+  "namespace": "com.codedstream.transfruad.library.schema",
+  "doc": "Schema for financial card transactions",
+  "fields": [
+    {
+      "name": "transactionId",
+      "type": "string",
+      "doc": "Unique identifier for the transaction"
+    },
+    {
+      "name": "cardId",
+      "type": "string",
+      "doc": "Unique identifier for the card"
+    },
+    {
+      "name": "customerId",
+      "type": "string",
+      "doc": "Unique identifier for the customer"
+    },
+    {
+      "name": "transactionTimestamp",
+      "type": "long",
+      "doc": "Transaction timestamp in milliseconds since epoch"
+    },
+    {
+      "name": "transactionAmount",
+      "type": "double",
+      "doc": "Transaction amount"
+    },
+    {
+      "name": "currency",
+      "type": "string",
+      "doc": "Currency code (ISO 4217)",
+      "default": "USD"
+    },
+    {
+      "name": "merchantId",
+      "type": "string",
+      "doc": "Unique identifier for the merchant"
+    },
+    {
+      "name": "merchantName",
+      "type": "string",
+      "doc": "Name of the merchant"
+    },
+    {
+      "name": "merchantCategory",
+      "type": "string",
+      "doc": "MCC (Merchant Category Code)"
+    },
+    {
+      "name": "merchantLocation",
+      "type": {
+        "type": "record",
+        "name": "Location",
+        "fields": [
+          {
+            "name": "latitude",
+            "type": "double"
+          },
+          {
+            "name": "longitude",
+            "type": "double"
+          },
+          {
+            "name": "city",
+            "type": "string"
+          },
+          {
+            "name": "country",
+            "type": "string"
+          }
+        ]
+      },
+      "doc": "Merchant location information"
+    },
+    {
+      "name": "transactionType",
+      "type": {
+        "type": "enum",
+        "name": "TransactionType",
+        "symbols": ["POS", "ONLINE", "ATM", "CONTACTLESS", "RECURRING"]
+      },
+      "doc": "Type of transaction"
+    },
+    {
+      "name": "deviceInfo",
+      "type": [
+        "null",
+        {
+          "type": "record",
+          "name": "DeviceInfo",
+          "fields": [
+            {
+              "name": "deviceId",
+              "type": "string"
+            },
+            {
+              "name": "deviceType",
+              "type": "string"
+            },
+            {
+              "name": "ipAddress",
+              "type": "string"
+            },
+            {
+              "name": "userAgent",
+              "type": "string"
+            }
+          ]
+        }
+      ],
+      "doc": "Device information for online transactions",
+      "default": null
+    },
+    {
+      "name": "isCardPresent",
+      "type": "boolean",
+      "doc": "Whether the card was physically present"
+    },
+    {
+      "name": "previousTransactionId",
+      "type": ["null", "string"],
+      "doc": "Reference to previous transaction if applicable",
+      "default": null
+    }
+  ]
+}

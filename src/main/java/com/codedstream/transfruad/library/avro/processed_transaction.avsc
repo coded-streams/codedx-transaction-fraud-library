@@ -1,0 +1,152 @@
+{
+  "type": "record",
+  "name": "ProcessedTransaction",
+  "namespace": "ccom.codedstream.transfruad.library.schema",
+  "doc": "Schema for processed transaction outputs",
+  "fields": [
+    {
+      "name": "transactionId",
+      "type": "string",
+      "doc": "Original transaction identifier"
+    },
+    {
+      "name": "processingTimestamp",
+      "type": "long",
+      "doc": "Processing completion timestamp"
+    },
+    {
+      "name": "fraudProbability",
+      "type": "double",
+      "doc": "Fraud probability score from AI model"
+    },
+    {
+      "name": "status",
+      "type": {
+        "type": "enum",
+        "name": "ProcessingStatus",
+        "symbols": ["APPROVED", "REJECTED", "FLAGGED_FOR_REVIEW", "PENDING"]
+      },
+      "doc": "Processing status of the transaction"
+    },
+    {
+      "name": "featureVector",
+      "type": {
+        "type": "record",
+        "name": "FeatureVector",
+        "fields": [
+          {
+            "name": "amountDeviation",
+            "type": "double",
+            "doc": "Deviation from typical transaction amount"
+          },
+          {
+            "name": "velocity1h",
+            "type": "double",
+            "doc": "Transaction velocity in last 1 hour"
+          },
+          {
+            "name": "velocity24h",
+            "type": "double",
+            "doc": "Transaction velocity in last 24 hours"
+          },
+          {
+            "name": "distanceFromHome",
+            "type": "double",
+            "doc": "Distance from customer's home location"
+          },
+          {
+            "name": "timeOfDayRisk",
+            "type": "double",
+            "doc": "Risk score based on transaction time"
+          },
+          {
+            "name": "merchantRiskScore",
+            "type": "double",
+            "doc": "Risk score for the merchant"
+          },
+          {
+            "name": "deviceRiskScore",
+            "type": "double",
+            "doc": "Risk score based on device information"
+          },
+          {
+            "name": "behavioralAnomalyScore",
+            "type": "double",
+            "doc": "Score indicating behavioral anomalies"
+          }
+        ]
+      },
+      "doc": "Feature vector used for model inference"
+    },
+    {
+      "name": "windowedFeatures",
+      "type": [
+        "null",
+        {
+          "type": "record",
+          "name": "WindowedFeatures",
+          "fields": [
+            {
+              "name": "windowStart",
+              "type": "long",
+              "doc": "Window start timestamp"
+            },
+            {
+              "name": "windowEnd",
+              "type": "long",
+              "doc": "Window end timestamp"
+            },
+            {
+              "name": "totalAmount",
+              "type": "double",
+              "doc": "Total amount in the window"
+            },
+            {
+              "name": "transactionCount",
+              "type": "int",
+              "doc": "Number of transactions in the window"
+            },
+            {
+              "name": "uniqueMerchants",
+              "type": "int",
+              "doc": "Number of unique merchants"
+            },
+            {
+              "name": "uniqueLocations",
+              "type": "int",
+              "doc": "Number of unique locations"
+            }
+          ]
+        }
+      ],
+      "doc": "Window-based aggregation features",
+      "default": null
+    },
+    {
+      "name": "modelMetadata",
+      "type": {
+        "type": "record",
+        "name": "ModelMetadata",
+        "fields": [
+          {
+            "name": "modelVersion",
+            "type": "string"
+          },
+          {
+            "name": "modelType",
+            "type": "string"
+          },
+          {
+            "name": "inferenceTimeMs",
+            "type": "long"
+          },
+          {
+            "name": "confidence",
+            "type": "double"
+          }
+        ]
+      },
+      "doc": "Metadata about the AI model inference"
+    }
+  ]
+}

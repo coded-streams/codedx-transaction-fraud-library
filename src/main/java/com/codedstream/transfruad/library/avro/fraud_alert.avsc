@@ -1,0 +1,106 @@
+{
+  "type": "record",
+  "name": "FraudAlert",
+  "namespace": "com.codedstream.transfruad.library.schema",
+  "doc": "Schema for fraud detection alerts",
+  "fields": [
+    {
+      "name": "alertId",
+      "type": "string",
+      "doc": "Unique identifier for the fraud alert"
+    },
+    {
+      "name": "transactionId",
+      "type": "string",
+      "doc": "Reference to the suspicious transaction"
+    },
+    {
+      "name": "customerId",
+      "type": "string",
+      "doc": "Customer identifier"
+    },
+    {
+      "name": "cardId",
+      "type": "string",
+      "doc": "Card identifier"
+    },
+    {
+      "name": "alertTimestamp",
+      "type": "long",
+      "doc": "Alert generation timestamp"
+    },
+    {
+      "name": "severity",
+      "type": {
+        "type": "enum",
+        "name": "AlertSeverity",
+        "symbols": ["LOW", "MEDIUM", "HIGH", "CRITICAL"]
+      },
+      "doc": "Severity level of the fraud alert"
+    },
+    {
+      "name": "fraudScore",
+      "type": "double",
+      "doc": "AI model fraud probability score (0.0 - 1.0)"
+    },
+    {
+      "name": "alertType",
+      "type": {
+        "type": "enum",
+        "name": "AlertType",
+        "symbols": [
+          "AMOUNT_ANOMALY",
+          "VELOCITY_ANOMALY",
+          "LOCATION_ANOMALY",
+          "TIME_ANOMALY",
+          "MERCHANT_RISK",
+          "BEHAVIORAL_ANOMALY",
+          "MULTIPLE_FACTORS"
+        ]
+      },
+      "doc": "Type of fraud pattern detected"
+    },
+    {
+      "name": "riskFactors",
+      "type": {
+        "type": "array",
+        "items": "string"
+      },
+      "doc": "List of risk factors contributing to the alert"
+    },
+    {
+      "name": "modelVersion",
+      "type": "string",
+      "doc": "Version of the AI model that generated the alert"
+    },
+    {
+      "name": "recommendedAction",
+      "type": {
+        "type": "enum",
+        "name": "RecommendedAction",
+        "symbols": [
+          "ALLOW",
+          "REVIEW",
+          "BLOCK_CARD",
+          "REQUIRE_2FA",
+          "CONTACT_CUSTOMER"
+        ]
+      },
+      "doc": "Recommended action based on fraud assessment"
+    },
+    {
+      "name": "features",
+      "type": {
+        "type": "map",
+        "values": "double"
+      },
+      "doc": "Feature values used for model inference"
+    },
+    {
+      "name": "isFalsePositive",
+      "type": ["null", "boolean"],
+      "doc": "Marked as true if alert was a false positive",
+      "default": null
+    }
+  ]
+}
