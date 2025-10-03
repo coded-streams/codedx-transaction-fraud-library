@@ -1,0 +1,24 @@
+{
+  "type": "record",
+  "name": "Location",
+  "namespace": "com.codedstream.transfruad.library.schema",
+  "doc": "Geographic location information",
+  "fields": [
+    {
+      "name": "latitude",
+      "type": "double"
+    },
+    {
+      "name": "longitude",
+      "type": "double"
+    },
+    {
+      "name": "city",
+      "type": "string"
+    },
+    {
+      "name": "country",
+      "type": "string"
+    }
+  ]
+}

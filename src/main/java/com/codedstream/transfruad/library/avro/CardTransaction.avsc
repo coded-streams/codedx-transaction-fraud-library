@@ -54,7 +54,7 @@
       "name": "merchantLocation",
       "type": {
         "type": "record",
-        "name": "Location",
+        "name": "MerchantLocation",
         "fields": [
           {
             "name": "latitude",

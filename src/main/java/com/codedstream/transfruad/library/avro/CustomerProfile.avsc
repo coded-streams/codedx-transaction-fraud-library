@@ -37,7 +37,28 @@
     },
     {
       "name": "homeLocation",
-      "type": "Location",
+      "type": {
+        "type": "record",
+        "name": "CustomerLocation",
+        "fields": [
+          {
+            "name": "latitude",
+            "type": "double"
+          },
+          {
+            "name": "longitude",
+            "type": "double"
+          },
+          {
+            "name": "city",
+            "type": "string"
+          },
+          {
+            "name": "country",
+            "type": "string"
+          }
+        ]
+      },
       "doc": "Customer's home location"
     },
     {
