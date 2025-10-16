@@ -1,0 +1,30 @@
+{
+  "type": "record",
+  "name": "ProcessedTransactionFeatures",
+  "namespace": "com.codedstream.transfruad.library.schema",
+  "fields": [
+    {"name": "transactionId", "type": "string"},
+    {"name": "timestamp", "type": "long"},
+    {"name": "merchant", "type": "float"},
+    {"name": "category", "type": "float"},
+    {"name": "amt", "type": "float"},
+    {"name": "first", "type": "float"},
+    {"name": "last", "type": "float"},
+    {"name": "gender", "type": "float"},
+    {"name": "city", "type": "float"},
+    {"name": "state", "type": "float"},
+    {"name": "zip", "type": "float"},
+    {"name": "lat", "type": "float"},
+    {"name": "long", "type": "float"},
+    {"name": "city_pop", "type": "float"},
+    {"name": "job", "type": "float"},
+    {"name": "merch_lat", "type": "float"},
+    {"name": "merch_long", "type": "float"},
+    {"name": "hour", "type": "float"},
+    {"name": "dayofweek", "type": "float"},
+    {"name": "month", "type": "float"},
+    {"name": "day", "type": "float"},
+    {"name": "dist_to_merchant_km", "type": "float"},
+    {"name": "is_fraud", "type": "boolean", "default": false}
+  ]
+}
