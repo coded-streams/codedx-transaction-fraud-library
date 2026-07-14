@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.codedstreams</groupId>
   <artifactId>codedx-transaction-fraud-library</artifactId>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.3-SNAPSHOT</version>
   <name>codedx-transaction-fraud-library</name>
   <description>Shared Avro schemas for transaction fraud detection - Flink 2.0 compatible</description>
   <url>https://github.com/coded-streams/codedx-transaction-fraud-library</url>
@@ -26,8 +26,11 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <avro.version>1.11.4</avro.version>
-    <!-- Updated to Java 17 for Flink 2.0 compatibility -->
+    <!-- Avro library version -->
+    <avro.version>1.11.1</avro.version>
+    <!-- Avro Maven Plugin version (can be different from library version) -->
+    <avro.plugin.version>1.11.4</avro.plugin.version>
+    <!-- Java 17 for Flink 2.0 compatibility -->
     <java.version>17</java.version>
     <maven.compiler.release>17</maven.compiler.release>
 
@@ -57,7 +60,7 @@
       <plugin>
         <groupId>org.apache.avro</groupId>
         <artifactId>avro-maven-plugin</artifactId>
-        <version>${avro.version}</version>
+        <version>${avro.plugin.version}</version>
         <executions>
           <execution>
             <phase>generate-sources</phase>
@@ -68,9 +71,6 @@
               <sourceDirectory>${project.basedir}/src/main/java/com/codedstream/transfruad/library/avro/</sourceDirectory>
               <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
               <stringType>String</stringType>
-              <createSetters>true</createSetters>
-<!--              <createGetters>true</createGetters>-->
-              <createOptionalGetters>true</createOptionalGetters>
               <fieldVisibility>public_deprecated</fieldVisibility>
             </configuration>
           </execution>
