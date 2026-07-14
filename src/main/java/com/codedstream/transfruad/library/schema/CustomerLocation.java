@@ -11,13 +11,13 @@ import org.apache.avro.util.Utf8;
 import org.apache.avro.message.BinaryMessageEncoder;
 import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
-
+import java.util.Optional;
 @org.apache.avro.specific.AvroGenerated
 public class CustomerLocation extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 2770562719185401072L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"CustomerLocation\",\"namespace\":\"com.codedstream.transfruad.library.schema\",\"fields\":[{\"name\":\"latitude\",\"type\":\"double\"},{\"name\":\"longitude\",\"type\":\"double\"},{\"name\":\"city\",\"type\":\"string\"},{\"name\":\"country\",\"type\":\"string\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"CustomerLocation\",\"namespace\":\"com.codedstream.transfruad.library.schema\",\"fields\":[{\"name\":\"latitude\",\"type\":\"double\"},{\"name\":\"longitude\",\"type\":\"double\"},{\"name\":\"city\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"country\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -75,8 +75,8 @@ public class CustomerLocation extends org.apache.avro.specific.SpecificRecordBas
 
   private double latitude;
   private double longitude;
-  private java.lang.CharSequence city;
-  private java.lang.CharSequence country;
+  private java.lang.String city;
+  private java.lang.String country;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -92,7 +92,7 @@ public class CustomerLocation extends org.apache.avro.specific.SpecificRecordBas
    * @param city The new value for city
    * @param country The new value for country
    */
-  public CustomerLocation(java.lang.Double latitude, java.lang.Double longitude, java.lang.CharSequence city, java.lang.CharSequence country) {
+  public CustomerLocation(java.lang.Double latitude, java.lang.Double longitude, java.lang.String city, java.lang.String country) {
     this.latitude = latitude;
     this.longitude = longitude;
     this.city = city;
@@ -124,8 +124,8 @@ public class CustomerLocation extends org.apache.avro.specific.SpecificRecordBas
     switch (field$) {
     case 0: latitude = (java.lang.Double)value$; break;
     case 1: longitude = (java.lang.Double)value$; break;
-    case 2: city = (java.lang.CharSequence)value$; break;
-    case 3: country = (java.lang.CharSequence)value$; break;
+    case 2: city = value$ != null ? value$.toString() : null; break;
+    case 3: country = value$ != null ? value$.toString() : null; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -138,6 +138,13 @@ public class CustomerLocation extends org.apache.avro.specific.SpecificRecordBas
     return latitude;
   }
 
+  /**
+   * Gets the value of the 'latitude' field as an Optional&lt;java.lang.Double&gt;.
+   * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+   */
+  public Optional<java.lang.Double> getOptionalLatitude() {
+    return Optional.<java.lang.Double>ofNullable(latitude);
+  }
 
   /**
    * Sets the value of the 'latitude' field.
@@ -155,6 +162,13 @@ public class CustomerLocation extends org.apache.avro.specific.SpecificRecordBas
     return longitude;
   }
 
+  /**
+   * Gets the value of the 'longitude' field as an Optional&lt;java.lang.Double&gt;.
+   * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+   */
+  public Optional<java.lang.Double> getOptionalLongitude() {
+    return Optional.<java.lang.Double>ofNullable(longitude);
+  }
 
   /**
    * Sets the value of the 'longitude' field.
@@ -168,16 +182,23 @@ public class CustomerLocation extends org.apache.avro.specific.SpecificRecordBas
    * Gets the value of the 'city' field.
    * @return The value of the 'city' field.
    */
-  public java.lang.CharSequence getCity() {
+  public java.lang.String getCity() {
     return city;
   }
 
+  /**
+   * Gets the value of the 'city' field as an Optional&lt;java.lang.String&gt;.
+   * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+   */
+  public Optional<java.lang.String> getOptionalCity() {
+    return Optional.<java.lang.String>ofNullable(city);
+  }
 
   /**
    * Sets the value of the 'city' field.
    * @param value the value to set.
    */
-  public void setCity(java.lang.CharSequence value) {
+  public void setCity(java.lang.String value) {
     this.city = value;
   }
 
@@ -185,16 +206,23 @@ public class CustomerLocation extends org.apache.avro.specific.SpecificRecordBas
    * Gets the value of the 'country' field.
    * @return The value of the 'country' field.
    */
-  public java.lang.CharSequence getCountry() {
+  public java.lang.String getCountry() {
     return country;
   }
 
+  /**
+   * Gets the value of the 'country' field as an Optional&lt;java.lang.String&gt;.
+   * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+   */
+  public Optional<java.lang.String> getOptionalCountry() {
+    return Optional.<java.lang.String>ofNullable(country);
+  }
 
   /**
    * Sets the value of the 'country' field.
    * @param value the value to set.
    */
-  public void setCountry(java.lang.CharSequence value) {
+  public void setCountry(java.lang.String value) {
     this.country = value;
   }
 
@@ -241,8 +269,8 @@ public class CustomerLocation extends org.apache.avro.specific.SpecificRecordBas
 
     private double latitude;
     private double longitude;
-    private java.lang.CharSequence city;
-    private java.lang.CharSequence country;
+    private java.lang.String city;
+    private java.lang.String country;
 
     /** Creates a new Builder */
     private Builder() {
@@ -305,6 +333,13 @@ public class CustomerLocation extends org.apache.avro.specific.SpecificRecordBas
       return latitude;
     }
 
+    /**
+      * Gets the value of the 'latitude' field as an Optional&lt;java.lang.Double&gt;.
+      * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+      */
+    public Optional<java.lang.Double> getOptionalLatitude() {
+      return Optional.<java.lang.Double>ofNullable(latitude);
+    }
 
     /**
       * Sets the value of the 'latitude' field.
@@ -344,6 +379,13 @@ public class CustomerLocation extends org.apache.avro.specific.SpecificRecordBas
       return longitude;
     }
 
+    /**
+      * Gets the value of the 'longitude' field as an Optional&lt;java.lang.Double&gt;.
+      * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+      */
+    public Optional<java.lang.Double> getOptionalLongitude() {
+      return Optional.<java.lang.Double>ofNullable(longitude);
+    }
 
     /**
       * Sets the value of the 'longitude' field.
@@ -379,17 +421,24 @@ public class CustomerLocation extends org.apache.avro.specific.SpecificRecordBas
       * Gets the value of the 'city' field.
       * @return The value.
       */
-    public java.lang.CharSequence getCity() {
+    public java.lang.String getCity() {
       return city;
     }
 
+    /**
+      * Gets the value of the 'city' field as an Optional&lt;java.lang.String&gt;.
+      * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+      */
+    public Optional<java.lang.String> getOptionalCity() {
+      return Optional.<java.lang.String>ofNullable(city);
+    }
 
     /**
       * Sets the value of the 'city' field.
       * @param value The value of 'city'.
       * @return This builder.
       */
-    public com.codedstream.transfruad.library.schema.CustomerLocation.Builder setCity(java.lang.CharSequence value) {
+    public com.codedstream.transfruad.library.schema.CustomerLocation.Builder setCity(java.lang.String value) {
       validate(fields()[2], value);
       this.city = value;
       fieldSetFlags()[2] = true;
@@ -419,17 +468,24 @@ public class CustomerLocation extends org.apache.avro.specific.SpecificRecordBas
       * Gets the value of the 'country' field.
       * @return The value.
       */
-    public java.lang.CharSequence getCountry() {
+    public java.lang.String getCountry() {
       return country;
     }
 
+    /**
+      * Gets the value of the 'country' field as an Optional&lt;java.lang.String&gt;.
+      * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+      */
+    public Optional<java.lang.String> getOptionalCountry() {
+      return Optional.<java.lang.String>ofNullable(country);
+    }
 
     /**
       * Sets the value of the 'country' field.
       * @param value The value of 'country'.
       * @return This builder.
       */
-    public com.codedstream.transfruad.library.schema.CustomerLocation.Builder setCountry(java.lang.CharSequence value) {
+    public com.codedstream.transfruad.library.schema.CustomerLocation.Builder setCountry(java.lang.String value) {
       validate(fields()[3], value);
       this.country = value;
       fieldSetFlags()[3] = true;
@@ -462,8 +518,8 @@ public class CustomerLocation extends org.apache.avro.specific.SpecificRecordBas
         CustomerLocation record = new CustomerLocation();
         record.latitude = fieldSetFlags()[0] ? this.latitude : (java.lang.Double) defaultValue(fields()[0]);
         record.longitude = fieldSetFlags()[1] ? this.longitude : (java.lang.Double) defaultValue(fields()[1]);
-        record.city = fieldSetFlags()[2] ? this.city : (java.lang.CharSequence) defaultValue(fields()[2]);
-        record.country = fieldSetFlags()[3] ? this.country : (java.lang.CharSequence) defaultValue(fields()[3]);
+        record.city = fieldSetFlags()[2] ? this.city : (java.lang.String) defaultValue(fields()[2]);
+        record.country = fieldSetFlags()[3] ? this.country : (java.lang.String) defaultValue(fields()[3]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
@@ -515,9 +571,9 @@ public class CustomerLocation extends org.apache.avro.specific.SpecificRecordBas
 
       this.longitude = in.readDouble();
 
-      this.city = in.readString(this.city instanceof Utf8 ? (Utf8)this.city : null);
+      this.city = in.readString();
 
-      this.country = in.readString(this.country instanceof Utf8 ? (Utf8)this.country : null);
+      this.country = in.readString();
 
     } else {
       for (int i = 0; i < 4; i++) {
@@ -531,11 +587,11 @@ public class CustomerLocation extends org.apache.avro.specific.SpecificRecordBas
           break;
 
         case 2:
-          this.city = in.readString(this.city instanceof Utf8 ? (Utf8)this.city : null);
+          this.city = in.readString();
           break;
 
         case 3:
-          this.country = in.readString(this.country instanceof Utf8 ? (Utf8)this.country : null);
+          this.country = in.readString();
           break;
 
         default:

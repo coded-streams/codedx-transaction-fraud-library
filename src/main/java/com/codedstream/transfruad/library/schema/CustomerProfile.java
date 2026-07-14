@@ -11,14 +11,14 @@ import org.apache.avro.util.Utf8;
 import org.apache.avro.message.BinaryMessageEncoder;
 import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
-
+import java.util.Optional;
 /** Schema for customer behavioral profiles */
 @org.apache.avro.specific.AvroGenerated
 public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 3291295855888300982L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"CustomerProfile\",\"namespace\":\"com.codedstream.transfruad.library.schema\",\"doc\":\"Schema for customer behavioral profiles\",\"fields\":[{\"name\":\"customerId\",\"type\":\"string\",\"doc\":\"Unique customer identifier\"},{\"name\":\"profileTimestamp\",\"type\":\"long\",\"doc\":\"Profile last update timestamp\"},{\"name\":\"averageTransactionAmount\",\"type\":\"double\",\"doc\":\"Average transaction amount\"},{\"name\":\"typicalTransactionHours\",\"type\":{\"type\":\"array\",\"items\":\"int\"},\"doc\":\"Typical hours when customer transacts\"},{\"name\":\"frequentMerchants\",\"type\":{\"type\":\"array\",\"items\":\"string\"},\"doc\":\"List of frequently used merchant IDs\"},{\"name\":\"homeLocation\",\"type\":{\"type\":\"record\",\"name\":\"CustomerLocation\",\"fields\":[{\"name\":\"latitude\",\"type\":\"double\"},{\"name\":\"longitude\",\"type\":\"double\"},{\"name\":\"city\",\"type\":\"string\"},{\"name\":\"country\",\"type\":\"string\"}]},\"doc\":\"Customer's home location\"},{\"name\":\"transactionVelocity1h\",\"type\":\"double\",\"doc\":\"Typical transaction velocity per hour\"},{\"name\":\"transactionVelocity24h\",\"type\":\"double\",\"doc\":\"Typical transaction velocity per day\"},{\"name\":\"preferredCategories\",\"type\":{\"type\":\"array\",\"items\":\"string\"},\"doc\":\"Preferred merchant categories\"},{\"name\":\"riskScore\",\"type\":\"double\",\"doc\":\"Overall customer risk score\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"CustomerProfile\",\"namespace\":\"com.codedstream.transfruad.library.schema\",\"doc\":\"Schema for customer behavioral profiles\",\"fields\":[{\"name\":\"customerId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"Unique customer identifier\"},{\"name\":\"profileTimestamp\",\"type\":\"long\",\"doc\":\"Profile last update timestamp\"},{\"name\":\"averageTransactionAmount\",\"type\":\"double\",\"doc\":\"Average transaction amount\"},{\"name\":\"typicalTransactionHours\",\"type\":{\"type\":\"array\",\"items\":\"int\"},\"doc\":\"Typical hours when customer transacts\"},{\"name\":\"frequentMerchants\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"doc\":\"List of frequently used merchant IDs\"},{\"name\":\"homeLocation\",\"type\":{\"type\":\"record\",\"name\":\"CustomerLocation\",\"fields\":[{\"name\":\"latitude\",\"type\":\"double\"},{\"name\":\"longitude\",\"type\":\"double\"},{\"name\":\"city\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"country\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]},\"doc\":\"Customer's home location\"},{\"name\":\"transactionVelocity1h\",\"type\":\"double\",\"doc\":\"Typical transaction velocity per hour\"},{\"name\":\"transactionVelocity24h\",\"type\":\"double\",\"doc\":\"Typical transaction velocity per day\"},{\"name\":\"preferredCategories\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"doc\":\"Preferred merchant categories\"},{\"name\":\"riskScore\",\"type\":\"double\",\"doc\":\"Overall customer risk score\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -75,7 +75,7 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
   }
 
   /** Unique customer identifier */
-  private java.lang.CharSequence customerId;
+  private java.lang.String customerId;
   /** Profile last update timestamp */
   private long profileTimestamp;
   /** Average transaction amount */
@@ -83,7 +83,7 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
   /** Typical hours when customer transacts */
   private java.util.List<java.lang.Integer> typicalTransactionHours;
   /** List of frequently used merchant IDs */
-  private java.util.List<java.lang.CharSequence> frequentMerchants;
+  private java.util.List<java.lang.String> frequentMerchants;
   /** Customer's home location */
   private com.codedstream.transfruad.library.schema.CustomerLocation homeLocation;
   /** Typical transaction velocity per hour */
@@ -91,7 +91,7 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
   /** Typical transaction velocity per day */
   private double transactionVelocity24h;
   /** Preferred merchant categories */
-  private java.util.List<java.lang.CharSequence> preferredCategories;
+  private java.util.List<java.lang.String> preferredCategories;
   /** Overall customer risk score */
   private double riskScore;
 
@@ -115,7 +115,7 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
    * @param preferredCategories Preferred merchant categories
    * @param riskScore Overall customer risk score
    */
-  public CustomerProfile(java.lang.CharSequence customerId, java.lang.Long profileTimestamp, java.lang.Double averageTransactionAmount, java.util.List<java.lang.Integer> typicalTransactionHours, java.util.List<java.lang.CharSequence> frequentMerchants, com.codedstream.transfruad.library.schema.CustomerLocation homeLocation, java.lang.Double transactionVelocity1h, java.lang.Double transactionVelocity24h, java.util.List<java.lang.CharSequence> preferredCategories, java.lang.Double riskScore) {
+  public CustomerProfile(java.lang.String customerId, java.lang.Long profileTimestamp, java.lang.Double averageTransactionAmount, java.util.List<java.lang.Integer> typicalTransactionHours, java.util.List<java.lang.String> frequentMerchants, com.codedstream.transfruad.library.schema.CustomerLocation homeLocation, java.lang.Double transactionVelocity1h, java.lang.Double transactionVelocity24h, java.util.List<java.lang.String> preferredCategories, java.lang.Double riskScore) {
     this.customerId = customerId;
     this.profileTimestamp = profileTimestamp;
     this.averageTransactionAmount = averageTransactionAmount;
@@ -157,15 +157,15 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: customerId = (java.lang.CharSequence)value$; break;
+    case 0: customerId = value$ != null ? value$.toString() : null; break;
     case 1: profileTimestamp = (java.lang.Long)value$; break;
     case 2: averageTransactionAmount = (java.lang.Double)value$; break;
     case 3: typicalTransactionHours = (java.util.List<java.lang.Integer>)value$; break;
-    case 4: frequentMerchants = (java.util.List<java.lang.CharSequence>)value$; break;
+    case 4: frequentMerchants = (java.util.List<java.lang.String>)value$; break;
     case 5: homeLocation = (com.codedstream.transfruad.library.schema.CustomerLocation)value$; break;
     case 6: transactionVelocity1h = (java.lang.Double)value$; break;
     case 7: transactionVelocity24h = (java.lang.Double)value$; break;
-    case 8: preferredCategories = (java.util.List<java.lang.CharSequence>)value$; break;
+    case 8: preferredCategories = (java.util.List<java.lang.String>)value$; break;
     case 9: riskScore = (java.lang.Double)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
@@ -175,17 +175,25 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
    * Gets the value of the 'customerId' field.
    * @return Unique customer identifier
    */
-  public java.lang.CharSequence getCustomerId() {
+  public java.lang.String getCustomerId() {
     return customerId;
   }
 
+  /**
+   * Gets the value of the 'customerId' field as an Optional&lt;java.lang.String&gt;.
+   * Unique customer identifier
+   * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+   */
+  public Optional<java.lang.String> getOptionalCustomerId() {
+    return Optional.<java.lang.String>ofNullable(customerId);
+  }
 
   /**
    * Sets the value of the 'customerId' field.
    * Unique customer identifier
    * @param value the value to set.
    */
-  public void setCustomerId(java.lang.CharSequence value) {
+  public void setCustomerId(java.lang.String value) {
     this.customerId = value;
   }
 
@@ -197,6 +205,14 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
     return profileTimestamp;
   }
 
+  /**
+   * Gets the value of the 'profileTimestamp' field as an Optional&lt;java.lang.Long&gt;.
+   * Profile last update timestamp
+   * @return The value wrapped in an Optional&lt;java.lang.Long&gt;.
+   */
+  public Optional<java.lang.Long> getOptionalProfileTimestamp() {
+    return Optional.<java.lang.Long>ofNullable(profileTimestamp);
+  }
 
   /**
    * Sets the value of the 'profileTimestamp' field.
@@ -215,6 +231,14 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
     return averageTransactionAmount;
   }
 
+  /**
+   * Gets the value of the 'averageTransactionAmount' field as an Optional&lt;java.lang.Double&gt;.
+   * Average transaction amount
+   * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+   */
+  public Optional<java.lang.Double> getOptionalAverageTransactionAmount() {
+    return Optional.<java.lang.Double>ofNullable(averageTransactionAmount);
+  }
 
   /**
    * Sets the value of the 'averageTransactionAmount' field.
@@ -233,6 +257,14 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
     return typicalTransactionHours;
   }
 
+  /**
+   * Gets the value of the 'typicalTransactionHours' field as an Optional&lt;java.util.List<java.lang.Integer>&gt;.
+   * Typical hours when customer transacts
+   * @return The value wrapped in an Optional&lt;java.util.List<java.lang.Integer>&gt;.
+   */
+  public Optional<java.util.List<java.lang.Integer>> getOptionalTypicalTransactionHours() {
+    return Optional.<java.util.List<java.lang.Integer>>ofNullable(typicalTransactionHours);
+  }
 
   /**
    * Sets the value of the 'typicalTransactionHours' field.
@@ -247,17 +279,25 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
    * Gets the value of the 'frequentMerchants' field.
    * @return List of frequently used merchant IDs
    */
-  public java.util.List<java.lang.CharSequence> getFrequentMerchants() {
+  public java.util.List<java.lang.String> getFrequentMerchants() {
     return frequentMerchants;
   }
 
+  /**
+   * Gets the value of the 'frequentMerchants' field as an Optional&lt;java.util.List<java.lang.String>&gt;.
+   * List of frequently used merchant IDs
+   * @return The value wrapped in an Optional&lt;java.util.List<java.lang.String>&gt;.
+   */
+  public Optional<java.util.List<java.lang.String>> getOptionalFrequentMerchants() {
+    return Optional.<java.util.List<java.lang.String>>ofNullable(frequentMerchants);
+  }
 
   /**
    * Sets the value of the 'frequentMerchants' field.
    * List of frequently used merchant IDs
    * @param value the value to set.
    */
-  public void setFrequentMerchants(java.util.List<java.lang.CharSequence> value) {
+  public void setFrequentMerchants(java.util.List<java.lang.String> value) {
     this.frequentMerchants = value;
   }
 
@@ -269,6 +309,14 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
     return homeLocation;
   }
 
+  /**
+   * Gets the value of the 'homeLocation' field as an Optional&lt;com.codedstream.transfruad.library.schema.CustomerLocation&gt;.
+   * Customer's home location
+   * @return The value wrapped in an Optional&lt;com.codedstream.transfruad.library.schema.CustomerLocation&gt;.
+   */
+  public Optional<com.codedstream.transfruad.library.schema.CustomerLocation> getOptionalHomeLocation() {
+    return Optional.<com.codedstream.transfruad.library.schema.CustomerLocation>ofNullable(homeLocation);
+  }
 
   /**
    * Sets the value of the 'homeLocation' field.
@@ -287,6 +335,14 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
     return transactionVelocity1h;
   }
 
+  /**
+   * Gets the value of the 'transactionVelocity1h' field as an Optional&lt;java.lang.Double&gt;.
+   * Typical transaction velocity per hour
+   * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+   */
+  public Optional<java.lang.Double> getOptionalTransactionVelocity1h() {
+    return Optional.<java.lang.Double>ofNullable(transactionVelocity1h);
+  }
 
   /**
    * Sets the value of the 'transactionVelocity1h' field.
@@ -305,6 +361,14 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
     return transactionVelocity24h;
   }
 
+  /**
+   * Gets the value of the 'transactionVelocity24h' field as an Optional&lt;java.lang.Double&gt;.
+   * Typical transaction velocity per day
+   * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+   */
+  public Optional<java.lang.Double> getOptionalTransactionVelocity24h() {
+    return Optional.<java.lang.Double>ofNullable(transactionVelocity24h);
+  }
 
   /**
    * Sets the value of the 'transactionVelocity24h' field.
@@ -319,17 +383,25 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
    * Gets the value of the 'preferredCategories' field.
    * @return Preferred merchant categories
    */
-  public java.util.List<java.lang.CharSequence> getPreferredCategories() {
+  public java.util.List<java.lang.String> getPreferredCategories() {
     return preferredCategories;
   }
 
+  /**
+   * Gets the value of the 'preferredCategories' field as an Optional&lt;java.util.List<java.lang.String>&gt;.
+   * Preferred merchant categories
+   * @return The value wrapped in an Optional&lt;java.util.List<java.lang.String>&gt;.
+   */
+  public Optional<java.util.List<java.lang.String>> getOptionalPreferredCategories() {
+    return Optional.<java.util.List<java.lang.String>>ofNullable(preferredCategories);
+  }
 
   /**
    * Sets the value of the 'preferredCategories' field.
    * Preferred merchant categories
    * @param value the value to set.
    */
-  public void setPreferredCategories(java.util.List<java.lang.CharSequence> value) {
+  public void setPreferredCategories(java.util.List<java.lang.String> value) {
     this.preferredCategories = value;
   }
 
@@ -341,6 +413,14 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
     return riskScore;
   }
 
+  /**
+   * Gets the value of the 'riskScore' field as an Optional&lt;java.lang.Double&gt;.
+   * Overall customer risk score
+   * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+   */
+  public Optional<java.lang.Double> getOptionalRiskScore() {
+    return Optional.<java.lang.Double>ofNullable(riskScore);
+  }
 
   /**
    * Sets the value of the 'riskScore' field.
@@ -393,7 +473,7 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
     implements org.apache.avro.data.RecordBuilder<CustomerProfile> {
 
     /** Unique customer identifier */
-    private java.lang.CharSequence customerId;
+    private java.lang.String customerId;
     /** Profile last update timestamp */
     private long profileTimestamp;
     /** Average transaction amount */
@@ -401,7 +481,7 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
     /** Typical hours when customer transacts */
     private java.util.List<java.lang.Integer> typicalTransactionHours;
     /** List of frequently used merchant IDs */
-    private java.util.List<java.lang.CharSequence> frequentMerchants;
+    private java.util.List<java.lang.String> frequentMerchants;
     /** Customer's home location */
     private com.codedstream.transfruad.library.schema.CustomerLocation homeLocation;
     private com.codedstream.transfruad.library.schema.CustomerLocation.Builder homeLocationBuilder;
@@ -410,7 +490,7 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
     /** Typical transaction velocity per day */
     private double transactionVelocity24h;
     /** Preferred merchant categories */
-    private java.util.List<java.lang.CharSequence> preferredCategories;
+    private java.util.List<java.lang.String> preferredCategories;
     /** Overall customer risk score */
     private double riskScore;
 
@@ -524,10 +604,18 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
       * Unique customer identifier
       * @return The value.
       */
-    public java.lang.CharSequence getCustomerId() {
+    public java.lang.String getCustomerId() {
       return customerId;
     }
 
+    /**
+      * Gets the value of the 'customerId' field as an Optional&lt;java.lang.String&gt;.
+      * Unique customer identifier
+      * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+      */
+    public Optional<java.lang.String> getOptionalCustomerId() {
+      return Optional.<java.lang.String>ofNullable(customerId);
+    }
 
     /**
       * Sets the value of the 'customerId' field.
@@ -535,7 +623,7 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'customerId'.
       * @return This builder.
       */
-    public com.codedstream.transfruad.library.schema.CustomerProfile.Builder setCustomerId(java.lang.CharSequence value) {
+    public com.codedstream.transfruad.library.schema.CustomerProfile.Builder setCustomerId(java.lang.String value) {
       validate(fields()[0], value);
       this.customerId = value;
       fieldSetFlags()[0] = true;
@@ -572,6 +660,14 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
       return profileTimestamp;
     }
 
+    /**
+      * Gets the value of the 'profileTimestamp' field as an Optional&lt;java.lang.Long&gt;.
+      * Profile last update timestamp
+      * @return The value wrapped in an Optional&lt;java.lang.Long&gt;.
+      */
+    public Optional<java.lang.Long> getOptionalProfileTimestamp() {
+      return Optional.<java.lang.Long>ofNullable(profileTimestamp);
+    }
 
     /**
       * Sets the value of the 'profileTimestamp' field.
@@ -615,6 +711,14 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
       return averageTransactionAmount;
     }
 
+    /**
+      * Gets the value of the 'averageTransactionAmount' field as an Optional&lt;java.lang.Double&gt;.
+      * Average transaction amount
+      * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+      */
+    public Optional<java.lang.Double> getOptionalAverageTransactionAmount() {
+      return Optional.<java.lang.Double>ofNullable(averageTransactionAmount);
+    }
 
     /**
       * Sets the value of the 'averageTransactionAmount' field.
@@ -658,6 +762,14 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
       return typicalTransactionHours;
     }
 
+    /**
+      * Gets the value of the 'typicalTransactionHours' field as an Optional&lt;java.util.List<java.lang.Integer>&gt;.
+      * Typical hours when customer transacts
+      * @return The value wrapped in an Optional&lt;java.util.List<java.lang.Integer>&gt;.
+      */
+    public Optional<java.util.List<java.lang.Integer>> getOptionalTypicalTransactionHours() {
+      return Optional.<java.util.List<java.lang.Integer>>ofNullable(typicalTransactionHours);
+    }
 
     /**
       * Sets the value of the 'typicalTransactionHours' field.
@@ -698,10 +810,18 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
       * List of frequently used merchant IDs
       * @return The value.
       */
-    public java.util.List<java.lang.CharSequence> getFrequentMerchants() {
+    public java.util.List<java.lang.String> getFrequentMerchants() {
       return frequentMerchants;
     }
 
+    /**
+      * Gets the value of the 'frequentMerchants' field as an Optional&lt;java.util.List<java.lang.String>&gt;.
+      * List of frequently used merchant IDs
+      * @return The value wrapped in an Optional&lt;java.util.List<java.lang.String>&gt;.
+      */
+    public Optional<java.util.List<java.lang.String>> getOptionalFrequentMerchants() {
+      return Optional.<java.util.List<java.lang.String>>ofNullable(frequentMerchants);
+    }
 
     /**
       * Sets the value of the 'frequentMerchants' field.
@@ -709,7 +829,7 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'frequentMerchants'.
       * @return This builder.
       */
-    public com.codedstream.transfruad.library.schema.CustomerProfile.Builder setFrequentMerchants(java.util.List<java.lang.CharSequence> value) {
+    public com.codedstream.transfruad.library.schema.CustomerProfile.Builder setFrequentMerchants(java.util.List<java.lang.String> value) {
       validate(fields()[4], value);
       this.frequentMerchants = value;
       fieldSetFlags()[4] = true;
@@ -746,6 +866,14 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
       return homeLocation;
     }
 
+    /**
+      * Gets the value of the 'homeLocation' field as an Optional&lt;com.codedstream.transfruad.library.schema.CustomerLocation&gt;.
+      * Customer's home location
+      * @return The value wrapped in an Optional&lt;com.codedstream.transfruad.library.schema.CustomerLocation&gt;.
+      */
+    public Optional<com.codedstream.transfruad.library.schema.CustomerLocation> getOptionalHomeLocation() {
+      return Optional.<com.codedstream.transfruad.library.schema.CustomerLocation>ofNullable(homeLocation);
+    }
 
     /**
       * Sets the value of the 'homeLocation' field.
@@ -829,6 +957,14 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
       return transactionVelocity1h;
     }
 
+    /**
+      * Gets the value of the 'transactionVelocity1h' field as an Optional&lt;java.lang.Double&gt;.
+      * Typical transaction velocity per hour
+      * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+      */
+    public Optional<java.lang.Double> getOptionalTransactionVelocity1h() {
+      return Optional.<java.lang.Double>ofNullable(transactionVelocity1h);
+    }
 
     /**
       * Sets the value of the 'transactionVelocity1h' field.
@@ -872,6 +1008,14 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
       return transactionVelocity24h;
     }
 
+    /**
+      * Gets the value of the 'transactionVelocity24h' field as an Optional&lt;java.lang.Double&gt;.
+      * Typical transaction velocity per day
+      * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+      */
+    public Optional<java.lang.Double> getOptionalTransactionVelocity24h() {
+      return Optional.<java.lang.Double>ofNullable(transactionVelocity24h);
+    }
 
     /**
       * Sets the value of the 'transactionVelocity24h' field.
@@ -911,10 +1055,18 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
       * Preferred merchant categories
       * @return The value.
       */
-    public java.util.List<java.lang.CharSequence> getPreferredCategories() {
+    public java.util.List<java.lang.String> getPreferredCategories() {
       return preferredCategories;
     }
 
+    /**
+      * Gets the value of the 'preferredCategories' field as an Optional&lt;java.util.List<java.lang.String>&gt;.
+      * Preferred merchant categories
+      * @return The value wrapped in an Optional&lt;java.util.List<java.lang.String>&gt;.
+      */
+    public Optional<java.util.List<java.lang.String>> getOptionalPreferredCategories() {
+      return Optional.<java.util.List<java.lang.String>>ofNullable(preferredCategories);
+    }
 
     /**
       * Sets the value of the 'preferredCategories' field.
@@ -922,7 +1074,7 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'preferredCategories'.
       * @return This builder.
       */
-    public com.codedstream.transfruad.library.schema.CustomerProfile.Builder setPreferredCategories(java.util.List<java.lang.CharSequence> value) {
+    public com.codedstream.transfruad.library.schema.CustomerProfile.Builder setPreferredCategories(java.util.List<java.lang.String> value) {
       validate(fields()[8], value);
       this.preferredCategories = value;
       fieldSetFlags()[8] = true;
@@ -959,6 +1111,14 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
       return riskScore;
     }
 
+    /**
+      * Gets the value of the 'riskScore' field as an Optional&lt;java.lang.Double&gt;.
+      * Overall customer risk score
+      * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+      */
+    public Optional<java.lang.Double> getOptionalRiskScore() {
+      return Optional.<java.lang.Double>ofNullable(riskScore);
+    }
 
     /**
       * Sets the value of the 'riskScore' field.
@@ -998,11 +1158,11 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
     public CustomerProfile build() {
       try {
         CustomerProfile record = new CustomerProfile();
-        record.customerId = fieldSetFlags()[0] ? this.customerId : (java.lang.CharSequence) defaultValue(fields()[0]);
+        record.customerId = fieldSetFlags()[0] ? this.customerId : (java.lang.String) defaultValue(fields()[0]);
         record.profileTimestamp = fieldSetFlags()[1] ? this.profileTimestamp : (java.lang.Long) defaultValue(fields()[1]);
         record.averageTransactionAmount = fieldSetFlags()[2] ? this.averageTransactionAmount : (java.lang.Double) defaultValue(fields()[2]);
         record.typicalTransactionHours = fieldSetFlags()[3] ? this.typicalTransactionHours : (java.util.List<java.lang.Integer>) defaultValue(fields()[3]);
-        record.frequentMerchants = fieldSetFlags()[4] ? this.frequentMerchants : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[4]);
+        record.frequentMerchants = fieldSetFlags()[4] ? this.frequentMerchants : (java.util.List<java.lang.String>) defaultValue(fields()[4]);
         if (homeLocationBuilder != null) {
           try {
             record.homeLocation = this.homeLocationBuilder.build();
@@ -1015,7 +1175,7 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
         }
         record.transactionVelocity1h = fieldSetFlags()[6] ? this.transactionVelocity1h : (java.lang.Double) defaultValue(fields()[6]);
         record.transactionVelocity24h = fieldSetFlags()[7] ? this.transactionVelocity24h : (java.lang.Double) defaultValue(fields()[7]);
-        record.preferredCategories = fieldSetFlags()[8] ? this.preferredCategories : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[8]);
+        record.preferredCategories = fieldSetFlags()[8] ? this.preferredCategories : (java.util.List<java.lang.String>) defaultValue(fields()[8]);
         record.riskScore = fieldSetFlags()[9] ? this.riskScore : (java.lang.Double) defaultValue(fields()[9]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
@@ -1072,7 +1232,7 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
     out.writeArrayStart();
     out.setItemCount(size1);
     long actualSize1 = 0;
-    for (java.lang.CharSequence e1: this.frequentMerchants) {
+    for (java.lang.String e1: this.frequentMerchants) {
       actualSize1++;
       out.startItem();
       out.writeString(e1);
@@ -1091,7 +1251,7 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
     out.writeArrayStart();
     out.setItemCount(size2);
     long actualSize2 = 0;
-    for (java.lang.CharSequence e2: this.preferredCategories) {
+    for (java.lang.String e2: this.preferredCategories) {
       actualSize2++;
       out.startItem();
       out.writeString(e2);
@@ -1109,7 +1269,7 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
   {
     org.apache.avro.Schema.Field[] fieldOrder = in.readFieldOrderIfDiff();
     if (fieldOrder == null) {
-      this.customerId = in.readString(this.customerId instanceof Utf8 ? (Utf8)this.customerId : null);
+      this.customerId = in.readString();
 
       this.profileTimestamp = in.readLong();
 
@@ -1131,16 +1291,16 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
       }
 
       long size1 = in.readArrayStart();
-      java.util.List<java.lang.CharSequence> a1 = this.frequentMerchants;
+      java.util.List<java.lang.String> a1 = this.frequentMerchants;
       if (a1 == null) {
-        a1 = new SpecificData.Array<java.lang.CharSequence>((int)size1, SCHEMA$.getField("frequentMerchants").schema());
+        a1 = new SpecificData.Array<java.lang.String>((int)size1, SCHEMA$.getField("frequentMerchants").schema());
         this.frequentMerchants = a1;
       } else a1.clear();
-      SpecificData.Array<java.lang.CharSequence> ga1 = (a1 instanceof SpecificData.Array ? (SpecificData.Array<java.lang.CharSequence>)a1 : null);
+      SpecificData.Array<java.lang.String> ga1 = (a1 instanceof SpecificData.Array ? (SpecificData.Array<java.lang.String>)a1 : null);
       for ( ; 0 < size1; size1 = in.arrayNext()) {
         for ( ; size1 != 0; size1--) {
-          java.lang.CharSequence e1 = (ga1 != null ? ga1.peek() : null);
-          e1 = in.readString(e1 instanceof Utf8 ? (Utf8)e1 : null);
+          java.lang.String e1 = (ga1 != null ? ga1.peek() : null);
+          e1 = in.readString();
           a1.add(e1);
         }
       }
@@ -1155,16 +1315,16 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
       this.transactionVelocity24h = in.readDouble();
 
       long size2 = in.readArrayStart();
-      java.util.List<java.lang.CharSequence> a2 = this.preferredCategories;
+      java.util.List<java.lang.String> a2 = this.preferredCategories;
       if (a2 == null) {
-        a2 = new SpecificData.Array<java.lang.CharSequence>((int)size2, SCHEMA$.getField("preferredCategories").schema());
+        a2 = new SpecificData.Array<java.lang.String>((int)size2, SCHEMA$.getField("preferredCategories").schema());
         this.preferredCategories = a2;
       } else a2.clear();
-      SpecificData.Array<java.lang.CharSequence> ga2 = (a2 instanceof SpecificData.Array ? (SpecificData.Array<java.lang.CharSequence>)a2 : null);
+      SpecificData.Array<java.lang.String> ga2 = (a2 instanceof SpecificData.Array ? (SpecificData.Array<java.lang.String>)a2 : null);
       for ( ; 0 < size2; size2 = in.arrayNext()) {
         for ( ; size2 != 0; size2--) {
-          java.lang.CharSequence e2 = (ga2 != null ? ga2.peek() : null);
-          e2 = in.readString(e2 instanceof Utf8 ? (Utf8)e2 : null);
+          java.lang.String e2 = (ga2 != null ? ga2.peek() : null);
+          e2 = in.readString();
           a2.add(e2);
         }
       }
@@ -1175,7 +1335,7 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
       for (int i = 0; i < 10; i++) {
         switch (fieldOrder[i].pos()) {
         case 0:
-          this.customerId = in.readString(this.customerId instanceof Utf8 ? (Utf8)this.customerId : null);
+          this.customerId = in.readString();
           break;
 
         case 1:
@@ -1205,16 +1365,16 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
 
         case 4:
           long size1 = in.readArrayStart();
-          java.util.List<java.lang.CharSequence> a1 = this.frequentMerchants;
+          java.util.List<java.lang.String> a1 = this.frequentMerchants;
           if (a1 == null) {
-            a1 = new SpecificData.Array<java.lang.CharSequence>((int)size1, SCHEMA$.getField("frequentMerchants").schema());
+            a1 = new SpecificData.Array<java.lang.String>((int)size1, SCHEMA$.getField("frequentMerchants").schema());
             this.frequentMerchants = a1;
           } else a1.clear();
-          SpecificData.Array<java.lang.CharSequence> ga1 = (a1 instanceof SpecificData.Array ? (SpecificData.Array<java.lang.CharSequence>)a1 : null);
+          SpecificData.Array<java.lang.String> ga1 = (a1 instanceof SpecificData.Array ? (SpecificData.Array<java.lang.String>)a1 : null);
           for ( ; 0 < size1; size1 = in.arrayNext()) {
             for ( ; size1 != 0; size1--) {
-              java.lang.CharSequence e1 = (ga1 != null ? ga1.peek() : null);
-              e1 = in.readString(e1 instanceof Utf8 ? (Utf8)e1 : null);
+              java.lang.String e1 = (ga1 != null ? ga1.peek() : null);
+              e1 = in.readString();
               a1.add(e1);
             }
           }
@@ -1237,16 +1397,16 @@ public class CustomerProfile extends org.apache.avro.specific.SpecificRecordBase
 
         case 8:
           long size2 = in.readArrayStart();
-          java.util.List<java.lang.CharSequence> a2 = this.preferredCategories;
+          java.util.List<java.lang.String> a2 = this.preferredCategories;
           if (a2 == null) {
-            a2 = new SpecificData.Array<java.lang.CharSequence>((int)size2, SCHEMA$.getField("preferredCategories").schema());
+            a2 = new SpecificData.Array<java.lang.String>((int)size2, SCHEMA$.getField("preferredCategories").schema());
             this.preferredCategories = a2;
           } else a2.clear();
-          SpecificData.Array<java.lang.CharSequence> ga2 = (a2 instanceof SpecificData.Array ? (SpecificData.Array<java.lang.CharSequence>)a2 : null);
+          SpecificData.Array<java.lang.String> ga2 = (a2 instanceof SpecificData.Array ? (SpecificData.Array<java.lang.String>)a2 : null);
           for ( ; 0 < size2; size2 = in.arrayNext()) {
             for ( ; size2 != 0; size2--) {
-              java.lang.CharSequence e2 = (ga2 != null ? ga2.peek() : null);
-              e2 = in.readString(e2 instanceof Utf8 ? (Utf8)e2 : null);
+              java.lang.String e2 = (ga2 != null ? ga2.peek() : null);
+              e2 = in.readString();
               a2.add(e2);
             }
           }

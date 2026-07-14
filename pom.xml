@@ -1,11 +1,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.codedstreams</groupId>
   <artifactId>codedx-transaction-fraud-library</artifactId>
-  <version>1.1-SNAPSHOT</version>
+  <version>1.2-SNAPSHOT</version>
   <name>codedx-transaction-fraud-library</name>
-  <url>http://maven.apache.org</url>
+  <description>Shared Avro schemas for transaction fraud detection - Flink 2.0 compatible</description>
+  <url>https://github.com/coded-streams/codedx-transaction-fraud-library</url>
+
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -16,8 +25,17 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <avro.version>1.11.4</avro.version>
-    <java.version>11</java.version>
+    <!-- Updated to Java 17 for Flink 2.0 compatibility -->
+    <java.version>17</java.version>
+    <maven.compiler.release>17</maven.compiler.release>
+
+    <!-- Plugin Versions -->
+    <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+    <maven-javadoc-plugin.version>3.6.2</maven-javadoc-plugin.version>
+    <maven-source-plugin.version>3.3.0</maven-source-plugin.version>
+    <maven-surefire-plugin.version>3.2.2</maven-surefire-plugin.version>
   </properties>
 
   <dependencies>
@@ -35,6 +53,7 @@
 
   <build>
     <plugins>
+      <!-- Avro Plugin - Generate Java classes from Avro schemas -->
       <plugin>
         <groupId>org.apache.avro</groupId>
         <artifactId>avro-maven-plugin</artifactId>
@@ -48,36 +67,78 @@
             <configuration>
               <sourceDirectory>${project.basedir}/src/main/java/com/codedstream/transfruad/library/avro/</sourceDirectory>
               <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
+              <stringType>String</stringType>
+              <createSetters>true</createSetters>
+<!--              <createGetters>true</createGetters>-->
+              <createOptionalGetters>true</createOptionalGetters>
+              <fieldVisibility>public_deprecated</fieldVisibility>
             </configuration>
           </execution>
         </executions>
       </plugin>
-      <!-- Java Compiler Plugin -->
+
+      <!-- Java Compiler Plugin - Updated for Java 17 -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
+        <version>${maven-compiler-plugin.version}</version>
         <configuration>
-          <source>${java.version}</source>
-          <target>${java.version}</target>
+          <release>${maven.compiler.release}</release>
+          <encoding>${project.build.sourceEncoding}</encoding>
+          <showWarnings>true</showWarnings>
+          <showDeprecation>true</showDeprecation>
         </configuration>
       </plugin>
 
+      <!-- Javadoc Plugin - Updated for Java 17 -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.3.1</version>
+        <version>${maven-javadoc-plugin.version}</version>
         <executions>
           <execution>
+            <id>attach-javadocs</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <release>${maven.compiler.release}</release>
+          <doclint>none</doclint>
+          <failOnError>false</failOnError>
+          <failOnWarnings>false</failOnWarnings>
+          <quiet>true</quiet>
+        </configuration>
+      </plugin>
+
+      <!-- Source Plugin - Generates sources JAR for publishing -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>${maven-source-plugin.version}</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
             <goals>
               <goal>jar</goal>
             </goals>
           </execution>
         </executions>
       </plugin>
+
+      <!-- Surefire Plugin - Test configuration -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${maven-surefire-plugin.version}</version>
+        <configuration>
+          <skipTests>false</skipTests>
+          <useSystemClassLoader>false</useSystemClassLoader>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
-
 
   <distributionManagement>
     <repository>
@@ -85,4 +146,17 @@
       <url>https://maven.pkg.github.com/coded-streams/codedx-transaction-fraud-library</url>
     </repository>
   </distributionManagement>
+
+  <repositories>
+    <repository>
+      <id>central</id>
+      <url>https://repo.maven.apache.org/maven2</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
 </project>

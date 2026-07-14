@@ -11,13 +11,13 @@ import org.apache.avro.util.Utf8;
 import org.apache.avro.message.BinaryMessageEncoder;
 import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
-
+import java.util.Optional;
 @org.apache.avro.specific.AvroGenerated
 public class ModelMetadata extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -2902114542992142975L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ModelMetadata\",\"namespace\":\"com.codedstream.transfruad.library.schema\",\"fields\":[{\"name\":\"modelVersion\",\"type\":\"string\"},{\"name\":\"modelType\",\"type\":\"string\"},{\"name\":\"inferenceTimeMs\",\"type\":\"long\"},{\"name\":\"confidence\",\"type\":\"double\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ModelMetadata\",\"namespace\":\"com.codedstream.transfruad.library.schema\",\"fields\":[{\"name\":\"modelVersion\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"modelType\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"inferenceTimeMs\",\"type\":\"long\"},{\"name\":\"confidence\",\"type\":\"double\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -73,8 +73,8 @@ public class ModelMetadata extends org.apache.avro.specific.SpecificRecordBase i
     return DECODER.decode(b);
   }
 
-  private java.lang.CharSequence modelVersion;
-  private java.lang.CharSequence modelType;
+  private java.lang.String modelVersion;
+  private java.lang.String modelType;
   private long inferenceTimeMs;
   private double confidence;
 
@@ -92,7 +92,7 @@ public class ModelMetadata extends org.apache.avro.specific.SpecificRecordBase i
    * @param inferenceTimeMs The new value for inferenceTimeMs
    * @param confidence The new value for confidence
    */
-  public ModelMetadata(java.lang.CharSequence modelVersion, java.lang.CharSequence modelType, java.lang.Long inferenceTimeMs, java.lang.Double confidence) {
+  public ModelMetadata(java.lang.String modelVersion, java.lang.String modelType, java.lang.Long inferenceTimeMs, java.lang.Double confidence) {
     this.modelVersion = modelVersion;
     this.modelType = modelType;
     this.inferenceTimeMs = inferenceTimeMs;
@@ -122,8 +122,8 @@ public class ModelMetadata extends org.apache.avro.specific.SpecificRecordBase i
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: modelVersion = (java.lang.CharSequence)value$; break;
-    case 1: modelType = (java.lang.CharSequence)value$; break;
+    case 0: modelVersion = value$ != null ? value$.toString() : null; break;
+    case 1: modelType = value$ != null ? value$.toString() : null; break;
     case 2: inferenceTimeMs = (java.lang.Long)value$; break;
     case 3: confidence = (java.lang.Double)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
@@ -134,16 +134,23 @@ public class ModelMetadata extends org.apache.avro.specific.SpecificRecordBase i
    * Gets the value of the 'modelVersion' field.
    * @return The value of the 'modelVersion' field.
    */
-  public java.lang.CharSequence getModelVersion() {
+  public java.lang.String getModelVersion() {
     return modelVersion;
   }
 
+  /**
+   * Gets the value of the 'modelVersion' field as an Optional&lt;java.lang.String&gt;.
+   * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+   */
+  public Optional<java.lang.String> getOptionalModelVersion() {
+    return Optional.<java.lang.String>ofNullable(modelVersion);
+  }
 
   /**
    * Sets the value of the 'modelVersion' field.
    * @param value the value to set.
    */
-  public void setModelVersion(java.lang.CharSequence value) {
+  public void setModelVersion(java.lang.String value) {
     this.modelVersion = value;
   }
 
@@ -151,16 +158,23 @@ public class ModelMetadata extends org.apache.avro.specific.SpecificRecordBase i
    * Gets the value of the 'modelType' field.
    * @return The value of the 'modelType' field.
    */
-  public java.lang.CharSequence getModelType() {
+  public java.lang.String getModelType() {
     return modelType;
   }
 
+  /**
+   * Gets the value of the 'modelType' field as an Optional&lt;java.lang.String&gt;.
+   * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+   */
+  public Optional<java.lang.String> getOptionalModelType() {
+    return Optional.<java.lang.String>ofNullable(modelType);
+  }
 
   /**
    * Sets the value of the 'modelType' field.
    * @param value the value to set.
    */
-  public void setModelType(java.lang.CharSequence value) {
+  public void setModelType(java.lang.String value) {
     this.modelType = value;
   }
 
@@ -172,6 +186,13 @@ public class ModelMetadata extends org.apache.avro.specific.SpecificRecordBase i
     return inferenceTimeMs;
   }
 
+  /**
+   * Gets the value of the 'inferenceTimeMs' field as an Optional&lt;java.lang.Long&gt;.
+   * @return The value wrapped in an Optional&lt;java.lang.Long&gt;.
+   */
+  public Optional<java.lang.Long> getOptionalInferenceTimeMs() {
+    return Optional.<java.lang.Long>ofNullable(inferenceTimeMs);
+  }
 
   /**
    * Sets the value of the 'inferenceTimeMs' field.
@@ -189,6 +210,13 @@ public class ModelMetadata extends org.apache.avro.specific.SpecificRecordBase i
     return confidence;
   }
 
+  /**
+   * Gets the value of the 'confidence' field as an Optional&lt;java.lang.Double&gt;.
+   * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+   */
+  public Optional<java.lang.Double> getOptionalConfidence() {
+    return Optional.<java.lang.Double>ofNullable(confidence);
+  }
 
   /**
    * Sets the value of the 'confidence' field.
@@ -239,8 +267,8 @@ public class ModelMetadata extends org.apache.avro.specific.SpecificRecordBase i
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<ModelMetadata>
     implements org.apache.avro.data.RecordBuilder<ModelMetadata> {
 
-    private java.lang.CharSequence modelVersion;
-    private java.lang.CharSequence modelType;
+    private java.lang.String modelVersion;
+    private java.lang.String modelType;
     private long inferenceTimeMs;
     private double confidence;
 
@@ -301,17 +329,24 @@ public class ModelMetadata extends org.apache.avro.specific.SpecificRecordBase i
       * Gets the value of the 'modelVersion' field.
       * @return The value.
       */
-    public java.lang.CharSequence getModelVersion() {
+    public java.lang.String getModelVersion() {
       return modelVersion;
     }
 
+    /**
+      * Gets the value of the 'modelVersion' field as an Optional&lt;java.lang.String&gt;.
+      * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+      */
+    public Optional<java.lang.String> getOptionalModelVersion() {
+      return Optional.<java.lang.String>ofNullable(modelVersion);
+    }
 
     /**
       * Sets the value of the 'modelVersion' field.
       * @param value The value of 'modelVersion'.
       * @return This builder.
       */
-    public com.codedstream.transfruad.library.schema.ModelMetadata.Builder setModelVersion(java.lang.CharSequence value) {
+    public com.codedstream.transfruad.library.schema.ModelMetadata.Builder setModelVersion(java.lang.String value) {
       validate(fields()[0], value);
       this.modelVersion = value;
       fieldSetFlags()[0] = true;
@@ -341,17 +376,24 @@ public class ModelMetadata extends org.apache.avro.specific.SpecificRecordBase i
       * Gets the value of the 'modelType' field.
       * @return The value.
       */
-    public java.lang.CharSequence getModelType() {
+    public java.lang.String getModelType() {
       return modelType;
     }
 
+    /**
+      * Gets the value of the 'modelType' field as an Optional&lt;java.lang.String&gt;.
+      * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+      */
+    public Optional<java.lang.String> getOptionalModelType() {
+      return Optional.<java.lang.String>ofNullable(modelType);
+    }
 
     /**
       * Sets the value of the 'modelType' field.
       * @param value The value of 'modelType'.
       * @return This builder.
       */
-    public com.codedstream.transfruad.library.schema.ModelMetadata.Builder setModelType(java.lang.CharSequence value) {
+    public com.codedstream.transfruad.library.schema.ModelMetadata.Builder setModelType(java.lang.String value) {
       validate(fields()[1], value);
       this.modelType = value;
       fieldSetFlags()[1] = true;
@@ -385,6 +427,13 @@ public class ModelMetadata extends org.apache.avro.specific.SpecificRecordBase i
       return inferenceTimeMs;
     }
 
+    /**
+      * Gets the value of the 'inferenceTimeMs' field as an Optional&lt;java.lang.Long&gt;.
+      * @return The value wrapped in an Optional&lt;java.lang.Long&gt;.
+      */
+    public Optional<java.lang.Long> getOptionalInferenceTimeMs() {
+      return Optional.<java.lang.Long>ofNullable(inferenceTimeMs);
+    }
 
     /**
       * Sets the value of the 'inferenceTimeMs' field.
@@ -424,6 +473,13 @@ public class ModelMetadata extends org.apache.avro.specific.SpecificRecordBase i
       return confidence;
     }
 
+    /**
+      * Gets the value of the 'confidence' field as an Optional&lt;java.lang.Double&gt;.
+      * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+      */
+    public Optional<java.lang.Double> getOptionalConfidence() {
+      return Optional.<java.lang.Double>ofNullable(confidence);
+    }
 
     /**
       * Sets the value of the 'confidence' field.
@@ -460,8 +516,8 @@ public class ModelMetadata extends org.apache.avro.specific.SpecificRecordBase i
     public ModelMetadata build() {
       try {
         ModelMetadata record = new ModelMetadata();
-        record.modelVersion = fieldSetFlags()[0] ? this.modelVersion : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.modelType = fieldSetFlags()[1] ? this.modelType : (java.lang.CharSequence) defaultValue(fields()[1]);
+        record.modelVersion = fieldSetFlags()[0] ? this.modelVersion : (java.lang.String) defaultValue(fields()[0]);
+        record.modelType = fieldSetFlags()[1] ? this.modelType : (java.lang.String) defaultValue(fields()[1]);
         record.inferenceTimeMs = fieldSetFlags()[2] ? this.inferenceTimeMs : (java.lang.Long) defaultValue(fields()[2]);
         record.confidence = fieldSetFlags()[3] ? this.confidence : (java.lang.Double) defaultValue(fields()[3]);
         return record;
@@ -511,9 +567,9 @@ public class ModelMetadata extends org.apache.avro.specific.SpecificRecordBase i
   {
     org.apache.avro.Schema.Field[] fieldOrder = in.readFieldOrderIfDiff();
     if (fieldOrder == null) {
-      this.modelVersion = in.readString(this.modelVersion instanceof Utf8 ? (Utf8)this.modelVersion : null);
+      this.modelVersion = in.readString();
 
-      this.modelType = in.readString(this.modelType instanceof Utf8 ? (Utf8)this.modelType : null);
+      this.modelType = in.readString();
 
       this.inferenceTimeMs = in.readLong();
 
@@ -523,11 +579,11 @@ public class ModelMetadata extends org.apache.avro.specific.SpecificRecordBase i
       for (int i = 0; i < 4; i++) {
         switch (fieldOrder[i].pos()) {
         case 0:
-          this.modelVersion = in.readString(this.modelVersion instanceof Utf8 ? (Utf8)this.modelVersion : null);
+          this.modelVersion = in.readString();
           break;
 
         case 1:
-          this.modelType = in.readString(this.modelType instanceof Utf8 ? (Utf8)this.modelType : null);
+          this.modelType = in.readString();
           break;
 
         case 2:

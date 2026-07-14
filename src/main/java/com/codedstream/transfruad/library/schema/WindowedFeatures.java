@@ -11,7 +11,7 @@ import org.apache.avro.util.Utf8;
 import org.apache.avro.message.BinaryMessageEncoder;
 import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
-
+import java.util.Optional;
 @org.apache.avro.specific.AvroGenerated
 public class WindowedFeatures extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -8304323718792833852L;
@@ -154,6 +154,14 @@ public class WindowedFeatures extends org.apache.avro.specific.SpecificRecordBas
     return windowStart;
   }
 
+  /**
+   * Gets the value of the 'windowStart' field as an Optional&lt;java.lang.Long&gt;.
+   * Window start timestamp
+   * @return The value wrapped in an Optional&lt;java.lang.Long&gt;.
+   */
+  public Optional<java.lang.Long> getOptionalWindowStart() {
+    return Optional.<java.lang.Long>ofNullable(windowStart);
+  }
 
   /**
    * Sets the value of the 'windowStart' field.
@@ -172,6 +180,14 @@ public class WindowedFeatures extends org.apache.avro.specific.SpecificRecordBas
     return windowEnd;
   }
 
+  /**
+   * Gets the value of the 'windowEnd' field as an Optional&lt;java.lang.Long&gt;.
+   * Window end timestamp
+   * @return The value wrapped in an Optional&lt;java.lang.Long&gt;.
+   */
+  public Optional<java.lang.Long> getOptionalWindowEnd() {
+    return Optional.<java.lang.Long>ofNullable(windowEnd);
+  }
 
   /**
    * Sets the value of the 'windowEnd' field.
@@ -190,6 +206,14 @@ public class WindowedFeatures extends org.apache.avro.specific.SpecificRecordBas
     return totalAmount;
   }
 
+  /**
+   * Gets the value of the 'totalAmount' field as an Optional&lt;java.lang.Double&gt;.
+   * Total amount in the window
+   * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+   */
+  public Optional<java.lang.Double> getOptionalTotalAmount() {
+    return Optional.<java.lang.Double>ofNullable(totalAmount);
+  }
 
   /**
    * Sets the value of the 'totalAmount' field.
@@ -208,6 +232,14 @@ public class WindowedFeatures extends org.apache.avro.specific.SpecificRecordBas
     return transactionCount;
   }
 
+  /**
+   * Gets the value of the 'transactionCount' field as an Optional&lt;java.lang.Integer&gt;.
+   * Number of transactions in the window
+   * @return The value wrapped in an Optional&lt;java.lang.Integer&gt;.
+   */
+  public Optional<java.lang.Integer> getOptionalTransactionCount() {
+    return Optional.<java.lang.Integer>ofNullable(transactionCount);
+  }
 
   /**
    * Sets the value of the 'transactionCount' field.
@@ -226,6 +258,14 @@ public class WindowedFeatures extends org.apache.avro.specific.SpecificRecordBas
     return uniqueMerchants;
   }
 
+  /**
+   * Gets the value of the 'uniqueMerchants' field as an Optional&lt;java.lang.Integer&gt;.
+   * Number of unique merchants
+   * @return The value wrapped in an Optional&lt;java.lang.Integer&gt;.
+   */
+  public Optional<java.lang.Integer> getOptionalUniqueMerchants() {
+    return Optional.<java.lang.Integer>ofNullable(uniqueMerchants);
+  }
 
   /**
    * Sets the value of the 'uniqueMerchants' field.
@@ -244,6 +284,14 @@ public class WindowedFeatures extends org.apache.avro.specific.SpecificRecordBas
     return uniqueLocations;
   }
 
+  /**
+   * Gets the value of the 'uniqueLocations' field as an Optional&lt;java.lang.Integer&gt;.
+   * Number of unique locations
+   * @return The value wrapped in an Optional&lt;java.lang.Integer&gt;.
+   */
+  public Optional<java.lang.Integer> getOptionalUniqueLocations() {
+    return Optional.<java.lang.Integer>ofNullable(uniqueLocations);
+  }
 
   /**
    * Sets the value of the 'uniqueLocations' field.
@@ -386,6 +434,14 @@ public class WindowedFeatures extends org.apache.avro.specific.SpecificRecordBas
       return windowStart;
     }
 
+    /**
+      * Gets the value of the 'windowStart' field as an Optional&lt;java.lang.Long&gt;.
+      * Window start timestamp
+      * @return The value wrapped in an Optional&lt;java.lang.Long&gt;.
+      */
+    public Optional<java.lang.Long> getOptionalWindowStart() {
+      return Optional.<java.lang.Long>ofNullable(windowStart);
+    }
 
     /**
       * Sets the value of the 'windowStart' field.
@@ -429,6 +485,14 @@ public class WindowedFeatures extends org.apache.avro.specific.SpecificRecordBas
       return windowEnd;
     }
 
+    /**
+      * Gets the value of the 'windowEnd' field as an Optional&lt;java.lang.Long&gt;.
+      * Window end timestamp
+      * @return The value wrapped in an Optional&lt;java.lang.Long&gt;.
+      */
+    public Optional<java.lang.Long> getOptionalWindowEnd() {
+      return Optional.<java.lang.Long>ofNullable(windowEnd);
+    }
 
     /**
       * Sets the value of the 'windowEnd' field.
@@ -472,6 +536,14 @@ public class WindowedFeatures extends org.apache.avro.specific.SpecificRecordBas
       return totalAmount;
     }
 
+    /**
+      * Gets the value of the 'totalAmount' field as an Optional&lt;java.lang.Double&gt;.
+      * Total amount in the window
+      * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+      */
+    public Optional<java.lang.Double> getOptionalTotalAmount() {
+      return Optional.<java.lang.Double>ofNullable(totalAmount);
+    }
 
     /**
       * Sets the value of the 'totalAmount' field.
@@ -515,6 +587,14 @@ public class WindowedFeatures extends org.apache.avro.specific.SpecificRecordBas
       return transactionCount;
     }
 
+    /**
+      * Gets the value of the 'transactionCount' field as an Optional&lt;java.lang.Integer&gt;.
+      * Number of transactions in the window
+      * @return The value wrapped in an Optional&lt;java.lang.Integer&gt;.
+      */
+    public Optional<java.lang.Integer> getOptionalTransactionCount() {
+      return Optional.<java.lang.Integer>ofNullable(transactionCount);
+    }
 
     /**
       * Sets the value of the 'transactionCount' field.
@@ -558,6 +638,14 @@ public class WindowedFeatures extends org.apache.avro.specific.SpecificRecordBas
       return uniqueMerchants;
     }
 
+    /**
+      * Gets the value of the 'uniqueMerchants' field as an Optional&lt;java.lang.Integer&gt;.
+      * Number of unique merchants
+      * @return The value wrapped in an Optional&lt;java.lang.Integer&gt;.
+      */
+    public Optional<java.lang.Integer> getOptionalUniqueMerchants() {
+      return Optional.<java.lang.Integer>ofNullable(uniqueMerchants);
+    }
 
     /**
       * Sets the value of the 'uniqueMerchants' field.
@@ -601,6 +689,14 @@ public class WindowedFeatures extends org.apache.avro.specific.SpecificRecordBas
       return uniqueLocations;
     }
 
+    /**
+      * Gets the value of the 'uniqueLocations' field as an Optional&lt;java.lang.Integer&gt;.
+      * Number of unique locations
+      * @return The value wrapped in an Optional&lt;java.lang.Integer&gt;.
+      */
+    public Optional<java.lang.Integer> getOptionalUniqueLocations() {
+      return Optional.<java.lang.Integer>ofNullable(uniqueLocations);
+    }
 
     /**
       * Sets the value of the 'uniqueLocations' field.

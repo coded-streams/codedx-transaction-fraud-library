@@ -11,14 +11,14 @@ import org.apache.avro.util.Utf8;
 import org.apache.avro.message.BinaryMessageEncoder;
 import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
-
+import java.util.Optional;
 /** Schema for fraud detection alerts */
 @org.apache.avro.specific.AvroGenerated
 public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = 249620973164969864L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FraudAlert\",\"namespace\":\"com.codedstream.transfruad.library.schema\",\"doc\":\"Schema for fraud detection alerts\",\"fields\":[{\"name\":\"alertId\",\"type\":\"string\",\"doc\":\"Unique identifier for the fraud alert\"},{\"name\":\"transactionId\",\"type\":\"string\",\"doc\":\"Reference to the suspicious transaction\"},{\"name\":\"customerId\",\"type\":\"string\",\"doc\":\"Customer identifier\"},{\"name\":\"cardId\",\"type\":\"string\",\"doc\":\"Card identifier\"},{\"name\":\"alertTimestamp\",\"type\":\"long\",\"doc\":\"Alert generation timestamp\"},{\"name\":\"severity\",\"type\":{\"type\":\"enum\",\"name\":\"AlertSeverity\",\"symbols\":[\"LOW\",\"MEDIUM\",\"HIGH\",\"CRITICAL\"]},\"doc\":\"Severity level of the fraud alert\"},{\"name\":\"fraudScore\",\"type\":\"double\",\"doc\":\"AI model fraud probability score (0.0 - 1.0)\"},{\"name\":\"alertType\",\"type\":{\"type\":\"enum\",\"name\":\"AlertType\",\"symbols\":[\"AMOUNT_ANOMALY\",\"VELOCITY_ANOMALY\",\"LOCATION_ANOMALY\",\"TIME_ANOMALY\",\"MERCHANT_RISK\",\"BEHAVIORAL_ANOMALY\",\"MULTIPLE_FACTORS\"]},\"doc\":\"Type of fraud pattern detected\"},{\"name\":\"riskFactors\",\"type\":{\"type\":\"array\",\"items\":\"string\"},\"doc\":\"List of risk factors contributing to the alert\"},{\"name\":\"modelVersion\",\"type\":\"string\",\"doc\":\"Version of the AI model that generated the alert\"},{\"name\":\"recommendedAction\",\"type\":{\"type\":\"enum\",\"name\":\"RecommendedAction\",\"symbols\":[\"ALLOW\",\"REVIEW\",\"BLOCK_CARD\",\"REQUIRE_2FA\",\"CONTACT_CUSTOMER\"]},\"doc\":\"Recommended action based on fraud assessment\"},{\"name\":\"features\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"Feature values used for model inference\"},{\"name\":\"isFalsePositive\",\"type\":[\"null\",\"boolean\"],\"doc\":\"Marked as true if alert was a false positive\",\"default\":null}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FraudAlert\",\"namespace\":\"com.codedstream.transfruad.library.schema\",\"doc\":\"Schema for fraud detection alerts\",\"fields\":[{\"name\":\"alertId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"Unique identifier for the fraud alert\"},{\"name\":\"transactionId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"Reference to the suspicious transaction\"},{\"name\":\"customerId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"Customer identifier\"},{\"name\":\"cardId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"Card identifier\"},{\"name\":\"alertTimestamp\",\"type\":\"long\",\"doc\":\"Alert generation timestamp\"},{\"name\":\"severity\",\"type\":{\"type\":\"enum\",\"name\":\"AlertSeverity\",\"symbols\":[\"LOW\",\"MEDIUM\",\"HIGH\",\"CRITICAL\"]},\"doc\":\"Severity level of the fraud alert\"},{\"name\":\"fraudScore\",\"type\":\"double\",\"doc\":\"AI model fraud probability score (0.0 - 1.0)\"},{\"name\":\"alertType\",\"type\":{\"type\":\"enum\",\"name\":\"AlertType\",\"symbols\":[\"AMOUNT_ANOMALY\",\"VELOCITY_ANOMALY\",\"LOCATION_ANOMALY\",\"TIME_ANOMALY\",\"MERCHANT_RISK\",\"BEHAVIORAL_ANOMALY\",\"MULTIPLE_FACTORS\"]},\"doc\":\"Type of fraud pattern detected\"},{\"name\":\"riskFactors\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},\"doc\":\"List of risk factors contributing to the alert\"},{\"name\":\"modelVersion\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"Version of the AI model that generated the alert\"},{\"name\":\"recommendedAction\",\"type\":{\"type\":\"enum\",\"name\":\"RecommendedAction\",\"symbols\":[\"ALLOW\",\"REVIEW\",\"BLOCK_CARD\",\"REQUIRE_2FA\",\"CONTACT_CUSTOMER\"]},\"doc\":\"Recommended action based on fraud assessment\"},{\"name\":\"features\",\"type\":{\"type\":\"map\",\"values\":\"double\",\"avro.java.string\":\"String\"},\"doc\":\"Feature values used for model inference\"},{\"name\":\"isFalsePositive\",\"type\":[\"null\",\"boolean\"],\"doc\":\"Marked as true if alert was a false positive\",\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -75,13 +75,13 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
   }
 
   /** Unique identifier for the fraud alert */
-  private java.lang.CharSequence alertId;
+  private java.lang.String alertId;
   /** Reference to the suspicious transaction */
-  private java.lang.CharSequence transactionId;
+  private java.lang.String transactionId;
   /** Customer identifier */
-  private java.lang.CharSequence customerId;
+  private java.lang.String customerId;
   /** Card identifier */
-  private java.lang.CharSequence cardId;
+  private java.lang.String cardId;
   /** Alert generation timestamp */
   private long alertTimestamp;
   /** Severity level of the fraud alert */
@@ -91,13 +91,13 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
   /** Type of fraud pattern detected */
   private com.codedstream.transfruad.library.schema.AlertType alertType;
   /** List of risk factors contributing to the alert */
-  private java.util.List<java.lang.CharSequence> riskFactors;
+  private java.util.List<java.lang.String> riskFactors;
   /** Version of the AI model that generated the alert */
-  private java.lang.CharSequence modelVersion;
+  private java.lang.String modelVersion;
   /** Recommended action based on fraud assessment */
   private com.codedstream.transfruad.library.schema.RecommendedAction recommendedAction;
   /** Feature values used for model inference */
-  private java.util.Map<java.lang.CharSequence,java.lang.Double> features;
+  private java.util.Map<java.lang.String,java.lang.Double> features;
   /** Marked as true if alert was a false positive */
   private java.lang.Boolean isFalsePositive;
 
@@ -124,7 +124,7 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
    * @param features Feature values used for model inference
    * @param isFalsePositive Marked as true if alert was a false positive
    */
-  public FraudAlert(java.lang.CharSequence alertId, java.lang.CharSequence transactionId, java.lang.CharSequence customerId, java.lang.CharSequence cardId, java.lang.Long alertTimestamp, com.codedstream.transfruad.library.schema.AlertSeverity severity, java.lang.Double fraudScore, com.codedstream.transfruad.library.schema.AlertType alertType, java.util.List<java.lang.CharSequence> riskFactors, java.lang.CharSequence modelVersion, com.codedstream.transfruad.library.schema.RecommendedAction recommendedAction, java.util.Map<java.lang.CharSequence,java.lang.Double> features, java.lang.Boolean isFalsePositive) {
+  public FraudAlert(java.lang.String alertId, java.lang.String transactionId, java.lang.String customerId, java.lang.String cardId, java.lang.Long alertTimestamp, com.codedstream.transfruad.library.schema.AlertSeverity severity, java.lang.Double fraudScore, com.codedstream.transfruad.library.schema.AlertType alertType, java.util.List<java.lang.String> riskFactors, java.lang.String modelVersion, com.codedstream.transfruad.library.schema.RecommendedAction recommendedAction, java.util.Map<java.lang.String,java.lang.Double> features, java.lang.Boolean isFalsePositive) {
     this.alertId = alertId;
     this.transactionId = transactionId;
     this.customerId = customerId;
@@ -172,18 +172,18 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: alertId = (java.lang.CharSequence)value$; break;
-    case 1: transactionId = (java.lang.CharSequence)value$; break;
-    case 2: customerId = (java.lang.CharSequence)value$; break;
-    case 3: cardId = (java.lang.CharSequence)value$; break;
+    case 0: alertId = value$ != null ? value$.toString() : null; break;
+    case 1: transactionId = value$ != null ? value$.toString() : null; break;
+    case 2: customerId = value$ != null ? value$.toString() : null; break;
+    case 3: cardId = value$ != null ? value$.toString() : null; break;
     case 4: alertTimestamp = (java.lang.Long)value$; break;
     case 5: severity = (com.codedstream.transfruad.library.schema.AlertSeverity)value$; break;
     case 6: fraudScore = (java.lang.Double)value$; break;
     case 7: alertType = (com.codedstream.transfruad.library.schema.AlertType)value$; break;
-    case 8: riskFactors = (java.util.List<java.lang.CharSequence>)value$; break;
-    case 9: modelVersion = (java.lang.CharSequence)value$; break;
+    case 8: riskFactors = (java.util.List<java.lang.String>)value$; break;
+    case 9: modelVersion = value$ != null ? value$.toString() : null; break;
     case 10: recommendedAction = (com.codedstream.transfruad.library.schema.RecommendedAction)value$; break;
-    case 11: features = (java.util.Map<java.lang.CharSequence,java.lang.Double>)value$; break;
+    case 11: features = (java.util.Map<java.lang.String,java.lang.Double>)value$; break;
     case 12: isFalsePositive = (java.lang.Boolean)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
@@ -193,17 +193,25 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'alertId' field.
    * @return Unique identifier for the fraud alert
    */
-  public java.lang.CharSequence getAlertId() {
+  public java.lang.String getAlertId() {
     return alertId;
   }
 
+  /**
+   * Gets the value of the 'alertId' field as an Optional&lt;java.lang.String&gt;.
+   * Unique identifier for the fraud alert
+   * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+   */
+  public Optional<java.lang.String> getOptionalAlertId() {
+    return Optional.<java.lang.String>ofNullable(alertId);
+  }
 
   /**
    * Sets the value of the 'alertId' field.
    * Unique identifier for the fraud alert
    * @param value the value to set.
    */
-  public void setAlertId(java.lang.CharSequence value) {
+  public void setAlertId(java.lang.String value) {
     this.alertId = value;
   }
 
@@ -211,17 +219,25 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'transactionId' field.
    * @return Reference to the suspicious transaction
    */
-  public java.lang.CharSequence getTransactionId() {
+  public java.lang.String getTransactionId() {
     return transactionId;
   }
 
+  /**
+   * Gets the value of the 'transactionId' field as an Optional&lt;java.lang.String&gt;.
+   * Reference to the suspicious transaction
+   * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+   */
+  public Optional<java.lang.String> getOptionalTransactionId() {
+    return Optional.<java.lang.String>ofNullable(transactionId);
+  }
 
   /**
    * Sets the value of the 'transactionId' field.
    * Reference to the suspicious transaction
    * @param value the value to set.
    */
-  public void setTransactionId(java.lang.CharSequence value) {
+  public void setTransactionId(java.lang.String value) {
     this.transactionId = value;
   }
 
@@ -229,17 +245,25 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'customerId' field.
    * @return Customer identifier
    */
-  public java.lang.CharSequence getCustomerId() {
+  public java.lang.String getCustomerId() {
     return customerId;
   }
 
+  /**
+   * Gets the value of the 'customerId' field as an Optional&lt;java.lang.String&gt;.
+   * Customer identifier
+   * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+   */
+  public Optional<java.lang.String> getOptionalCustomerId() {
+    return Optional.<java.lang.String>ofNullable(customerId);
+  }
 
   /**
    * Sets the value of the 'customerId' field.
    * Customer identifier
    * @param value the value to set.
    */
-  public void setCustomerId(java.lang.CharSequence value) {
+  public void setCustomerId(java.lang.String value) {
     this.customerId = value;
   }
 
@@ -247,17 +271,25 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'cardId' field.
    * @return Card identifier
    */
-  public java.lang.CharSequence getCardId() {
+  public java.lang.String getCardId() {
     return cardId;
   }
 
+  /**
+   * Gets the value of the 'cardId' field as an Optional&lt;java.lang.String&gt;.
+   * Card identifier
+   * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+   */
+  public Optional<java.lang.String> getOptionalCardId() {
+    return Optional.<java.lang.String>ofNullable(cardId);
+  }
 
   /**
    * Sets the value of the 'cardId' field.
    * Card identifier
    * @param value the value to set.
    */
-  public void setCardId(java.lang.CharSequence value) {
+  public void setCardId(java.lang.String value) {
     this.cardId = value;
   }
 
@@ -269,6 +301,14 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
     return alertTimestamp;
   }
 
+  /**
+   * Gets the value of the 'alertTimestamp' field as an Optional&lt;java.lang.Long&gt;.
+   * Alert generation timestamp
+   * @return The value wrapped in an Optional&lt;java.lang.Long&gt;.
+   */
+  public Optional<java.lang.Long> getOptionalAlertTimestamp() {
+    return Optional.<java.lang.Long>ofNullable(alertTimestamp);
+  }
 
   /**
    * Sets the value of the 'alertTimestamp' field.
@@ -287,6 +327,14 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
     return severity;
   }
 
+  /**
+   * Gets the value of the 'severity' field as an Optional&lt;com.codedstream.transfruad.library.schema.AlertSeverity&gt;.
+   * Severity level of the fraud alert
+   * @return The value wrapped in an Optional&lt;com.codedstream.transfruad.library.schema.AlertSeverity&gt;.
+   */
+  public Optional<com.codedstream.transfruad.library.schema.AlertSeverity> getOptionalSeverity() {
+    return Optional.<com.codedstream.transfruad.library.schema.AlertSeverity>ofNullable(severity);
+  }
 
   /**
    * Sets the value of the 'severity' field.
@@ -305,6 +353,14 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
     return fraudScore;
   }
 
+  /**
+   * Gets the value of the 'fraudScore' field as an Optional&lt;java.lang.Double&gt;.
+   * AI model fraud probability score (0.0 - 1.0)
+   * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+   */
+  public Optional<java.lang.Double> getOptionalFraudScore() {
+    return Optional.<java.lang.Double>ofNullable(fraudScore);
+  }
 
   /**
    * Sets the value of the 'fraudScore' field.
@@ -323,6 +379,14 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
     return alertType;
   }
 
+  /**
+   * Gets the value of the 'alertType' field as an Optional&lt;com.codedstream.transfruad.library.schema.AlertType&gt;.
+   * Type of fraud pattern detected
+   * @return The value wrapped in an Optional&lt;com.codedstream.transfruad.library.schema.AlertType&gt;.
+   */
+  public Optional<com.codedstream.transfruad.library.schema.AlertType> getOptionalAlertType() {
+    return Optional.<com.codedstream.transfruad.library.schema.AlertType>ofNullable(alertType);
+  }
 
   /**
    * Sets the value of the 'alertType' field.
@@ -337,17 +401,25 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'riskFactors' field.
    * @return List of risk factors contributing to the alert
    */
-  public java.util.List<java.lang.CharSequence> getRiskFactors() {
+  public java.util.List<java.lang.String> getRiskFactors() {
     return riskFactors;
   }
 
+  /**
+   * Gets the value of the 'riskFactors' field as an Optional&lt;java.util.List<java.lang.String>&gt;.
+   * List of risk factors contributing to the alert
+   * @return The value wrapped in an Optional&lt;java.util.List<java.lang.String>&gt;.
+   */
+  public Optional<java.util.List<java.lang.String>> getOptionalRiskFactors() {
+    return Optional.<java.util.List<java.lang.String>>ofNullable(riskFactors);
+  }
 
   /**
    * Sets the value of the 'riskFactors' field.
    * List of risk factors contributing to the alert
    * @param value the value to set.
    */
-  public void setRiskFactors(java.util.List<java.lang.CharSequence> value) {
+  public void setRiskFactors(java.util.List<java.lang.String> value) {
     this.riskFactors = value;
   }
 
@@ -355,17 +427,25 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'modelVersion' field.
    * @return Version of the AI model that generated the alert
    */
-  public java.lang.CharSequence getModelVersion() {
+  public java.lang.String getModelVersion() {
     return modelVersion;
   }
 
+  /**
+   * Gets the value of the 'modelVersion' field as an Optional&lt;java.lang.String&gt;.
+   * Version of the AI model that generated the alert
+   * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+   */
+  public Optional<java.lang.String> getOptionalModelVersion() {
+    return Optional.<java.lang.String>ofNullable(modelVersion);
+  }
 
   /**
    * Sets the value of the 'modelVersion' field.
    * Version of the AI model that generated the alert
    * @param value the value to set.
    */
-  public void setModelVersion(java.lang.CharSequence value) {
+  public void setModelVersion(java.lang.String value) {
     this.modelVersion = value;
   }
 
@@ -377,6 +457,14 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
     return recommendedAction;
   }
 
+  /**
+   * Gets the value of the 'recommendedAction' field as an Optional&lt;com.codedstream.transfruad.library.schema.RecommendedAction&gt;.
+   * Recommended action based on fraud assessment
+   * @return The value wrapped in an Optional&lt;com.codedstream.transfruad.library.schema.RecommendedAction&gt;.
+   */
+  public Optional<com.codedstream.transfruad.library.schema.RecommendedAction> getOptionalRecommendedAction() {
+    return Optional.<com.codedstream.transfruad.library.schema.RecommendedAction>ofNullable(recommendedAction);
+  }
 
   /**
    * Sets the value of the 'recommendedAction' field.
@@ -391,17 +479,25 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'features' field.
    * @return Feature values used for model inference
    */
-  public java.util.Map<java.lang.CharSequence,java.lang.Double> getFeatures() {
+  public java.util.Map<java.lang.String,java.lang.Double> getFeatures() {
     return features;
   }
 
+  /**
+   * Gets the value of the 'features' field as an Optional&lt;java.util.Map<java.lang.String,java.lang.Double>&gt;.
+   * Feature values used for model inference
+   * @return The value wrapped in an Optional&lt;java.util.Map<java.lang.String,java.lang.Double>&gt;.
+   */
+  public Optional<java.util.Map<java.lang.String,java.lang.Double>> getOptionalFeatures() {
+    return Optional.<java.util.Map<java.lang.String,java.lang.Double>>ofNullable(features);
+  }
 
   /**
    * Sets the value of the 'features' field.
    * Feature values used for model inference
    * @param value the value to set.
    */
-  public void setFeatures(java.util.Map<java.lang.CharSequence,java.lang.Double> value) {
+  public void setFeatures(java.util.Map<java.lang.String,java.lang.Double> value) {
     this.features = value;
   }
 
@@ -413,6 +509,14 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
     return isFalsePositive;
   }
 
+  /**
+   * Gets the value of the 'isFalsePositive' field as an Optional&lt;java.lang.Boolean&gt;.
+   * Marked as true if alert was a false positive
+   * @return The value wrapped in an Optional&lt;java.lang.Boolean&gt;.
+   */
+  public Optional<java.lang.Boolean> getOptionalIsFalsePositive() {
+    return Optional.<java.lang.Boolean>ofNullable(isFalsePositive);
+  }
 
   /**
    * Sets the value of the 'isFalsePositive' field.
@@ -465,13 +569,13 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
     implements org.apache.avro.data.RecordBuilder<FraudAlert> {
 
     /** Unique identifier for the fraud alert */
-    private java.lang.CharSequence alertId;
+    private java.lang.String alertId;
     /** Reference to the suspicious transaction */
-    private java.lang.CharSequence transactionId;
+    private java.lang.String transactionId;
     /** Customer identifier */
-    private java.lang.CharSequence customerId;
+    private java.lang.String customerId;
     /** Card identifier */
-    private java.lang.CharSequence cardId;
+    private java.lang.String cardId;
     /** Alert generation timestamp */
     private long alertTimestamp;
     /** Severity level of the fraud alert */
@@ -481,13 +585,13 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
     /** Type of fraud pattern detected */
     private com.codedstream.transfruad.library.schema.AlertType alertType;
     /** List of risk factors contributing to the alert */
-    private java.util.List<java.lang.CharSequence> riskFactors;
+    private java.util.List<java.lang.String> riskFactors;
     /** Version of the AI model that generated the alert */
-    private java.lang.CharSequence modelVersion;
+    private java.lang.String modelVersion;
     /** Recommended action based on fraud assessment */
     private com.codedstream.transfruad.library.schema.RecommendedAction recommendedAction;
     /** Feature values used for model inference */
-    private java.util.Map<java.lang.CharSequence,java.lang.Double> features;
+    private java.util.Map<java.lang.String,java.lang.Double> features;
     /** Marked as true if alert was a false positive */
     private java.lang.Boolean isFalsePositive;
 
@@ -621,10 +725,18 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
       * Unique identifier for the fraud alert
       * @return The value.
       */
-    public java.lang.CharSequence getAlertId() {
+    public java.lang.String getAlertId() {
       return alertId;
     }
 
+    /**
+      * Gets the value of the 'alertId' field as an Optional&lt;java.lang.String&gt;.
+      * Unique identifier for the fraud alert
+      * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+      */
+    public Optional<java.lang.String> getOptionalAlertId() {
+      return Optional.<java.lang.String>ofNullable(alertId);
+    }
 
     /**
       * Sets the value of the 'alertId' field.
@@ -632,7 +744,7 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'alertId'.
       * @return This builder.
       */
-    public com.codedstream.transfruad.library.schema.FraudAlert.Builder setAlertId(java.lang.CharSequence value) {
+    public com.codedstream.transfruad.library.schema.FraudAlert.Builder setAlertId(java.lang.String value) {
       validate(fields()[0], value);
       this.alertId = value;
       fieldSetFlags()[0] = true;
@@ -665,10 +777,18 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
       * Reference to the suspicious transaction
       * @return The value.
       */
-    public java.lang.CharSequence getTransactionId() {
+    public java.lang.String getTransactionId() {
       return transactionId;
     }
 
+    /**
+      * Gets the value of the 'transactionId' field as an Optional&lt;java.lang.String&gt;.
+      * Reference to the suspicious transaction
+      * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+      */
+    public Optional<java.lang.String> getOptionalTransactionId() {
+      return Optional.<java.lang.String>ofNullable(transactionId);
+    }
 
     /**
       * Sets the value of the 'transactionId' field.
@@ -676,7 +796,7 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'transactionId'.
       * @return This builder.
       */
-    public com.codedstream.transfruad.library.schema.FraudAlert.Builder setTransactionId(java.lang.CharSequence value) {
+    public com.codedstream.transfruad.library.schema.FraudAlert.Builder setTransactionId(java.lang.String value) {
       validate(fields()[1], value);
       this.transactionId = value;
       fieldSetFlags()[1] = true;
@@ -709,10 +829,18 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
       * Customer identifier
       * @return The value.
       */
-    public java.lang.CharSequence getCustomerId() {
+    public java.lang.String getCustomerId() {
       return customerId;
     }
 
+    /**
+      * Gets the value of the 'customerId' field as an Optional&lt;java.lang.String&gt;.
+      * Customer identifier
+      * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+      */
+    public Optional<java.lang.String> getOptionalCustomerId() {
+      return Optional.<java.lang.String>ofNullable(customerId);
+    }
 
     /**
       * Sets the value of the 'customerId' field.
@@ -720,7 +848,7 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'customerId'.
       * @return This builder.
       */
-    public com.codedstream.transfruad.library.schema.FraudAlert.Builder setCustomerId(java.lang.CharSequence value) {
+    public com.codedstream.transfruad.library.schema.FraudAlert.Builder setCustomerId(java.lang.String value) {
       validate(fields()[2], value);
       this.customerId = value;
       fieldSetFlags()[2] = true;
@@ -753,10 +881,18 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
       * Card identifier
       * @return The value.
       */
-    public java.lang.CharSequence getCardId() {
+    public java.lang.String getCardId() {
       return cardId;
     }
 
+    /**
+      * Gets the value of the 'cardId' field as an Optional&lt;java.lang.String&gt;.
+      * Card identifier
+      * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+      */
+    public Optional<java.lang.String> getOptionalCardId() {
+      return Optional.<java.lang.String>ofNullable(cardId);
+    }
 
     /**
       * Sets the value of the 'cardId' field.
@@ -764,7 +900,7 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'cardId'.
       * @return This builder.
       */
-    public com.codedstream.transfruad.library.schema.FraudAlert.Builder setCardId(java.lang.CharSequence value) {
+    public com.codedstream.transfruad.library.schema.FraudAlert.Builder setCardId(java.lang.String value) {
       validate(fields()[3], value);
       this.cardId = value;
       fieldSetFlags()[3] = true;
@@ -801,6 +937,14 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
       return alertTimestamp;
     }
 
+    /**
+      * Gets the value of the 'alertTimestamp' field as an Optional&lt;java.lang.Long&gt;.
+      * Alert generation timestamp
+      * @return The value wrapped in an Optional&lt;java.lang.Long&gt;.
+      */
+    public Optional<java.lang.Long> getOptionalAlertTimestamp() {
+      return Optional.<java.lang.Long>ofNullable(alertTimestamp);
+    }
 
     /**
       * Sets the value of the 'alertTimestamp' field.
@@ -844,6 +988,14 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
       return severity;
     }
 
+    /**
+      * Gets the value of the 'severity' field as an Optional&lt;com.codedstream.transfruad.library.schema.AlertSeverity&gt;.
+      * Severity level of the fraud alert
+      * @return The value wrapped in an Optional&lt;com.codedstream.transfruad.library.schema.AlertSeverity&gt;.
+      */
+    public Optional<com.codedstream.transfruad.library.schema.AlertSeverity> getOptionalSeverity() {
+      return Optional.<com.codedstream.transfruad.library.schema.AlertSeverity>ofNullable(severity);
+    }
 
     /**
       * Sets the value of the 'severity' field.
@@ -888,6 +1040,14 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
       return fraudScore;
     }
 
+    /**
+      * Gets the value of the 'fraudScore' field as an Optional&lt;java.lang.Double&gt;.
+      * AI model fraud probability score (0.0 - 1.0)
+      * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+      */
+    public Optional<java.lang.Double> getOptionalFraudScore() {
+      return Optional.<java.lang.Double>ofNullable(fraudScore);
+    }
 
     /**
       * Sets the value of the 'fraudScore' field.
@@ -931,6 +1091,14 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
       return alertType;
     }
 
+    /**
+      * Gets the value of the 'alertType' field as an Optional&lt;com.codedstream.transfruad.library.schema.AlertType&gt;.
+      * Type of fraud pattern detected
+      * @return The value wrapped in an Optional&lt;com.codedstream.transfruad.library.schema.AlertType&gt;.
+      */
+    public Optional<com.codedstream.transfruad.library.schema.AlertType> getOptionalAlertType() {
+      return Optional.<com.codedstream.transfruad.library.schema.AlertType>ofNullable(alertType);
+    }
 
     /**
       * Sets the value of the 'alertType' field.
@@ -971,10 +1139,18 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
       * List of risk factors contributing to the alert
       * @return The value.
       */
-    public java.util.List<java.lang.CharSequence> getRiskFactors() {
+    public java.util.List<java.lang.String> getRiskFactors() {
       return riskFactors;
     }
 
+    /**
+      * Gets the value of the 'riskFactors' field as an Optional&lt;java.util.List<java.lang.String>&gt;.
+      * List of risk factors contributing to the alert
+      * @return The value wrapped in an Optional&lt;java.util.List<java.lang.String>&gt;.
+      */
+    public Optional<java.util.List<java.lang.String>> getOptionalRiskFactors() {
+      return Optional.<java.util.List<java.lang.String>>ofNullable(riskFactors);
+    }
 
     /**
       * Sets the value of the 'riskFactors' field.
@@ -982,7 +1158,7 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'riskFactors'.
       * @return This builder.
       */
-    public com.codedstream.transfruad.library.schema.FraudAlert.Builder setRiskFactors(java.util.List<java.lang.CharSequence> value) {
+    public com.codedstream.transfruad.library.schema.FraudAlert.Builder setRiskFactors(java.util.List<java.lang.String> value) {
       validate(fields()[8], value);
       this.riskFactors = value;
       fieldSetFlags()[8] = true;
@@ -1015,10 +1191,18 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
       * Version of the AI model that generated the alert
       * @return The value.
       */
-    public java.lang.CharSequence getModelVersion() {
+    public java.lang.String getModelVersion() {
       return modelVersion;
     }
 
+    /**
+      * Gets the value of the 'modelVersion' field as an Optional&lt;java.lang.String&gt;.
+      * Version of the AI model that generated the alert
+      * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+      */
+    public Optional<java.lang.String> getOptionalModelVersion() {
+      return Optional.<java.lang.String>ofNullable(modelVersion);
+    }
 
     /**
       * Sets the value of the 'modelVersion' field.
@@ -1026,7 +1210,7 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'modelVersion'.
       * @return This builder.
       */
-    public com.codedstream.transfruad.library.schema.FraudAlert.Builder setModelVersion(java.lang.CharSequence value) {
+    public com.codedstream.transfruad.library.schema.FraudAlert.Builder setModelVersion(java.lang.String value) {
       validate(fields()[9], value);
       this.modelVersion = value;
       fieldSetFlags()[9] = true;
@@ -1063,6 +1247,14 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
       return recommendedAction;
     }
 
+    /**
+      * Gets the value of the 'recommendedAction' field as an Optional&lt;com.codedstream.transfruad.library.schema.RecommendedAction&gt;.
+      * Recommended action based on fraud assessment
+      * @return The value wrapped in an Optional&lt;com.codedstream.transfruad.library.schema.RecommendedAction&gt;.
+      */
+    public Optional<com.codedstream.transfruad.library.schema.RecommendedAction> getOptionalRecommendedAction() {
+      return Optional.<com.codedstream.transfruad.library.schema.RecommendedAction>ofNullable(recommendedAction);
+    }
 
     /**
       * Sets the value of the 'recommendedAction' field.
@@ -1103,10 +1295,18 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
       * Feature values used for model inference
       * @return The value.
       */
-    public java.util.Map<java.lang.CharSequence,java.lang.Double> getFeatures() {
+    public java.util.Map<java.lang.String,java.lang.Double> getFeatures() {
       return features;
     }
 
+    /**
+      * Gets the value of the 'features' field as an Optional&lt;java.util.Map<java.lang.String,java.lang.Double>&gt;.
+      * Feature values used for model inference
+      * @return The value wrapped in an Optional&lt;java.util.Map<java.lang.String,java.lang.Double>&gt;.
+      */
+    public Optional<java.util.Map<java.lang.String,java.lang.Double>> getOptionalFeatures() {
+      return Optional.<java.util.Map<java.lang.String,java.lang.Double>>ofNullable(features);
+    }
 
     /**
       * Sets the value of the 'features' field.
@@ -1114,7 +1314,7 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'features'.
       * @return This builder.
       */
-    public com.codedstream.transfruad.library.schema.FraudAlert.Builder setFeatures(java.util.Map<java.lang.CharSequence,java.lang.Double> value) {
+    public com.codedstream.transfruad.library.schema.FraudAlert.Builder setFeatures(java.util.Map<java.lang.String,java.lang.Double> value) {
       validate(fields()[11], value);
       this.features = value;
       fieldSetFlags()[11] = true;
@@ -1151,6 +1351,14 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
       return isFalsePositive;
     }
 
+    /**
+      * Gets the value of the 'isFalsePositive' field as an Optional&lt;java.lang.Boolean&gt;.
+      * Marked as true if alert was a false positive
+      * @return The value wrapped in an Optional&lt;java.lang.Boolean&gt;.
+      */
+    public Optional<java.lang.Boolean> getOptionalIsFalsePositive() {
+      return Optional.<java.lang.Boolean>ofNullable(isFalsePositive);
+    }
 
     /**
       * Sets the value of the 'isFalsePositive' field.
@@ -1191,18 +1399,18 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
     public FraudAlert build() {
       try {
         FraudAlert record = new FraudAlert();
-        record.alertId = fieldSetFlags()[0] ? this.alertId : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.transactionId = fieldSetFlags()[1] ? this.transactionId : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.customerId = fieldSetFlags()[2] ? this.customerId : (java.lang.CharSequence) defaultValue(fields()[2]);
-        record.cardId = fieldSetFlags()[3] ? this.cardId : (java.lang.CharSequence) defaultValue(fields()[3]);
+        record.alertId = fieldSetFlags()[0] ? this.alertId : (java.lang.String) defaultValue(fields()[0]);
+        record.transactionId = fieldSetFlags()[1] ? this.transactionId : (java.lang.String) defaultValue(fields()[1]);
+        record.customerId = fieldSetFlags()[2] ? this.customerId : (java.lang.String) defaultValue(fields()[2]);
+        record.cardId = fieldSetFlags()[3] ? this.cardId : (java.lang.String) defaultValue(fields()[3]);
         record.alertTimestamp = fieldSetFlags()[4] ? this.alertTimestamp : (java.lang.Long) defaultValue(fields()[4]);
         record.severity = fieldSetFlags()[5] ? this.severity : (com.codedstream.transfruad.library.schema.AlertSeverity) defaultValue(fields()[5]);
         record.fraudScore = fieldSetFlags()[6] ? this.fraudScore : (java.lang.Double) defaultValue(fields()[6]);
         record.alertType = fieldSetFlags()[7] ? this.alertType : (com.codedstream.transfruad.library.schema.AlertType) defaultValue(fields()[7]);
-        record.riskFactors = fieldSetFlags()[8] ? this.riskFactors : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[8]);
-        record.modelVersion = fieldSetFlags()[9] ? this.modelVersion : (java.lang.CharSequence) defaultValue(fields()[9]);
+        record.riskFactors = fieldSetFlags()[8] ? this.riskFactors : (java.util.List<java.lang.String>) defaultValue(fields()[8]);
+        record.modelVersion = fieldSetFlags()[9] ? this.modelVersion : (java.lang.String) defaultValue(fields()[9]);
         record.recommendedAction = fieldSetFlags()[10] ? this.recommendedAction : (com.codedstream.transfruad.library.schema.RecommendedAction) defaultValue(fields()[10]);
-        record.features = fieldSetFlags()[11] ? this.features : (java.util.Map<java.lang.CharSequence,java.lang.Double>) defaultValue(fields()[11]);
+        record.features = fieldSetFlags()[11] ? this.features : (java.util.Map<java.lang.String,java.lang.Double>) defaultValue(fields()[11]);
         record.isFalsePositive = fieldSetFlags()[12] ? this.isFalsePositive : (java.lang.Boolean) defaultValue(fields()[12]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
@@ -1256,7 +1464,7 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
     out.writeArrayStart();
     out.setItemCount(size0);
     long actualSize0 = 0;
-    for (java.lang.CharSequence e0: this.riskFactors) {
+    for (java.lang.String e0: this.riskFactors) {
       actualSize0++;
       out.startItem();
       out.writeString(e0);
@@ -1273,7 +1481,7 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
     out.writeMapStart();
     out.setItemCount(size1);
     long actualSize1 = 0;
-    for (java.util.Map.Entry<java.lang.CharSequence, java.lang.Double> e1: this.features.entrySet()) {
+    for (java.util.Map.Entry<java.lang.String, java.lang.Double> e1: this.features.entrySet()) {
       actualSize1++;
       out.startItem();
       out.writeString(e1.getKey());
@@ -1299,13 +1507,13 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
   {
     org.apache.avro.Schema.Field[] fieldOrder = in.readFieldOrderIfDiff();
     if (fieldOrder == null) {
-      this.alertId = in.readString(this.alertId instanceof Utf8 ? (Utf8)this.alertId : null);
+      this.alertId = in.readString();
 
-      this.transactionId = in.readString(this.transactionId instanceof Utf8 ? (Utf8)this.transactionId : null);
+      this.transactionId = in.readString();
 
-      this.customerId = in.readString(this.customerId instanceof Utf8 ? (Utf8)this.customerId : null);
+      this.customerId = in.readString();
 
-      this.cardId = in.readString(this.cardId instanceof Utf8 ? (Utf8)this.cardId : null);
+      this.cardId = in.readString();
 
       this.alertTimestamp = in.readLong();
 
@@ -1316,34 +1524,34 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
       this.alertType = com.codedstream.transfruad.library.schema.AlertType.values()[in.readEnum()];
 
       long size0 = in.readArrayStart();
-      java.util.List<java.lang.CharSequence> a0 = this.riskFactors;
+      java.util.List<java.lang.String> a0 = this.riskFactors;
       if (a0 == null) {
-        a0 = new SpecificData.Array<java.lang.CharSequence>((int)size0, SCHEMA$.getField("riskFactors").schema());
+        a0 = new SpecificData.Array<java.lang.String>((int)size0, SCHEMA$.getField("riskFactors").schema());
         this.riskFactors = a0;
       } else a0.clear();
-      SpecificData.Array<java.lang.CharSequence> ga0 = (a0 instanceof SpecificData.Array ? (SpecificData.Array<java.lang.CharSequence>)a0 : null);
+      SpecificData.Array<java.lang.String> ga0 = (a0 instanceof SpecificData.Array ? (SpecificData.Array<java.lang.String>)a0 : null);
       for ( ; 0 < size0; size0 = in.arrayNext()) {
         for ( ; size0 != 0; size0--) {
-          java.lang.CharSequence e0 = (ga0 != null ? ga0.peek() : null);
-          e0 = in.readString(e0 instanceof Utf8 ? (Utf8)e0 : null);
+          java.lang.String e0 = (ga0 != null ? ga0.peek() : null);
+          e0 = in.readString();
           a0.add(e0);
         }
       }
 
-      this.modelVersion = in.readString(this.modelVersion instanceof Utf8 ? (Utf8)this.modelVersion : null);
+      this.modelVersion = in.readString();
 
       this.recommendedAction = com.codedstream.transfruad.library.schema.RecommendedAction.values()[in.readEnum()];
 
       long size1 = in.readMapStart();
-      java.util.Map<java.lang.CharSequence,java.lang.Double> m1 = this.features; // Need fresh name due to limitation of macro system
+      java.util.Map<java.lang.String,java.lang.Double> m1 = this.features; // Need fresh name due to limitation of macro system
       if (m1 == null) {
-        m1 = new java.util.HashMap<java.lang.CharSequence,java.lang.Double>((int)size1);
+        m1 = new java.util.HashMap<java.lang.String,java.lang.Double>((int)size1);
         this.features = m1;
       } else m1.clear();
       for ( ; 0 < size1; size1 = in.mapNext()) {
         for ( ; size1 != 0; size1--) {
-          java.lang.CharSequence k1 = null;
-          k1 = in.readString(k1 instanceof Utf8 ? (Utf8)k1 : null);
+          java.lang.String k1 = null;
+          k1 = in.readString();
           java.lang.Double v1 = null;
           v1 = in.readDouble();
           m1.put(k1, v1);
@@ -1361,19 +1569,19 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
       for (int i = 0; i < 13; i++) {
         switch (fieldOrder[i].pos()) {
         case 0:
-          this.alertId = in.readString(this.alertId instanceof Utf8 ? (Utf8)this.alertId : null);
+          this.alertId = in.readString();
           break;
 
         case 1:
-          this.transactionId = in.readString(this.transactionId instanceof Utf8 ? (Utf8)this.transactionId : null);
+          this.transactionId = in.readString();
           break;
 
         case 2:
-          this.customerId = in.readString(this.customerId instanceof Utf8 ? (Utf8)this.customerId : null);
+          this.customerId = in.readString();
           break;
 
         case 3:
-          this.cardId = in.readString(this.cardId instanceof Utf8 ? (Utf8)this.cardId : null);
+          this.cardId = in.readString();
           break;
 
         case 4:
@@ -1394,23 +1602,23 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
 
         case 8:
           long size0 = in.readArrayStart();
-          java.util.List<java.lang.CharSequence> a0 = this.riskFactors;
+          java.util.List<java.lang.String> a0 = this.riskFactors;
           if (a0 == null) {
-            a0 = new SpecificData.Array<java.lang.CharSequence>((int)size0, SCHEMA$.getField("riskFactors").schema());
+            a0 = new SpecificData.Array<java.lang.String>((int)size0, SCHEMA$.getField("riskFactors").schema());
             this.riskFactors = a0;
           } else a0.clear();
-          SpecificData.Array<java.lang.CharSequence> ga0 = (a0 instanceof SpecificData.Array ? (SpecificData.Array<java.lang.CharSequence>)a0 : null);
+          SpecificData.Array<java.lang.String> ga0 = (a0 instanceof SpecificData.Array ? (SpecificData.Array<java.lang.String>)a0 : null);
           for ( ; 0 < size0; size0 = in.arrayNext()) {
             for ( ; size0 != 0; size0--) {
-              java.lang.CharSequence e0 = (ga0 != null ? ga0.peek() : null);
-              e0 = in.readString(e0 instanceof Utf8 ? (Utf8)e0 : null);
+              java.lang.String e0 = (ga0 != null ? ga0.peek() : null);
+              e0 = in.readString();
               a0.add(e0);
             }
           }
           break;
 
         case 9:
-          this.modelVersion = in.readString(this.modelVersion instanceof Utf8 ? (Utf8)this.modelVersion : null);
+          this.modelVersion = in.readString();
           break;
 
         case 10:
@@ -1419,15 +1627,15 @@ public class FraudAlert extends org.apache.avro.specific.SpecificRecordBase impl
 
         case 11:
           long size1 = in.readMapStart();
-          java.util.Map<java.lang.CharSequence,java.lang.Double> m1 = this.features; // Need fresh name due to limitation of macro system
+          java.util.Map<java.lang.String,java.lang.Double> m1 = this.features; // Need fresh name due to limitation of macro system
           if (m1 == null) {
-            m1 = new java.util.HashMap<java.lang.CharSequence,java.lang.Double>((int)size1);
+            m1 = new java.util.HashMap<java.lang.String,java.lang.Double>((int)size1);
             this.features = m1;
           } else m1.clear();
           for ( ; 0 < size1; size1 = in.mapNext()) {
             for ( ; size1 != 0; size1--) {
-              java.lang.CharSequence k1 = null;
-              k1 = in.readString(k1 instanceof Utf8 ? (Utf8)k1 : null);
+              java.lang.String k1 = null;
+              k1 = in.readString();
               java.lang.Double v1 = null;
               v1 = in.readDouble();
               m1.put(k1, v1);

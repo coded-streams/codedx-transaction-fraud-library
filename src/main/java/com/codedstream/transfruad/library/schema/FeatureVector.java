@@ -11,7 +11,7 @@ import org.apache.avro.util.Utf8;
 import org.apache.avro.message.BinaryMessageEncoder;
 import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
-
+import java.util.Optional;
 @org.apache.avro.specific.AvroGenerated
 public class FeatureVector extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -7128654415603655943L;
@@ -166,6 +166,14 @@ public class FeatureVector extends org.apache.avro.specific.SpecificRecordBase i
     return amountDeviation;
   }
 
+  /**
+   * Gets the value of the 'amountDeviation' field as an Optional&lt;java.lang.Double&gt;.
+   * Deviation from typical transaction amount
+   * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+   */
+  public Optional<java.lang.Double> getOptionalAmountDeviation() {
+    return Optional.<java.lang.Double>ofNullable(amountDeviation);
+  }
 
   /**
    * Sets the value of the 'amountDeviation' field.
@@ -184,6 +192,14 @@ public class FeatureVector extends org.apache.avro.specific.SpecificRecordBase i
     return velocity1h;
   }
 
+  /**
+   * Gets the value of the 'velocity1h' field as an Optional&lt;java.lang.Double&gt;.
+   * Transaction velocity in last 1 hour
+   * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+   */
+  public Optional<java.lang.Double> getOptionalVelocity1h() {
+    return Optional.<java.lang.Double>ofNullable(velocity1h);
+  }
 
   /**
    * Sets the value of the 'velocity1h' field.
@@ -202,6 +218,14 @@ public class FeatureVector extends org.apache.avro.specific.SpecificRecordBase i
     return velocity24h;
   }
 
+  /**
+   * Gets the value of the 'velocity24h' field as an Optional&lt;java.lang.Double&gt;.
+   * Transaction velocity in last 24 hours
+   * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+   */
+  public Optional<java.lang.Double> getOptionalVelocity24h() {
+    return Optional.<java.lang.Double>ofNullable(velocity24h);
+  }
 
   /**
    * Sets the value of the 'velocity24h' field.
@@ -220,6 +244,14 @@ public class FeatureVector extends org.apache.avro.specific.SpecificRecordBase i
     return distanceFromHome;
   }
 
+  /**
+   * Gets the value of the 'distanceFromHome' field as an Optional&lt;java.lang.Double&gt;.
+   * Distance from customer's home location
+   * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+   */
+  public Optional<java.lang.Double> getOptionalDistanceFromHome() {
+    return Optional.<java.lang.Double>ofNullable(distanceFromHome);
+  }
 
   /**
    * Sets the value of the 'distanceFromHome' field.
@@ -238,6 +270,14 @@ public class FeatureVector extends org.apache.avro.specific.SpecificRecordBase i
     return timeOfDayRisk;
   }
 
+  /**
+   * Gets the value of the 'timeOfDayRisk' field as an Optional&lt;java.lang.Double&gt;.
+   * Risk score based on transaction time
+   * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+   */
+  public Optional<java.lang.Double> getOptionalTimeOfDayRisk() {
+    return Optional.<java.lang.Double>ofNullable(timeOfDayRisk);
+  }
 
   /**
    * Sets the value of the 'timeOfDayRisk' field.
@@ -256,6 +296,14 @@ public class FeatureVector extends org.apache.avro.specific.SpecificRecordBase i
     return merchantRiskScore;
   }
 
+  /**
+   * Gets the value of the 'merchantRiskScore' field as an Optional&lt;java.lang.Double&gt;.
+   * Risk score for the merchant
+   * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+   */
+  public Optional<java.lang.Double> getOptionalMerchantRiskScore() {
+    return Optional.<java.lang.Double>ofNullable(merchantRiskScore);
+  }
 
   /**
    * Sets the value of the 'merchantRiskScore' field.
@@ -274,6 +322,14 @@ public class FeatureVector extends org.apache.avro.specific.SpecificRecordBase i
     return deviceRiskScore;
   }
 
+  /**
+   * Gets the value of the 'deviceRiskScore' field as an Optional&lt;java.lang.Double&gt;.
+   * Risk score based on device information
+   * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+   */
+  public Optional<java.lang.Double> getOptionalDeviceRiskScore() {
+    return Optional.<java.lang.Double>ofNullable(deviceRiskScore);
+  }
 
   /**
    * Sets the value of the 'deviceRiskScore' field.
@@ -292,6 +348,14 @@ public class FeatureVector extends org.apache.avro.specific.SpecificRecordBase i
     return behavioralAnomalyScore;
   }
 
+  /**
+   * Gets the value of the 'behavioralAnomalyScore' field as an Optional&lt;java.lang.Double&gt;.
+   * Score indicating behavioral anomalies
+   * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+   */
+  public Optional<java.lang.Double> getOptionalBehavioralAnomalyScore() {
+    return Optional.<java.lang.Double>ofNullable(behavioralAnomalyScore);
+  }
 
   /**
    * Sets the value of the 'behavioralAnomalyScore' field.
@@ -454,6 +518,14 @@ public class FeatureVector extends org.apache.avro.specific.SpecificRecordBase i
       return amountDeviation;
     }
 
+    /**
+      * Gets the value of the 'amountDeviation' field as an Optional&lt;java.lang.Double&gt;.
+      * Deviation from typical transaction amount
+      * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+      */
+    public Optional<java.lang.Double> getOptionalAmountDeviation() {
+      return Optional.<java.lang.Double>ofNullable(amountDeviation);
+    }
 
     /**
       * Sets the value of the 'amountDeviation' field.
@@ -497,6 +569,14 @@ public class FeatureVector extends org.apache.avro.specific.SpecificRecordBase i
       return velocity1h;
     }
 
+    /**
+      * Gets the value of the 'velocity1h' field as an Optional&lt;java.lang.Double&gt;.
+      * Transaction velocity in last 1 hour
+      * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+      */
+    public Optional<java.lang.Double> getOptionalVelocity1h() {
+      return Optional.<java.lang.Double>ofNullable(velocity1h);
+    }
 
     /**
       * Sets the value of the 'velocity1h' field.
@@ -540,6 +620,14 @@ public class FeatureVector extends org.apache.avro.specific.SpecificRecordBase i
       return velocity24h;
     }
 
+    /**
+      * Gets the value of the 'velocity24h' field as an Optional&lt;java.lang.Double&gt;.
+      * Transaction velocity in last 24 hours
+      * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+      */
+    public Optional<java.lang.Double> getOptionalVelocity24h() {
+      return Optional.<java.lang.Double>ofNullable(velocity24h);
+    }
 
     /**
       * Sets the value of the 'velocity24h' field.
@@ -583,6 +671,14 @@ public class FeatureVector extends org.apache.avro.specific.SpecificRecordBase i
       return distanceFromHome;
     }
 
+    /**
+      * Gets the value of the 'distanceFromHome' field as an Optional&lt;java.lang.Double&gt;.
+      * Distance from customer's home location
+      * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+      */
+    public Optional<java.lang.Double> getOptionalDistanceFromHome() {
+      return Optional.<java.lang.Double>ofNullable(distanceFromHome);
+    }
 
     /**
       * Sets the value of the 'distanceFromHome' field.
@@ -626,6 +722,14 @@ public class FeatureVector extends org.apache.avro.specific.SpecificRecordBase i
       return timeOfDayRisk;
     }
 
+    /**
+      * Gets the value of the 'timeOfDayRisk' field as an Optional&lt;java.lang.Double&gt;.
+      * Risk score based on transaction time
+      * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+      */
+    public Optional<java.lang.Double> getOptionalTimeOfDayRisk() {
+      return Optional.<java.lang.Double>ofNullable(timeOfDayRisk);
+    }
 
     /**
       * Sets the value of the 'timeOfDayRisk' field.
@@ -669,6 +773,14 @@ public class FeatureVector extends org.apache.avro.specific.SpecificRecordBase i
       return merchantRiskScore;
     }
 
+    /**
+      * Gets the value of the 'merchantRiskScore' field as an Optional&lt;java.lang.Double&gt;.
+      * Risk score for the merchant
+      * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+      */
+    public Optional<java.lang.Double> getOptionalMerchantRiskScore() {
+      return Optional.<java.lang.Double>ofNullable(merchantRiskScore);
+    }
 
     /**
       * Sets the value of the 'merchantRiskScore' field.
@@ -712,6 +824,14 @@ public class FeatureVector extends org.apache.avro.specific.SpecificRecordBase i
       return deviceRiskScore;
     }
 
+    /**
+      * Gets the value of the 'deviceRiskScore' field as an Optional&lt;java.lang.Double&gt;.
+      * Risk score based on device information
+      * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+      */
+    public Optional<java.lang.Double> getOptionalDeviceRiskScore() {
+      return Optional.<java.lang.Double>ofNullable(deviceRiskScore);
+    }
 
     /**
       * Sets the value of the 'deviceRiskScore' field.
@@ -755,6 +875,14 @@ public class FeatureVector extends org.apache.avro.specific.SpecificRecordBase i
       return behavioralAnomalyScore;
     }
 
+    /**
+      * Gets the value of the 'behavioralAnomalyScore' field as an Optional&lt;java.lang.Double&gt;.
+      * Score indicating behavioral anomalies
+      * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+      */
+    public Optional<java.lang.Double> getOptionalBehavioralAnomalyScore() {
+      return Optional.<java.lang.Double>ofNullable(behavioralAnomalyScore);
+    }
 
     /**
       * Sets the value of the 'behavioralAnomalyScore' field.

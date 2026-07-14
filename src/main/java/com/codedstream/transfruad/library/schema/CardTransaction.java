@@ -11,14 +11,14 @@ import org.apache.avro.util.Utf8;
 import org.apache.avro.message.BinaryMessageEncoder;
 import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
-
+import java.util.Optional;
 /** Schema for financial card transactions */
 @org.apache.avro.specific.AvroGenerated
 public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -2946955161183731660L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"CardTransaction\",\"namespace\":\"com.codedstream.transfruad.library.schema\",\"doc\":\"Schema for financial card transactions\",\"fields\":[{\"name\":\"transactionId\",\"type\":\"string\",\"doc\":\"Unique identifier for the transaction\"},{\"name\":\"cardId\",\"type\":\"string\",\"doc\":\"Unique identifier for the card\"},{\"name\":\"customerId\",\"type\":\"string\",\"doc\":\"Unique identifier for the customer\"},{\"name\":\"transactionTimestamp\",\"type\":\"long\",\"doc\":\"Transaction timestamp in milliseconds since epoch\"},{\"name\":\"transactionAmount\",\"type\":\"double\",\"doc\":\"Transaction amount\"},{\"name\":\"currency\",\"type\":\"string\",\"doc\":\"Currency code (ISO 4217)\",\"default\":\"USD\"},{\"name\":\"merchantId\",\"type\":\"string\",\"doc\":\"Unique identifier for the merchant\"},{\"name\":\"merchantName\",\"type\":\"string\",\"doc\":\"Name of the merchant\"},{\"name\":\"merchantCategory\",\"type\":\"string\",\"doc\":\"MCC (Merchant Category Code)\"},{\"name\":\"merchantLocation\",\"type\":{\"type\":\"record\",\"name\":\"MerchantLocation\",\"fields\":[{\"name\":\"latitude\",\"type\":\"double\"},{\"name\":\"longitude\",\"type\":\"double\"},{\"name\":\"city\",\"type\":\"string\"},{\"name\":\"country\",\"type\":\"string\"}]},\"doc\":\"Merchant location information\"},{\"name\":\"transactionType\",\"type\":{\"type\":\"enum\",\"name\":\"TransactionType\",\"symbols\":[\"POS\",\"ONLINE\",\"ATM\",\"CONTACTLESS\",\"RECURRING\"]},\"doc\":\"Type of transaction\"},{\"name\":\"deviceInfo\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DeviceInfo\",\"fields\":[{\"name\":\"deviceId\",\"type\":\"string\"},{\"name\":\"deviceType\",\"type\":\"string\"},{\"name\":\"ipAddress\",\"type\":\"string\"},{\"name\":\"userAgent\",\"type\":\"string\"}]}],\"doc\":\"Device information for online transactions\",\"default\":null},{\"name\":\"isCardPresent\",\"type\":\"boolean\",\"doc\":\"Whether the card was physically present\"},{\"name\":\"previousTransactionId\",\"type\":[\"null\",\"string\"],\"doc\":\"Reference to previous transaction if applicable\",\"default\":null}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"CardTransaction\",\"namespace\":\"com.codedstream.transfruad.library.schema\",\"doc\":\"Schema for financial card transactions\",\"fields\":[{\"name\":\"transactionId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"Unique identifier for the transaction\"},{\"name\":\"cardId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"Unique identifier for the card\"},{\"name\":\"customerId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"Unique identifier for the customer\"},{\"name\":\"transactionTimestamp\",\"type\":\"long\",\"doc\":\"Transaction timestamp in milliseconds since epoch\"},{\"name\":\"transactionAmount\",\"type\":\"double\",\"doc\":\"Transaction amount\"},{\"name\":\"currency\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"Currency code (ISO 4217)\",\"default\":\"USD\"},{\"name\":\"merchantId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"Unique identifier for the merchant\"},{\"name\":\"merchantName\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"Name of the merchant\"},{\"name\":\"merchantCategory\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"MCC (Merchant Category Code)\"},{\"name\":\"merchantLocation\",\"type\":{\"type\":\"record\",\"name\":\"MerchantLocation\",\"fields\":[{\"name\":\"latitude\",\"type\":\"double\"},{\"name\":\"longitude\",\"type\":\"double\"},{\"name\":\"city\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"country\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]},\"doc\":\"Merchant location information\"},{\"name\":\"transactionType\",\"type\":{\"type\":\"enum\",\"name\":\"TransactionType\",\"symbols\":[\"POS\",\"ONLINE\",\"ATM\",\"CONTACTLESS\",\"RECURRING\"]},\"doc\":\"Type of transaction\"},{\"name\":\"deviceInfo\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"DeviceInfo\",\"fields\":[{\"name\":\"deviceId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"deviceType\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"ipAddress\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"userAgent\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}],\"doc\":\"Device information for online transactions\",\"default\":null},{\"name\":\"isCardPresent\",\"type\":\"boolean\",\"doc\":\"Whether the card was physically present\"},{\"name\":\"previousTransactionId\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"doc\":\"Reference to previous transaction if applicable\",\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -75,23 +75,23 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
   }
 
   /** Unique identifier for the transaction */
-  private java.lang.CharSequence transactionId;
+  private java.lang.String transactionId;
   /** Unique identifier for the card */
-  private java.lang.CharSequence cardId;
+  private java.lang.String cardId;
   /** Unique identifier for the customer */
-  private java.lang.CharSequence customerId;
+  private java.lang.String customerId;
   /** Transaction timestamp in milliseconds since epoch */
   private long transactionTimestamp;
   /** Transaction amount */
   private double transactionAmount;
   /** Currency code (ISO 4217) */
-  private java.lang.CharSequence currency;
+  private java.lang.String currency;
   /** Unique identifier for the merchant */
-  private java.lang.CharSequence merchantId;
+  private java.lang.String merchantId;
   /** Name of the merchant */
-  private java.lang.CharSequence merchantName;
+  private java.lang.String merchantName;
   /** MCC (Merchant Category Code) */
-  private java.lang.CharSequence merchantCategory;
+  private java.lang.String merchantCategory;
   /** Merchant location information */
   private com.codedstream.transfruad.library.schema.MerchantLocation merchantLocation;
   /** Type of transaction */
@@ -101,7 +101,7 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
   /** Whether the card was physically present */
   private boolean isCardPresent;
   /** Reference to previous transaction if applicable */
-  private java.lang.CharSequence previousTransactionId;
+  private java.lang.String previousTransactionId;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -127,7 +127,7 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
    * @param isCardPresent Whether the card was physically present
    * @param previousTransactionId Reference to previous transaction if applicable
    */
-  public CardTransaction(java.lang.CharSequence transactionId, java.lang.CharSequence cardId, java.lang.CharSequence customerId, java.lang.Long transactionTimestamp, java.lang.Double transactionAmount, java.lang.CharSequence currency, java.lang.CharSequence merchantId, java.lang.CharSequence merchantName, java.lang.CharSequence merchantCategory, com.codedstream.transfruad.library.schema.MerchantLocation merchantLocation, com.codedstream.transfruad.library.schema.TransactionType transactionType, com.codedstream.transfruad.library.schema.DeviceInfo deviceInfo, java.lang.Boolean isCardPresent, java.lang.CharSequence previousTransactionId) {
+  public CardTransaction(java.lang.String transactionId, java.lang.String cardId, java.lang.String customerId, java.lang.Long transactionTimestamp, java.lang.Double transactionAmount, java.lang.String currency, java.lang.String merchantId, java.lang.String merchantName, java.lang.String merchantCategory, com.codedstream.transfruad.library.schema.MerchantLocation merchantLocation, com.codedstream.transfruad.library.schema.TransactionType transactionType, com.codedstream.transfruad.library.schema.DeviceInfo deviceInfo, java.lang.Boolean isCardPresent, java.lang.String previousTransactionId) {
     this.transactionId = transactionId;
     this.cardId = cardId;
     this.customerId = customerId;
@@ -177,20 +177,20 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: transactionId = (java.lang.CharSequence)value$; break;
-    case 1: cardId = (java.lang.CharSequence)value$; break;
-    case 2: customerId = (java.lang.CharSequence)value$; break;
+    case 0: transactionId = value$ != null ? value$.toString() : null; break;
+    case 1: cardId = value$ != null ? value$.toString() : null; break;
+    case 2: customerId = value$ != null ? value$.toString() : null; break;
     case 3: transactionTimestamp = (java.lang.Long)value$; break;
     case 4: transactionAmount = (java.lang.Double)value$; break;
-    case 5: currency = (java.lang.CharSequence)value$; break;
-    case 6: merchantId = (java.lang.CharSequence)value$; break;
-    case 7: merchantName = (java.lang.CharSequence)value$; break;
-    case 8: merchantCategory = (java.lang.CharSequence)value$; break;
+    case 5: currency = value$ != null ? value$.toString() : null; break;
+    case 6: merchantId = value$ != null ? value$.toString() : null; break;
+    case 7: merchantName = value$ != null ? value$.toString() : null; break;
+    case 8: merchantCategory = value$ != null ? value$.toString() : null; break;
     case 9: merchantLocation = (com.codedstream.transfruad.library.schema.MerchantLocation)value$; break;
     case 10: transactionType = (com.codedstream.transfruad.library.schema.TransactionType)value$; break;
     case 11: deviceInfo = (com.codedstream.transfruad.library.schema.DeviceInfo)value$; break;
     case 12: isCardPresent = (java.lang.Boolean)value$; break;
-    case 13: previousTransactionId = (java.lang.CharSequence)value$; break;
+    case 13: previousTransactionId = value$ != null ? value$.toString() : null; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -199,17 +199,25 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
    * Gets the value of the 'transactionId' field.
    * @return Unique identifier for the transaction
    */
-  public java.lang.CharSequence getTransactionId() {
+  public java.lang.String getTransactionId() {
     return transactionId;
   }
 
+  /**
+   * Gets the value of the 'transactionId' field as an Optional&lt;java.lang.String&gt;.
+   * Unique identifier for the transaction
+   * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+   */
+  public Optional<java.lang.String> getOptionalTransactionId() {
+    return Optional.<java.lang.String>ofNullable(transactionId);
+  }
 
   /**
    * Sets the value of the 'transactionId' field.
    * Unique identifier for the transaction
    * @param value the value to set.
    */
-  public void setTransactionId(java.lang.CharSequence value) {
+  public void setTransactionId(java.lang.String value) {
     this.transactionId = value;
   }
 
@@ -217,17 +225,25 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
    * Gets the value of the 'cardId' field.
    * @return Unique identifier for the card
    */
-  public java.lang.CharSequence getCardId() {
+  public java.lang.String getCardId() {
     return cardId;
   }
 
+  /**
+   * Gets the value of the 'cardId' field as an Optional&lt;java.lang.String&gt;.
+   * Unique identifier for the card
+   * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+   */
+  public Optional<java.lang.String> getOptionalCardId() {
+    return Optional.<java.lang.String>ofNullable(cardId);
+  }
 
   /**
    * Sets the value of the 'cardId' field.
    * Unique identifier for the card
    * @param value the value to set.
    */
-  public void setCardId(java.lang.CharSequence value) {
+  public void setCardId(java.lang.String value) {
     this.cardId = value;
   }
 
@@ -235,17 +251,25 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
    * Gets the value of the 'customerId' field.
    * @return Unique identifier for the customer
    */
-  public java.lang.CharSequence getCustomerId() {
+  public java.lang.String getCustomerId() {
     return customerId;
   }
 
+  /**
+   * Gets the value of the 'customerId' field as an Optional&lt;java.lang.String&gt;.
+   * Unique identifier for the customer
+   * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+   */
+  public Optional<java.lang.String> getOptionalCustomerId() {
+    return Optional.<java.lang.String>ofNullable(customerId);
+  }
 
   /**
    * Sets the value of the 'customerId' field.
    * Unique identifier for the customer
    * @param value the value to set.
    */
-  public void setCustomerId(java.lang.CharSequence value) {
+  public void setCustomerId(java.lang.String value) {
     this.customerId = value;
   }
 
@@ -257,6 +281,14 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
     return transactionTimestamp;
   }
 
+  /**
+   * Gets the value of the 'transactionTimestamp' field as an Optional&lt;java.lang.Long&gt;.
+   * Transaction timestamp in milliseconds since epoch
+   * @return The value wrapped in an Optional&lt;java.lang.Long&gt;.
+   */
+  public Optional<java.lang.Long> getOptionalTransactionTimestamp() {
+    return Optional.<java.lang.Long>ofNullable(transactionTimestamp);
+  }
 
   /**
    * Sets the value of the 'transactionTimestamp' field.
@@ -275,6 +307,14 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
     return transactionAmount;
   }
 
+  /**
+   * Gets the value of the 'transactionAmount' field as an Optional&lt;java.lang.Double&gt;.
+   * Transaction amount
+   * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+   */
+  public Optional<java.lang.Double> getOptionalTransactionAmount() {
+    return Optional.<java.lang.Double>ofNullable(transactionAmount);
+  }
 
   /**
    * Sets the value of the 'transactionAmount' field.
@@ -289,17 +329,25 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
    * Gets the value of the 'currency' field.
    * @return Currency code (ISO 4217)
    */
-  public java.lang.CharSequence getCurrency() {
+  public java.lang.String getCurrency() {
     return currency;
   }
 
+  /**
+   * Gets the value of the 'currency' field as an Optional&lt;java.lang.String&gt;.
+   * Currency code (ISO 4217)
+   * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+   */
+  public Optional<java.lang.String> getOptionalCurrency() {
+    return Optional.<java.lang.String>ofNullable(currency);
+  }
 
   /**
    * Sets the value of the 'currency' field.
    * Currency code (ISO 4217)
    * @param value the value to set.
    */
-  public void setCurrency(java.lang.CharSequence value) {
+  public void setCurrency(java.lang.String value) {
     this.currency = value;
   }
 
@@ -307,17 +355,25 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
    * Gets the value of the 'merchantId' field.
    * @return Unique identifier for the merchant
    */
-  public java.lang.CharSequence getMerchantId() {
+  public java.lang.String getMerchantId() {
     return merchantId;
   }
 
+  /**
+   * Gets the value of the 'merchantId' field as an Optional&lt;java.lang.String&gt;.
+   * Unique identifier for the merchant
+   * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+   */
+  public Optional<java.lang.String> getOptionalMerchantId() {
+    return Optional.<java.lang.String>ofNullable(merchantId);
+  }
 
   /**
    * Sets the value of the 'merchantId' field.
    * Unique identifier for the merchant
    * @param value the value to set.
    */
-  public void setMerchantId(java.lang.CharSequence value) {
+  public void setMerchantId(java.lang.String value) {
     this.merchantId = value;
   }
 
@@ -325,17 +381,25 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
    * Gets the value of the 'merchantName' field.
    * @return Name of the merchant
    */
-  public java.lang.CharSequence getMerchantName() {
+  public java.lang.String getMerchantName() {
     return merchantName;
   }
 
+  /**
+   * Gets the value of the 'merchantName' field as an Optional&lt;java.lang.String&gt;.
+   * Name of the merchant
+   * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+   */
+  public Optional<java.lang.String> getOptionalMerchantName() {
+    return Optional.<java.lang.String>ofNullable(merchantName);
+  }
 
   /**
    * Sets the value of the 'merchantName' field.
    * Name of the merchant
    * @param value the value to set.
    */
-  public void setMerchantName(java.lang.CharSequence value) {
+  public void setMerchantName(java.lang.String value) {
     this.merchantName = value;
   }
 
@@ -343,17 +407,25 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
    * Gets the value of the 'merchantCategory' field.
    * @return MCC (Merchant Category Code)
    */
-  public java.lang.CharSequence getMerchantCategory() {
+  public java.lang.String getMerchantCategory() {
     return merchantCategory;
   }
 
+  /**
+   * Gets the value of the 'merchantCategory' field as an Optional&lt;java.lang.String&gt;.
+   * MCC (Merchant Category Code)
+   * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+   */
+  public Optional<java.lang.String> getOptionalMerchantCategory() {
+    return Optional.<java.lang.String>ofNullable(merchantCategory);
+  }
 
   /**
    * Sets the value of the 'merchantCategory' field.
    * MCC (Merchant Category Code)
    * @param value the value to set.
    */
-  public void setMerchantCategory(java.lang.CharSequence value) {
+  public void setMerchantCategory(java.lang.String value) {
     this.merchantCategory = value;
   }
 
@@ -365,6 +437,14 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
     return merchantLocation;
   }
 
+  /**
+   * Gets the value of the 'merchantLocation' field as an Optional&lt;com.codedstream.transfruad.library.schema.MerchantLocation&gt;.
+   * Merchant location information
+   * @return The value wrapped in an Optional&lt;com.codedstream.transfruad.library.schema.MerchantLocation&gt;.
+   */
+  public Optional<com.codedstream.transfruad.library.schema.MerchantLocation> getOptionalMerchantLocation() {
+    return Optional.<com.codedstream.transfruad.library.schema.MerchantLocation>ofNullable(merchantLocation);
+  }
 
   /**
    * Sets the value of the 'merchantLocation' field.
@@ -383,6 +463,14 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
     return transactionType;
   }
 
+  /**
+   * Gets the value of the 'transactionType' field as an Optional&lt;com.codedstream.transfruad.library.schema.TransactionType&gt;.
+   * Type of transaction
+   * @return The value wrapped in an Optional&lt;com.codedstream.transfruad.library.schema.TransactionType&gt;.
+   */
+  public Optional<com.codedstream.transfruad.library.schema.TransactionType> getOptionalTransactionType() {
+    return Optional.<com.codedstream.transfruad.library.schema.TransactionType>ofNullable(transactionType);
+  }
 
   /**
    * Sets the value of the 'transactionType' field.
@@ -401,6 +489,14 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
     return deviceInfo;
   }
 
+  /**
+   * Gets the value of the 'deviceInfo' field as an Optional&lt;com.codedstream.transfruad.library.schema.DeviceInfo&gt;.
+   * Device information for online transactions
+   * @return The value wrapped in an Optional&lt;com.codedstream.transfruad.library.schema.DeviceInfo&gt;.
+   */
+  public Optional<com.codedstream.transfruad.library.schema.DeviceInfo> getOptionalDeviceInfo() {
+    return Optional.<com.codedstream.transfruad.library.schema.DeviceInfo>ofNullable(deviceInfo);
+  }
 
   /**
    * Sets the value of the 'deviceInfo' field.
@@ -419,6 +515,14 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
     return isCardPresent;
   }
 
+  /**
+   * Gets the value of the 'isCardPresent' field as an Optional&lt;java.lang.Boolean&gt;.
+   * Whether the card was physically present
+   * @return The value wrapped in an Optional&lt;java.lang.Boolean&gt;.
+   */
+  public Optional<java.lang.Boolean> getOptionalIsCardPresent() {
+    return Optional.<java.lang.Boolean>ofNullable(isCardPresent);
+  }
 
   /**
    * Sets the value of the 'isCardPresent' field.
@@ -433,17 +537,25 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
    * Gets the value of the 'previousTransactionId' field.
    * @return Reference to previous transaction if applicable
    */
-  public java.lang.CharSequence getPreviousTransactionId() {
+  public java.lang.String getPreviousTransactionId() {
     return previousTransactionId;
   }
 
+  /**
+   * Gets the value of the 'previousTransactionId' field as an Optional&lt;java.lang.String&gt;.
+   * Reference to previous transaction if applicable
+   * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+   */
+  public Optional<java.lang.String> getOptionalPreviousTransactionId() {
+    return Optional.<java.lang.String>ofNullable(previousTransactionId);
+  }
 
   /**
    * Sets the value of the 'previousTransactionId' field.
    * Reference to previous transaction if applicable
    * @param value the value to set.
    */
-  public void setPreviousTransactionId(java.lang.CharSequence value) {
+  public void setPreviousTransactionId(java.lang.String value) {
     this.previousTransactionId = value;
   }
 
@@ -489,23 +601,23 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
     implements org.apache.avro.data.RecordBuilder<CardTransaction> {
 
     /** Unique identifier for the transaction */
-    private java.lang.CharSequence transactionId;
+    private java.lang.String transactionId;
     /** Unique identifier for the card */
-    private java.lang.CharSequence cardId;
+    private java.lang.String cardId;
     /** Unique identifier for the customer */
-    private java.lang.CharSequence customerId;
+    private java.lang.String customerId;
     /** Transaction timestamp in milliseconds since epoch */
     private long transactionTimestamp;
     /** Transaction amount */
     private double transactionAmount;
     /** Currency code (ISO 4217) */
-    private java.lang.CharSequence currency;
+    private java.lang.String currency;
     /** Unique identifier for the merchant */
-    private java.lang.CharSequence merchantId;
+    private java.lang.String merchantId;
     /** Name of the merchant */
-    private java.lang.CharSequence merchantName;
+    private java.lang.String merchantName;
     /** MCC (Merchant Category Code) */
-    private java.lang.CharSequence merchantCategory;
+    private java.lang.String merchantCategory;
     /** Merchant location information */
     private com.codedstream.transfruad.library.schema.MerchantLocation merchantLocation;
     private com.codedstream.transfruad.library.schema.MerchantLocation.Builder merchantLocationBuilder;
@@ -517,7 +629,7 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
     /** Whether the card was physically present */
     private boolean isCardPresent;
     /** Reference to previous transaction if applicable */
-    private java.lang.CharSequence previousTransactionId;
+    private java.lang.String previousTransactionId;
 
     /** Creates a new Builder */
     private Builder() {
@@ -665,10 +777,18 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
       * Unique identifier for the transaction
       * @return The value.
       */
-    public java.lang.CharSequence getTransactionId() {
+    public java.lang.String getTransactionId() {
       return transactionId;
     }
 
+    /**
+      * Gets the value of the 'transactionId' field as an Optional&lt;java.lang.String&gt;.
+      * Unique identifier for the transaction
+      * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+      */
+    public Optional<java.lang.String> getOptionalTransactionId() {
+      return Optional.<java.lang.String>ofNullable(transactionId);
+    }
 
     /**
       * Sets the value of the 'transactionId' field.
@@ -676,7 +796,7 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'transactionId'.
       * @return This builder.
       */
-    public com.codedstream.transfruad.library.schema.CardTransaction.Builder setTransactionId(java.lang.CharSequence value) {
+    public com.codedstream.transfruad.library.schema.CardTransaction.Builder setTransactionId(java.lang.String value) {
       validate(fields()[0], value);
       this.transactionId = value;
       fieldSetFlags()[0] = true;
@@ -709,10 +829,18 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
       * Unique identifier for the card
       * @return The value.
       */
-    public java.lang.CharSequence getCardId() {
+    public java.lang.String getCardId() {
       return cardId;
     }
 
+    /**
+      * Gets the value of the 'cardId' field as an Optional&lt;java.lang.String&gt;.
+      * Unique identifier for the card
+      * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+      */
+    public Optional<java.lang.String> getOptionalCardId() {
+      return Optional.<java.lang.String>ofNullable(cardId);
+    }
 
     /**
       * Sets the value of the 'cardId' field.
@@ -720,7 +848,7 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'cardId'.
       * @return This builder.
       */
-    public com.codedstream.transfruad.library.schema.CardTransaction.Builder setCardId(java.lang.CharSequence value) {
+    public com.codedstream.transfruad.library.schema.CardTransaction.Builder setCardId(java.lang.String value) {
       validate(fields()[1], value);
       this.cardId = value;
       fieldSetFlags()[1] = true;
@@ -753,10 +881,18 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
       * Unique identifier for the customer
       * @return The value.
       */
-    public java.lang.CharSequence getCustomerId() {
+    public java.lang.String getCustomerId() {
       return customerId;
     }
 
+    /**
+      * Gets the value of the 'customerId' field as an Optional&lt;java.lang.String&gt;.
+      * Unique identifier for the customer
+      * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+      */
+    public Optional<java.lang.String> getOptionalCustomerId() {
+      return Optional.<java.lang.String>ofNullable(customerId);
+    }
 
     /**
       * Sets the value of the 'customerId' field.
@@ -764,7 +900,7 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'customerId'.
       * @return This builder.
       */
-    public com.codedstream.transfruad.library.schema.CardTransaction.Builder setCustomerId(java.lang.CharSequence value) {
+    public com.codedstream.transfruad.library.schema.CardTransaction.Builder setCustomerId(java.lang.String value) {
       validate(fields()[2], value);
       this.customerId = value;
       fieldSetFlags()[2] = true;
@@ -801,6 +937,14 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
       return transactionTimestamp;
     }
 
+    /**
+      * Gets the value of the 'transactionTimestamp' field as an Optional&lt;java.lang.Long&gt;.
+      * Transaction timestamp in milliseconds since epoch
+      * @return The value wrapped in an Optional&lt;java.lang.Long&gt;.
+      */
+    public Optional<java.lang.Long> getOptionalTransactionTimestamp() {
+      return Optional.<java.lang.Long>ofNullable(transactionTimestamp);
+    }
 
     /**
       * Sets the value of the 'transactionTimestamp' field.
@@ -844,6 +988,14 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
       return transactionAmount;
     }
 
+    /**
+      * Gets the value of the 'transactionAmount' field as an Optional&lt;java.lang.Double&gt;.
+      * Transaction amount
+      * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+      */
+    public Optional<java.lang.Double> getOptionalTransactionAmount() {
+      return Optional.<java.lang.Double>ofNullable(transactionAmount);
+    }
 
     /**
       * Sets the value of the 'transactionAmount' field.
@@ -883,10 +1035,18 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
       * Currency code (ISO 4217)
       * @return The value.
       */
-    public java.lang.CharSequence getCurrency() {
+    public java.lang.String getCurrency() {
       return currency;
     }
 
+    /**
+      * Gets the value of the 'currency' field as an Optional&lt;java.lang.String&gt;.
+      * Currency code (ISO 4217)
+      * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+      */
+    public Optional<java.lang.String> getOptionalCurrency() {
+      return Optional.<java.lang.String>ofNullable(currency);
+    }
 
     /**
       * Sets the value of the 'currency' field.
@@ -894,7 +1054,7 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'currency'.
       * @return This builder.
       */
-    public com.codedstream.transfruad.library.schema.CardTransaction.Builder setCurrency(java.lang.CharSequence value) {
+    public com.codedstream.transfruad.library.schema.CardTransaction.Builder setCurrency(java.lang.String value) {
       validate(fields()[5], value);
       this.currency = value;
       fieldSetFlags()[5] = true;
@@ -927,10 +1087,18 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
       * Unique identifier for the merchant
       * @return The value.
       */
-    public java.lang.CharSequence getMerchantId() {
+    public java.lang.String getMerchantId() {
       return merchantId;
     }
 
+    /**
+      * Gets the value of the 'merchantId' field as an Optional&lt;java.lang.String&gt;.
+      * Unique identifier for the merchant
+      * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+      */
+    public Optional<java.lang.String> getOptionalMerchantId() {
+      return Optional.<java.lang.String>ofNullable(merchantId);
+    }
 
     /**
       * Sets the value of the 'merchantId' field.
@@ -938,7 +1106,7 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'merchantId'.
       * @return This builder.
       */
-    public com.codedstream.transfruad.library.schema.CardTransaction.Builder setMerchantId(java.lang.CharSequence value) {
+    public com.codedstream.transfruad.library.schema.CardTransaction.Builder setMerchantId(java.lang.String value) {
       validate(fields()[6], value);
       this.merchantId = value;
       fieldSetFlags()[6] = true;
@@ -971,10 +1139,18 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
       * Name of the merchant
       * @return The value.
       */
-    public java.lang.CharSequence getMerchantName() {
+    public java.lang.String getMerchantName() {
       return merchantName;
     }
 
+    /**
+      * Gets the value of the 'merchantName' field as an Optional&lt;java.lang.String&gt;.
+      * Name of the merchant
+      * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+      */
+    public Optional<java.lang.String> getOptionalMerchantName() {
+      return Optional.<java.lang.String>ofNullable(merchantName);
+    }
 
     /**
       * Sets the value of the 'merchantName' field.
@@ -982,7 +1158,7 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'merchantName'.
       * @return This builder.
       */
-    public com.codedstream.transfruad.library.schema.CardTransaction.Builder setMerchantName(java.lang.CharSequence value) {
+    public com.codedstream.transfruad.library.schema.CardTransaction.Builder setMerchantName(java.lang.String value) {
       validate(fields()[7], value);
       this.merchantName = value;
       fieldSetFlags()[7] = true;
@@ -1015,10 +1191,18 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
       * MCC (Merchant Category Code)
       * @return The value.
       */
-    public java.lang.CharSequence getMerchantCategory() {
+    public java.lang.String getMerchantCategory() {
       return merchantCategory;
     }
 
+    /**
+      * Gets the value of the 'merchantCategory' field as an Optional&lt;java.lang.String&gt;.
+      * MCC (Merchant Category Code)
+      * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+      */
+    public Optional<java.lang.String> getOptionalMerchantCategory() {
+      return Optional.<java.lang.String>ofNullable(merchantCategory);
+    }
 
     /**
       * Sets the value of the 'merchantCategory' field.
@@ -1026,7 +1210,7 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'merchantCategory'.
       * @return This builder.
       */
-    public com.codedstream.transfruad.library.schema.CardTransaction.Builder setMerchantCategory(java.lang.CharSequence value) {
+    public com.codedstream.transfruad.library.schema.CardTransaction.Builder setMerchantCategory(java.lang.String value) {
       validate(fields()[8], value);
       this.merchantCategory = value;
       fieldSetFlags()[8] = true;
@@ -1063,6 +1247,14 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
       return merchantLocation;
     }
 
+    /**
+      * Gets the value of the 'merchantLocation' field as an Optional&lt;com.codedstream.transfruad.library.schema.MerchantLocation&gt;.
+      * Merchant location information
+      * @return The value wrapped in an Optional&lt;com.codedstream.transfruad.library.schema.MerchantLocation&gt;.
+      */
+    public Optional<com.codedstream.transfruad.library.schema.MerchantLocation> getOptionalMerchantLocation() {
+      return Optional.<com.codedstream.transfruad.library.schema.MerchantLocation>ofNullable(merchantLocation);
+    }
 
     /**
       * Sets the value of the 'merchantLocation' field.
@@ -1146,6 +1338,14 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
       return transactionType;
     }
 
+    /**
+      * Gets the value of the 'transactionType' field as an Optional&lt;com.codedstream.transfruad.library.schema.TransactionType&gt;.
+      * Type of transaction
+      * @return The value wrapped in an Optional&lt;com.codedstream.transfruad.library.schema.TransactionType&gt;.
+      */
+    public Optional<com.codedstream.transfruad.library.schema.TransactionType> getOptionalTransactionType() {
+      return Optional.<com.codedstream.transfruad.library.schema.TransactionType>ofNullable(transactionType);
+    }
 
     /**
       * Sets the value of the 'transactionType' field.
@@ -1190,6 +1390,14 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
       return deviceInfo;
     }
 
+    /**
+      * Gets the value of the 'deviceInfo' field as an Optional&lt;com.codedstream.transfruad.library.schema.DeviceInfo&gt;.
+      * Device information for online transactions
+      * @return The value wrapped in an Optional&lt;com.codedstream.transfruad.library.schema.DeviceInfo&gt;.
+      */
+    public Optional<com.codedstream.transfruad.library.schema.DeviceInfo> getOptionalDeviceInfo() {
+      return Optional.<com.codedstream.transfruad.library.schema.DeviceInfo>ofNullable(deviceInfo);
+    }
 
     /**
       * Sets the value of the 'deviceInfo' field.
@@ -1273,6 +1481,14 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
       return isCardPresent;
     }
 
+    /**
+      * Gets the value of the 'isCardPresent' field as an Optional&lt;java.lang.Boolean&gt;.
+      * Whether the card was physically present
+      * @return The value wrapped in an Optional&lt;java.lang.Boolean&gt;.
+      */
+    public Optional<java.lang.Boolean> getOptionalIsCardPresent() {
+      return Optional.<java.lang.Boolean>ofNullable(isCardPresent);
+    }
 
     /**
       * Sets the value of the 'isCardPresent' field.
@@ -1312,10 +1528,18 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
       * Reference to previous transaction if applicable
       * @return The value.
       */
-    public java.lang.CharSequence getPreviousTransactionId() {
+    public java.lang.String getPreviousTransactionId() {
       return previousTransactionId;
     }
 
+    /**
+      * Gets the value of the 'previousTransactionId' field as an Optional&lt;java.lang.String&gt;.
+      * Reference to previous transaction if applicable
+      * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+      */
+    public Optional<java.lang.String> getOptionalPreviousTransactionId() {
+      return Optional.<java.lang.String>ofNullable(previousTransactionId);
+    }
 
     /**
       * Sets the value of the 'previousTransactionId' field.
@@ -1323,7 +1547,7 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'previousTransactionId'.
       * @return This builder.
       */
-    public com.codedstream.transfruad.library.schema.CardTransaction.Builder setPreviousTransactionId(java.lang.CharSequence value) {
+    public com.codedstream.transfruad.library.schema.CardTransaction.Builder setPreviousTransactionId(java.lang.String value) {
       validate(fields()[13], value);
       this.previousTransactionId = value;
       fieldSetFlags()[13] = true;
@@ -1356,15 +1580,15 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
     public CardTransaction build() {
       try {
         CardTransaction record = new CardTransaction();
-        record.transactionId = fieldSetFlags()[0] ? this.transactionId : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.cardId = fieldSetFlags()[1] ? this.cardId : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.customerId = fieldSetFlags()[2] ? this.customerId : (java.lang.CharSequence) defaultValue(fields()[2]);
+        record.transactionId = fieldSetFlags()[0] ? this.transactionId : (java.lang.String) defaultValue(fields()[0]);
+        record.cardId = fieldSetFlags()[1] ? this.cardId : (java.lang.String) defaultValue(fields()[1]);
+        record.customerId = fieldSetFlags()[2] ? this.customerId : (java.lang.String) defaultValue(fields()[2]);
         record.transactionTimestamp = fieldSetFlags()[3] ? this.transactionTimestamp : (java.lang.Long) defaultValue(fields()[3]);
         record.transactionAmount = fieldSetFlags()[4] ? this.transactionAmount : (java.lang.Double) defaultValue(fields()[4]);
-        record.currency = fieldSetFlags()[5] ? this.currency : (java.lang.CharSequence) defaultValue(fields()[5]);
-        record.merchantId = fieldSetFlags()[6] ? this.merchantId : (java.lang.CharSequence) defaultValue(fields()[6]);
-        record.merchantName = fieldSetFlags()[7] ? this.merchantName : (java.lang.CharSequence) defaultValue(fields()[7]);
-        record.merchantCategory = fieldSetFlags()[8] ? this.merchantCategory : (java.lang.CharSequence) defaultValue(fields()[8]);
+        record.currency = fieldSetFlags()[5] ? this.currency : (java.lang.String) defaultValue(fields()[5]);
+        record.merchantId = fieldSetFlags()[6] ? this.merchantId : (java.lang.String) defaultValue(fields()[6]);
+        record.merchantName = fieldSetFlags()[7] ? this.merchantName : (java.lang.String) defaultValue(fields()[7]);
+        record.merchantCategory = fieldSetFlags()[8] ? this.merchantCategory : (java.lang.String) defaultValue(fields()[8]);
         if (merchantLocationBuilder != null) {
           try {
             record.merchantLocation = this.merchantLocationBuilder.build();
@@ -1387,7 +1611,7 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
           record.deviceInfo = fieldSetFlags()[11] ? this.deviceInfo : (com.codedstream.transfruad.library.schema.DeviceInfo) defaultValue(fields()[11]);
         }
         record.isCardPresent = fieldSetFlags()[12] ? this.isCardPresent : (java.lang.Boolean) defaultValue(fields()[12]);
-        record.previousTransactionId = fieldSetFlags()[13] ? this.previousTransactionId : (java.lang.CharSequence) defaultValue(fields()[13]);
+        record.previousTransactionId = fieldSetFlags()[13] ? this.previousTransactionId : (java.lang.String) defaultValue(fields()[13]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
@@ -1467,23 +1691,23 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
   {
     org.apache.avro.Schema.Field[] fieldOrder = in.readFieldOrderIfDiff();
     if (fieldOrder == null) {
-      this.transactionId = in.readString(this.transactionId instanceof Utf8 ? (Utf8)this.transactionId : null);
+      this.transactionId = in.readString();
 
-      this.cardId = in.readString(this.cardId instanceof Utf8 ? (Utf8)this.cardId : null);
+      this.cardId = in.readString();
 
-      this.customerId = in.readString(this.customerId instanceof Utf8 ? (Utf8)this.customerId : null);
+      this.customerId = in.readString();
 
       this.transactionTimestamp = in.readLong();
 
       this.transactionAmount = in.readDouble();
 
-      this.currency = in.readString(this.currency instanceof Utf8 ? (Utf8)this.currency : null);
+      this.currency = in.readString();
 
-      this.merchantId = in.readString(this.merchantId instanceof Utf8 ? (Utf8)this.merchantId : null);
+      this.merchantId = in.readString();
 
-      this.merchantName = in.readString(this.merchantName instanceof Utf8 ? (Utf8)this.merchantName : null);
+      this.merchantName = in.readString();
 
-      this.merchantCategory = in.readString(this.merchantCategory instanceof Utf8 ? (Utf8)this.merchantCategory : null);
+      this.merchantCategory = in.readString();
 
       if (this.merchantLocation == null) {
         this.merchantLocation = new com.codedstream.transfruad.library.schema.MerchantLocation();
@@ -1508,22 +1732,22 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
         in.readNull();
         this.previousTransactionId = null;
       } else {
-        this.previousTransactionId = in.readString(this.previousTransactionId instanceof Utf8 ? (Utf8)this.previousTransactionId : null);
+        this.previousTransactionId = in.readString();
       }
 
     } else {
       for (int i = 0; i < 14; i++) {
         switch (fieldOrder[i].pos()) {
         case 0:
-          this.transactionId = in.readString(this.transactionId instanceof Utf8 ? (Utf8)this.transactionId : null);
+          this.transactionId = in.readString();
           break;
 
         case 1:
-          this.cardId = in.readString(this.cardId instanceof Utf8 ? (Utf8)this.cardId : null);
+          this.cardId = in.readString();
           break;
 
         case 2:
-          this.customerId = in.readString(this.customerId instanceof Utf8 ? (Utf8)this.customerId : null);
+          this.customerId = in.readString();
           break;
 
         case 3:
@@ -1535,19 +1759,19 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
           break;
 
         case 5:
-          this.currency = in.readString(this.currency instanceof Utf8 ? (Utf8)this.currency : null);
+          this.currency = in.readString();
           break;
 
         case 6:
-          this.merchantId = in.readString(this.merchantId instanceof Utf8 ? (Utf8)this.merchantId : null);
+          this.merchantId = in.readString();
           break;
 
         case 7:
-          this.merchantName = in.readString(this.merchantName instanceof Utf8 ? (Utf8)this.merchantName : null);
+          this.merchantName = in.readString();
           break;
 
         case 8:
-          this.merchantCategory = in.readString(this.merchantCategory instanceof Utf8 ? (Utf8)this.merchantCategory : null);
+          this.merchantCategory = in.readString();
           break;
 
         case 9:
@@ -1582,7 +1806,7 @@ public class CardTransaction extends org.apache.avro.specific.SpecificRecordBase
             in.readNull();
             this.previousTransactionId = null;
           } else {
-            this.previousTransactionId = in.readString(this.previousTransactionId instanceof Utf8 ? (Utf8)this.previousTransactionId : null);
+            this.previousTransactionId = in.readString();
           }
           break;
 

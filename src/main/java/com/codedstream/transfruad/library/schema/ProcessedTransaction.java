@@ -11,14 +11,14 @@ import org.apache.avro.util.Utf8;
 import org.apache.avro.message.BinaryMessageEncoder;
 import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
-
+import java.util.Optional;
 /** Schema for processed transaction outputs */
 @org.apache.avro.specific.AvroGenerated
 public class ProcessedTransaction extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -271245721299535676L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ProcessedTransaction\",\"namespace\":\"com.codedstream.transfruad.library.schema\",\"doc\":\"Schema for processed transaction outputs\",\"fields\":[{\"name\":\"transactionId\",\"type\":\"string\",\"doc\":\"Original transaction identifier\"},{\"name\":\"processingTimestamp\",\"type\":\"long\",\"doc\":\"Processing completion timestamp\"},{\"name\":\"fraudProbability\",\"type\":\"double\",\"doc\":\"Fraud probability score from AI model\"},{\"name\":\"status\",\"type\":{\"type\":\"enum\",\"name\":\"ProcessingStatus\",\"symbols\":[\"APPROVED\",\"REJECTED\",\"FLAGGED_FOR_REVIEW\",\"PENDING\"]},\"doc\":\"Processing status of the transaction\"},{\"name\":\"featureVector\",\"type\":{\"type\":\"record\",\"name\":\"FeatureVector\",\"fields\":[{\"name\":\"amountDeviation\",\"type\":\"double\",\"doc\":\"Deviation from typical transaction amount\"},{\"name\":\"velocity1h\",\"type\":\"double\",\"doc\":\"Transaction velocity in last 1 hour\"},{\"name\":\"velocity24h\",\"type\":\"double\",\"doc\":\"Transaction velocity in last 24 hours\"},{\"name\":\"distanceFromHome\",\"type\":\"double\",\"doc\":\"Distance from customer's home location\"},{\"name\":\"timeOfDayRisk\",\"type\":\"double\",\"doc\":\"Risk score based on transaction time\"},{\"name\":\"merchantRiskScore\",\"type\":\"double\",\"doc\":\"Risk score for the merchant\"},{\"name\":\"deviceRiskScore\",\"type\":\"double\",\"doc\":\"Risk score based on device information\"},{\"name\":\"behavioralAnomalyScore\",\"type\":\"double\",\"doc\":\"Score indicating behavioral anomalies\"}]},\"doc\":\"Feature vector used for model inference\"},{\"name\":\"windowedFeatures\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"WindowedFeatures\",\"fields\":[{\"name\":\"windowStart\",\"type\":\"long\",\"doc\":\"Window start timestamp\"},{\"name\":\"windowEnd\",\"type\":\"long\",\"doc\":\"Window end timestamp\"},{\"name\":\"totalAmount\",\"type\":\"double\",\"doc\":\"Total amount in the window\"},{\"name\":\"transactionCount\",\"type\":\"int\",\"doc\":\"Number of transactions in the window\"},{\"name\":\"uniqueMerchants\",\"type\":\"int\",\"doc\":\"Number of unique merchants\"},{\"name\":\"uniqueLocations\",\"type\":\"int\",\"doc\":\"Number of unique locations\"}]}],\"doc\":\"Window-based aggregation features\",\"default\":null},{\"name\":\"modelMetadata\",\"type\":{\"type\":\"record\",\"name\":\"ModelMetadata\",\"fields\":[{\"name\":\"modelVersion\",\"type\":\"string\"},{\"name\":\"modelType\",\"type\":\"string\"},{\"name\":\"inferenceTimeMs\",\"type\":\"long\"},{\"name\":\"confidence\",\"type\":\"double\"}]},\"doc\":\"Metadata about the AI model inference\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ProcessedTransaction\",\"namespace\":\"com.codedstream.transfruad.library.schema\",\"doc\":\"Schema for processed transaction outputs\",\"fields\":[{\"name\":\"transactionId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"doc\":\"Original transaction identifier\"},{\"name\":\"processingTimestamp\",\"type\":\"long\",\"doc\":\"Processing completion timestamp\"},{\"name\":\"fraudProbability\",\"type\":\"double\",\"doc\":\"Fraud probability score from AI model\"},{\"name\":\"status\",\"type\":{\"type\":\"enum\",\"name\":\"ProcessingStatus\",\"symbols\":[\"APPROVED\",\"REJECTED\",\"FLAGGED_FOR_REVIEW\",\"PENDING\"]},\"doc\":\"Processing status of the transaction\"},{\"name\":\"featureVector\",\"type\":{\"type\":\"record\",\"name\":\"FeatureVector\",\"fields\":[{\"name\":\"amountDeviation\",\"type\":\"double\",\"doc\":\"Deviation from typical transaction amount\"},{\"name\":\"velocity1h\",\"type\":\"double\",\"doc\":\"Transaction velocity in last 1 hour\"},{\"name\":\"velocity24h\",\"type\":\"double\",\"doc\":\"Transaction velocity in last 24 hours\"},{\"name\":\"distanceFromHome\",\"type\":\"double\",\"doc\":\"Distance from customer's home location\"},{\"name\":\"timeOfDayRisk\",\"type\":\"double\",\"doc\":\"Risk score based on transaction time\"},{\"name\":\"merchantRiskScore\",\"type\":\"double\",\"doc\":\"Risk score for the merchant\"},{\"name\":\"deviceRiskScore\",\"type\":\"double\",\"doc\":\"Risk score based on device information\"},{\"name\":\"behavioralAnomalyScore\",\"type\":\"double\",\"doc\":\"Score indicating behavioral anomalies\"}]},\"doc\":\"Feature vector used for model inference\"},{\"name\":\"windowedFeatures\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"WindowedFeatures\",\"fields\":[{\"name\":\"windowStart\",\"type\":\"long\",\"doc\":\"Window start timestamp\"},{\"name\":\"windowEnd\",\"type\":\"long\",\"doc\":\"Window end timestamp\"},{\"name\":\"totalAmount\",\"type\":\"double\",\"doc\":\"Total amount in the window\"},{\"name\":\"transactionCount\",\"type\":\"int\",\"doc\":\"Number of transactions in the window\"},{\"name\":\"uniqueMerchants\",\"type\":\"int\",\"doc\":\"Number of unique merchants\"},{\"name\":\"uniqueLocations\",\"type\":\"int\",\"doc\":\"Number of unique locations\"}]}],\"doc\":\"Window-based aggregation features\",\"default\":null},{\"name\":\"modelMetadata\",\"type\":{\"type\":\"record\",\"name\":\"ModelMetadata\",\"fields\":[{\"name\":\"modelVersion\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"modelType\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"inferenceTimeMs\",\"type\":\"long\"},{\"name\":\"confidence\",\"type\":\"double\"}]},\"doc\":\"Metadata about the AI model inference\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -75,7 +75,7 @@ public class ProcessedTransaction extends org.apache.avro.specific.SpecificRecor
   }
 
   /** Original transaction identifier */
-  private java.lang.CharSequence transactionId;
+  private java.lang.String transactionId;
   /** Processing completion timestamp */
   private long processingTimestamp;
   /** Fraud probability score from AI model */
@@ -106,7 +106,7 @@ public class ProcessedTransaction extends org.apache.avro.specific.SpecificRecor
    * @param windowedFeatures Window-based aggregation features
    * @param modelMetadata Metadata about the AI model inference
    */
-  public ProcessedTransaction(java.lang.CharSequence transactionId, java.lang.Long processingTimestamp, java.lang.Double fraudProbability, com.codedstream.transfruad.library.schema.ProcessingStatus status, com.codedstream.transfruad.library.schema.FeatureVector featureVector, com.codedstream.transfruad.library.schema.WindowedFeatures windowedFeatures, com.codedstream.transfruad.library.schema.ModelMetadata modelMetadata) {
+  public ProcessedTransaction(java.lang.String transactionId, java.lang.Long processingTimestamp, java.lang.Double fraudProbability, com.codedstream.transfruad.library.schema.ProcessingStatus status, com.codedstream.transfruad.library.schema.FeatureVector featureVector, com.codedstream.transfruad.library.schema.WindowedFeatures windowedFeatures, com.codedstream.transfruad.library.schema.ModelMetadata modelMetadata) {
     this.transactionId = transactionId;
     this.processingTimestamp = processingTimestamp;
     this.fraudProbability = fraudProbability;
@@ -142,7 +142,7 @@ public class ProcessedTransaction extends org.apache.avro.specific.SpecificRecor
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: transactionId = (java.lang.CharSequence)value$; break;
+    case 0: transactionId = value$ != null ? value$.toString() : null; break;
     case 1: processingTimestamp = (java.lang.Long)value$; break;
     case 2: fraudProbability = (java.lang.Double)value$; break;
     case 3: status = (com.codedstream.transfruad.library.schema.ProcessingStatus)value$; break;
@@ -157,17 +157,25 @@ public class ProcessedTransaction extends org.apache.avro.specific.SpecificRecor
    * Gets the value of the 'transactionId' field.
    * @return Original transaction identifier
    */
-  public java.lang.CharSequence getTransactionId() {
+  public java.lang.String getTransactionId() {
     return transactionId;
   }
 
+  /**
+   * Gets the value of the 'transactionId' field as an Optional&lt;java.lang.String&gt;.
+   * Original transaction identifier
+   * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+   */
+  public Optional<java.lang.String> getOptionalTransactionId() {
+    return Optional.<java.lang.String>ofNullable(transactionId);
+  }
 
   /**
    * Sets the value of the 'transactionId' field.
    * Original transaction identifier
    * @param value the value to set.
    */
-  public void setTransactionId(java.lang.CharSequence value) {
+  public void setTransactionId(java.lang.String value) {
     this.transactionId = value;
   }
 
@@ -179,6 +187,14 @@ public class ProcessedTransaction extends org.apache.avro.specific.SpecificRecor
     return processingTimestamp;
   }
 
+  /**
+   * Gets the value of the 'processingTimestamp' field as an Optional&lt;java.lang.Long&gt;.
+   * Processing completion timestamp
+   * @return The value wrapped in an Optional&lt;java.lang.Long&gt;.
+   */
+  public Optional<java.lang.Long> getOptionalProcessingTimestamp() {
+    return Optional.<java.lang.Long>ofNullable(processingTimestamp);
+  }
 
   /**
    * Sets the value of the 'processingTimestamp' field.
@@ -197,6 +213,14 @@ public class ProcessedTransaction extends org.apache.avro.specific.SpecificRecor
     return fraudProbability;
   }
 
+  /**
+   * Gets the value of the 'fraudProbability' field as an Optional&lt;java.lang.Double&gt;.
+   * Fraud probability score from AI model
+   * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+   */
+  public Optional<java.lang.Double> getOptionalFraudProbability() {
+    return Optional.<java.lang.Double>ofNullable(fraudProbability);
+  }
 
   /**
    * Sets the value of the 'fraudProbability' field.
@@ -215,6 +239,14 @@ public class ProcessedTransaction extends org.apache.avro.specific.SpecificRecor
     return status;
   }
 
+  /**
+   * Gets the value of the 'status' field as an Optional&lt;com.codedstream.transfruad.library.schema.ProcessingStatus&gt;.
+   * Processing status of the transaction
+   * @return The value wrapped in an Optional&lt;com.codedstream.transfruad.library.schema.ProcessingStatus&gt;.
+   */
+  public Optional<com.codedstream.transfruad.library.schema.ProcessingStatus> getOptionalStatus() {
+    return Optional.<com.codedstream.transfruad.library.schema.ProcessingStatus>ofNullable(status);
+  }
 
   /**
    * Sets the value of the 'status' field.
@@ -233,6 +265,14 @@ public class ProcessedTransaction extends org.apache.avro.specific.SpecificRecor
     return featureVector;
   }
 
+  /**
+   * Gets the value of the 'featureVector' field as an Optional&lt;com.codedstream.transfruad.library.schema.FeatureVector&gt;.
+   * Feature vector used for model inference
+   * @return The value wrapped in an Optional&lt;com.codedstream.transfruad.library.schema.FeatureVector&gt;.
+   */
+  public Optional<com.codedstream.transfruad.library.schema.FeatureVector> getOptionalFeatureVector() {
+    return Optional.<com.codedstream.transfruad.library.schema.FeatureVector>ofNullable(featureVector);
+  }
 
   /**
    * Sets the value of the 'featureVector' field.
@@ -251,6 +291,14 @@ public class ProcessedTransaction extends org.apache.avro.specific.SpecificRecor
     return windowedFeatures;
   }
 
+  /**
+   * Gets the value of the 'windowedFeatures' field as an Optional&lt;com.codedstream.transfruad.library.schema.WindowedFeatures&gt;.
+   * Window-based aggregation features
+   * @return The value wrapped in an Optional&lt;com.codedstream.transfruad.library.schema.WindowedFeatures&gt;.
+   */
+  public Optional<com.codedstream.transfruad.library.schema.WindowedFeatures> getOptionalWindowedFeatures() {
+    return Optional.<com.codedstream.transfruad.library.schema.WindowedFeatures>ofNullable(windowedFeatures);
+  }
 
   /**
    * Sets the value of the 'windowedFeatures' field.
@@ -269,6 +317,14 @@ public class ProcessedTransaction extends org.apache.avro.specific.SpecificRecor
     return modelMetadata;
   }
 
+  /**
+   * Gets the value of the 'modelMetadata' field as an Optional&lt;com.codedstream.transfruad.library.schema.ModelMetadata&gt;.
+   * Metadata about the AI model inference
+   * @return The value wrapped in an Optional&lt;com.codedstream.transfruad.library.schema.ModelMetadata&gt;.
+   */
+  public Optional<com.codedstream.transfruad.library.schema.ModelMetadata> getOptionalModelMetadata() {
+    return Optional.<com.codedstream.transfruad.library.schema.ModelMetadata>ofNullable(modelMetadata);
+  }
 
   /**
    * Sets the value of the 'modelMetadata' field.
@@ -321,7 +377,7 @@ public class ProcessedTransaction extends org.apache.avro.specific.SpecificRecor
     implements org.apache.avro.data.RecordBuilder<ProcessedTransaction> {
 
     /** Original transaction identifier */
-    private java.lang.CharSequence transactionId;
+    private java.lang.String transactionId;
     /** Processing completion timestamp */
     private long processingTimestamp;
     /** Fraud probability score from AI model */
@@ -432,10 +488,18 @@ public class ProcessedTransaction extends org.apache.avro.specific.SpecificRecor
       * Original transaction identifier
       * @return The value.
       */
-    public java.lang.CharSequence getTransactionId() {
+    public java.lang.String getTransactionId() {
       return transactionId;
     }
 
+    /**
+      * Gets the value of the 'transactionId' field as an Optional&lt;java.lang.String&gt;.
+      * Original transaction identifier
+      * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+      */
+    public Optional<java.lang.String> getOptionalTransactionId() {
+      return Optional.<java.lang.String>ofNullable(transactionId);
+    }
 
     /**
       * Sets the value of the 'transactionId' field.
@@ -443,7 +507,7 @@ public class ProcessedTransaction extends org.apache.avro.specific.SpecificRecor
       * @param value The value of 'transactionId'.
       * @return This builder.
       */
-    public com.codedstream.transfruad.library.schema.ProcessedTransaction.Builder setTransactionId(java.lang.CharSequence value) {
+    public com.codedstream.transfruad.library.schema.ProcessedTransaction.Builder setTransactionId(java.lang.String value) {
       validate(fields()[0], value);
       this.transactionId = value;
       fieldSetFlags()[0] = true;
@@ -480,6 +544,14 @@ public class ProcessedTransaction extends org.apache.avro.specific.SpecificRecor
       return processingTimestamp;
     }
 
+    /**
+      * Gets the value of the 'processingTimestamp' field as an Optional&lt;java.lang.Long&gt;.
+      * Processing completion timestamp
+      * @return The value wrapped in an Optional&lt;java.lang.Long&gt;.
+      */
+    public Optional<java.lang.Long> getOptionalProcessingTimestamp() {
+      return Optional.<java.lang.Long>ofNullable(processingTimestamp);
+    }
 
     /**
       * Sets the value of the 'processingTimestamp' field.
@@ -523,6 +595,14 @@ public class ProcessedTransaction extends org.apache.avro.specific.SpecificRecor
       return fraudProbability;
     }
 
+    /**
+      * Gets the value of the 'fraudProbability' field as an Optional&lt;java.lang.Double&gt;.
+      * Fraud probability score from AI model
+      * @return The value wrapped in an Optional&lt;java.lang.Double&gt;.
+      */
+    public Optional<java.lang.Double> getOptionalFraudProbability() {
+      return Optional.<java.lang.Double>ofNullable(fraudProbability);
+    }
 
     /**
       * Sets the value of the 'fraudProbability' field.
@@ -566,6 +646,14 @@ public class ProcessedTransaction extends org.apache.avro.specific.SpecificRecor
       return status;
     }
 
+    /**
+      * Gets the value of the 'status' field as an Optional&lt;com.codedstream.transfruad.library.schema.ProcessingStatus&gt;.
+      * Processing status of the transaction
+      * @return The value wrapped in an Optional&lt;com.codedstream.transfruad.library.schema.ProcessingStatus&gt;.
+      */
+    public Optional<com.codedstream.transfruad.library.schema.ProcessingStatus> getOptionalStatus() {
+      return Optional.<com.codedstream.transfruad.library.schema.ProcessingStatus>ofNullable(status);
+    }
 
     /**
       * Sets the value of the 'status' field.
@@ -610,6 +698,14 @@ public class ProcessedTransaction extends org.apache.avro.specific.SpecificRecor
       return featureVector;
     }
 
+    /**
+      * Gets the value of the 'featureVector' field as an Optional&lt;com.codedstream.transfruad.library.schema.FeatureVector&gt;.
+      * Feature vector used for model inference
+      * @return The value wrapped in an Optional&lt;com.codedstream.transfruad.library.schema.FeatureVector&gt;.
+      */
+    public Optional<com.codedstream.transfruad.library.schema.FeatureVector> getOptionalFeatureVector() {
+      return Optional.<com.codedstream.transfruad.library.schema.FeatureVector>ofNullable(featureVector);
+    }
 
     /**
       * Sets the value of the 'featureVector' field.
@@ -693,6 +789,14 @@ public class ProcessedTransaction extends org.apache.avro.specific.SpecificRecor
       return windowedFeatures;
     }
 
+    /**
+      * Gets the value of the 'windowedFeatures' field as an Optional&lt;com.codedstream.transfruad.library.schema.WindowedFeatures&gt;.
+      * Window-based aggregation features
+      * @return The value wrapped in an Optional&lt;com.codedstream.transfruad.library.schema.WindowedFeatures&gt;.
+      */
+    public Optional<com.codedstream.transfruad.library.schema.WindowedFeatures> getOptionalWindowedFeatures() {
+      return Optional.<com.codedstream.transfruad.library.schema.WindowedFeatures>ofNullable(windowedFeatures);
+    }
 
     /**
       * Sets the value of the 'windowedFeatures' field.
@@ -776,6 +880,14 @@ public class ProcessedTransaction extends org.apache.avro.specific.SpecificRecor
       return modelMetadata;
     }
 
+    /**
+      * Gets the value of the 'modelMetadata' field as an Optional&lt;com.codedstream.transfruad.library.schema.ModelMetadata&gt;.
+      * Metadata about the AI model inference
+      * @return The value wrapped in an Optional&lt;com.codedstream.transfruad.library.schema.ModelMetadata&gt;.
+      */
+    public Optional<com.codedstream.transfruad.library.schema.ModelMetadata> getOptionalModelMetadata() {
+      return Optional.<com.codedstream.transfruad.library.schema.ModelMetadata>ofNullable(modelMetadata);
+    }
 
     /**
       * Sets the value of the 'modelMetadata' field.
@@ -855,7 +967,7 @@ public class ProcessedTransaction extends org.apache.avro.specific.SpecificRecor
     public ProcessedTransaction build() {
       try {
         ProcessedTransaction record = new ProcessedTransaction();
-        record.transactionId = fieldSetFlags()[0] ? this.transactionId : (java.lang.CharSequence) defaultValue(fields()[0]);
+        record.transactionId = fieldSetFlags()[0] ? this.transactionId : (java.lang.String) defaultValue(fields()[0]);
         record.processingTimestamp = fieldSetFlags()[1] ? this.processingTimestamp : (java.lang.Long) defaultValue(fields()[1]);
         record.fraudProbability = fieldSetFlags()[2] ? this.fraudProbability : (java.lang.Double) defaultValue(fields()[2]);
         record.status = fieldSetFlags()[3] ? this.status : (com.codedstream.transfruad.library.schema.ProcessingStatus) defaultValue(fields()[3]);
@@ -948,7 +1060,7 @@ public class ProcessedTransaction extends org.apache.avro.specific.SpecificRecor
   {
     org.apache.avro.Schema.Field[] fieldOrder = in.readFieldOrderIfDiff();
     if (fieldOrder == null) {
-      this.transactionId = in.readString(this.transactionId instanceof Utf8 ? (Utf8)this.transactionId : null);
+      this.transactionId = in.readString();
 
       this.processingTimestamp = in.readLong();
 
@@ -980,7 +1092,7 @@ public class ProcessedTransaction extends org.apache.avro.specific.SpecificRecor
       for (int i = 0; i < 7; i++) {
         switch (fieldOrder[i].pos()) {
         case 0:
-          this.transactionId = in.readString(this.transactionId instanceof Utf8 ? (Utf8)this.transactionId : null);
+          this.transactionId = in.readString();
           break;
 
         case 1:

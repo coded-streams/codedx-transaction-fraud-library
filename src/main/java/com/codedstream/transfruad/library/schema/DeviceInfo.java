@@ -11,13 +11,13 @@ import org.apache.avro.util.Utf8;
 import org.apache.avro.message.BinaryMessageEncoder;
 import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
-
+import java.util.Optional;
 @org.apache.avro.specific.AvroGenerated
 public class DeviceInfo extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -7786448276525534397L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DeviceInfo\",\"namespace\":\"com.codedstream.transfruad.library.schema\",\"fields\":[{\"name\":\"deviceId\",\"type\":\"string\"},{\"name\":\"deviceType\",\"type\":\"string\"},{\"name\":\"ipAddress\",\"type\":\"string\"},{\"name\":\"userAgent\",\"type\":\"string\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DeviceInfo\",\"namespace\":\"com.codedstream.transfruad.library.schema\",\"fields\":[{\"name\":\"deviceId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"deviceType\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"ipAddress\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"userAgent\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -73,10 +73,10 @@ public class DeviceInfo extends org.apache.avro.specific.SpecificRecordBase impl
     return DECODER.decode(b);
   }
 
-  private java.lang.CharSequence deviceId;
-  private java.lang.CharSequence deviceType;
-  private java.lang.CharSequence ipAddress;
-  private java.lang.CharSequence userAgent;
+  private java.lang.String deviceId;
+  private java.lang.String deviceType;
+  private java.lang.String ipAddress;
+  private java.lang.String userAgent;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -92,7 +92,7 @@ public class DeviceInfo extends org.apache.avro.specific.SpecificRecordBase impl
    * @param ipAddress The new value for ipAddress
    * @param userAgent The new value for userAgent
    */
-  public DeviceInfo(java.lang.CharSequence deviceId, java.lang.CharSequence deviceType, java.lang.CharSequence ipAddress, java.lang.CharSequence userAgent) {
+  public DeviceInfo(java.lang.String deviceId, java.lang.String deviceType, java.lang.String ipAddress, java.lang.String userAgent) {
     this.deviceId = deviceId;
     this.deviceType = deviceType;
     this.ipAddress = ipAddress;
@@ -122,10 +122,10 @@ public class DeviceInfo extends org.apache.avro.specific.SpecificRecordBase impl
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: deviceId = (java.lang.CharSequence)value$; break;
-    case 1: deviceType = (java.lang.CharSequence)value$; break;
-    case 2: ipAddress = (java.lang.CharSequence)value$; break;
-    case 3: userAgent = (java.lang.CharSequence)value$; break;
+    case 0: deviceId = value$ != null ? value$.toString() : null; break;
+    case 1: deviceType = value$ != null ? value$.toString() : null; break;
+    case 2: ipAddress = value$ != null ? value$.toString() : null; break;
+    case 3: userAgent = value$ != null ? value$.toString() : null; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -134,16 +134,23 @@ public class DeviceInfo extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'deviceId' field.
    * @return The value of the 'deviceId' field.
    */
-  public java.lang.CharSequence getDeviceId() {
+  public java.lang.String getDeviceId() {
     return deviceId;
   }
 
+  /**
+   * Gets the value of the 'deviceId' field as an Optional&lt;java.lang.String&gt;.
+   * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+   */
+  public Optional<java.lang.String> getOptionalDeviceId() {
+    return Optional.<java.lang.String>ofNullable(deviceId);
+  }
 
   /**
    * Sets the value of the 'deviceId' field.
    * @param value the value to set.
    */
-  public void setDeviceId(java.lang.CharSequence value) {
+  public void setDeviceId(java.lang.String value) {
     this.deviceId = value;
   }
 
@@ -151,16 +158,23 @@ public class DeviceInfo extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'deviceType' field.
    * @return The value of the 'deviceType' field.
    */
-  public java.lang.CharSequence getDeviceType() {
+  public java.lang.String getDeviceType() {
     return deviceType;
   }
 
+  /**
+   * Gets the value of the 'deviceType' field as an Optional&lt;java.lang.String&gt;.
+   * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+   */
+  public Optional<java.lang.String> getOptionalDeviceType() {
+    return Optional.<java.lang.String>ofNullable(deviceType);
+  }
 
   /**
    * Sets the value of the 'deviceType' field.
    * @param value the value to set.
    */
-  public void setDeviceType(java.lang.CharSequence value) {
+  public void setDeviceType(java.lang.String value) {
     this.deviceType = value;
   }
 
@@ -168,16 +182,23 @@ public class DeviceInfo extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'ipAddress' field.
    * @return The value of the 'ipAddress' field.
    */
-  public java.lang.CharSequence getIpAddress() {
+  public java.lang.String getIpAddress() {
     return ipAddress;
   }
 
+  /**
+   * Gets the value of the 'ipAddress' field as an Optional&lt;java.lang.String&gt;.
+   * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+   */
+  public Optional<java.lang.String> getOptionalIpAddress() {
+    return Optional.<java.lang.String>ofNullable(ipAddress);
+  }
 
   /**
    * Sets the value of the 'ipAddress' field.
    * @param value the value to set.
    */
-  public void setIpAddress(java.lang.CharSequence value) {
+  public void setIpAddress(java.lang.String value) {
     this.ipAddress = value;
   }
 
@@ -185,16 +206,23 @@ public class DeviceInfo extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'userAgent' field.
    * @return The value of the 'userAgent' field.
    */
-  public java.lang.CharSequence getUserAgent() {
+  public java.lang.String getUserAgent() {
     return userAgent;
   }
 
+  /**
+   * Gets the value of the 'userAgent' field as an Optional&lt;java.lang.String&gt;.
+   * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+   */
+  public Optional<java.lang.String> getOptionalUserAgent() {
+    return Optional.<java.lang.String>ofNullable(userAgent);
+  }
 
   /**
    * Sets the value of the 'userAgent' field.
    * @param value the value to set.
    */
-  public void setUserAgent(java.lang.CharSequence value) {
+  public void setUserAgent(java.lang.String value) {
     this.userAgent = value;
   }
 
@@ -239,10 +267,10 @@ public class DeviceInfo extends org.apache.avro.specific.SpecificRecordBase impl
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<DeviceInfo>
     implements org.apache.avro.data.RecordBuilder<DeviceInfo> {
 
-    private java.lang.CharSequence deviceId;
-    private java.lang.CharSequence deviceType;
-    private java.lang.CharSequence ipAddress;
-    private java.lang.CharSequence userAgent;
+    private java.lang.String deviceId;
+    private java.lang.String deviceType;
+    private java.lang.String ipAddress;
+    private java.lang.String userAgent;
 
     /** Creates a new Builder */
     private Builder() {
@@ -301,17 +329,24 @@ public class DeviceInfo extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'deviceId' field.
       * @return The value.
       */
-    public java.lang.CharSequence getDeviceId() {
+    public java.lang.String getDeviceId() {
       return deviceId;
     }
 
+    /**
+      * Gets the value of the 'deviceId' field as an Optional&lt;java.lang.String&gt;.
+      * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+      */
+    public Optional<java.lang.String> getOptionalDeviceId() {
+      return Optional.<java.lang.String>ofNullable(deviceId);
+    }
 
     /**
       * Sets the value of the 'deviceId' field.
       * @param value The value of 'deviceId'.
       * @return This builder.
       */
-    public com.codedstream.transfruad.library.schema.DeviceInfo.Builder setDeviceId(java.lang.CharSequence value) {
+    public com.codedstream.transfruad.library.schema.DeviceInfo.Builder setDeviceId(java.lang.String value) {
       validate(fields()[0], value);
       this.deviceId = value;
       fieldSetFlags()[0] = true;
@@ -341,17 +376,24 @@ public class DeviceInfo extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'deviceType' field.
       * @return The value.
       */
-    public java.lang.CharSequence getDeviceType() {
+    public java.lang.String getDeviceType() {
       return deviceType;
     }
 
+    /**
+      * Gets the value of the 'deviceType' field as an Optional&lt;java.lang.String&gt;.
+      * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+      */
+    public Optional<java.lang.String> getOptionalDeviceType() {
+      return Optional.<java.lang.String>ofNullable(deviceType);
+    }
 
     /**
       * Sets the value of the 'deviceType' field.
       * @param value The value of 'deviceType'.
       * @return This builder.
       */
-    public com.codedstream.transfruad.library.schema.DeviceInfo.Builder setDeviceType(java.lang.CharSequence value) {
+    public com.codedstream.transfruad.library.schema.DeviceInfo.Builder setDeviceType(java.lang.String value) {
       validate(fields()[1], value);
       this.deviceType = value;
       fieldSetFlags()[1] = true;
@@ -381,17 +423,24 @@ public class DeviceInfo extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'ipAddress' field.
       * @return The value.
       */
-    public java.lang.CharSequence getIpAddress() {
+    public java.lang.String getIpAddress() {
       return ipAddress;
     }
 
+    /**
+      * Gets the value of the 'ipAddress' field as an Optional&lt;java.lang.String&gt;.
+      * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+      */
+    public Optional<java.lang.String> getOptionalIpAddress() {
+      return Optional.<java.lang.String>ofNullable(ipAddress);
+    }
 
     /**
       * Sets the value of the 'ipAddress' field.
       * @param value The value of 'ipAddress'.
       * @return This builder.
       */
-    public com.codedstream.transfruad.library.schema.DeviceInfo.Builder setIpAddress(java.lang.CharSequence value) {
+    public com.codedstream.transfruad.library.schema.DeviceInfo.Builder setIpAddress(java.lang.String value) {
       validate(fields()[2], value);
       this.ipAddress = value;
       fieldSetFlags()[2] = true;
@@ -421,17 +470,24 @@ public class DeviceInfo extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'userAgent' field.
       * @return The value.
       */
-    public java.lang.CharSequence getUserAgent() {
+    public java.lang.String getUserAgent() {
       return userAgent;
     }
 
+    /**
+      * Gets the value of the 'userAgent' field as an Optional&lt;java.lang.String&gt;.
+      * @return The value wrapped in an Optional&lt;java.lang.String&gt;.
+      */
+    public Optional<java.lang.String> getOptionalUserAgent() {
+      return Optional.<java.lang.String>ofNullable(userAgent);
+    }
 
     /**
       * Sets the value of the 'userAgent' field.
       * @param value The value of 'userAgent'.
       * @return This builder.
       */
-    public com.codedstream.transfruad.library.schema.DeviceInfo.Builder setUserAgent(java.lang.CharSequence value) {
+    public com.codedstream.transfruad.library.schema.DeviceInfo.Builder setUserAgent(java.lang.String value) {
       validate(fields()[3], value);
       this.userAgent = value;
       fieldSetFlags()[3] = true;
@@ -462,10 +518,10 @@ public class DeviceInfo extends org.apache.avro.specific.SpecificRecordBase impl
     public DeviceInfo build() {
       try {
         DeviceInfo record = new DeviceInfo();
-        record.deviceId = fieldSetFlags()[0] ? this.deviceId : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.deviceType = fieldSetFlags()[1] ? this.deviceType : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.ipAddress = fieldSetFlags()[2] ? this.ipAddress : (java.lang.CharSequence) defaultValue(fields()[2]);
-        record.userAgent = fieldSetFlags()[3] ? this.userAgent : (java.lang.CharSequence) defaultValue(fields()[3]);
+        record.deviceId = fieldSetFlags()[0] ? this.deviceId : (java.lang.String) defaultValue(fields()[0]);
+        record.deviceType = fieldSetFlags()[1] ? this.deviceType : (java.lang.String) defaultValue(fields()[1]);
+        record.ipAddress = fieldSetFlags()[2] ? this.ipAddress : (java.lang.String) defaultValue(fields()[2]);
+        record.userAgent = fieldSetFlags()[3] ? this.userAgent : (java.lang.String) defaultValue(fields()[3]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
@@ -513,31 +569,31 @@ public class DeviceInfo extends org.apache.avro.specific.SpecificRecordBase impl
   {
     org.apache.avro.Schema.Field[] fieldOrder = in.readFieldOrderIfDiff();
     if (fieldOrder == null) {
-      this.deviceId = in.readString(this.deviceId instanceof Utf8 ? (Utf8)this.deviceId : null);
+      this.deviceId = in.readString();
 
-      this.deviceType = in.readString(this.deviceType instanceof Utf8 ? (Utf8)this.deviceType : null);
+      this.deviceType = in.readString();
 
-      this.ipAddress = in.readString(this.ipAddress instanceof Utf8 ? (Utf8)this.ipAddress : null);
+      this.ipAddress = in.readString();
 
-      this.userAgent = in.readString(this.userAgent instanceof Utf8 ? (Utf8)this.userAgent : null);
+      this.userAgent = in.readString();
 
     } else {
       for (int i = 0; i < 4; i++) {
         switch (fieldOrder[i].pos()) {
         case 0:
-          this.deviceId = in.readString(this.deviceId instanceof Utf8 ? (Utf8)this.deviceId : null);
+          this.deviceId = in.readString();
           break;
 
         case 1:
-          this.deviceType = in.readString(this.deviceType instanceof Utf8 ? (Utf8)this.deviceType : null);
+          this.deviceType = in.readString();
           break;
 
         case 2:
-          this.ipAddress = in.readString(this.ipAddress instanceof Utf8 ? (Utf8)this.ipAddress : null);
+          this.ipAddress = in.readString();
           break;
 
         case 3:
-          this.userAgent = in.readString(this.userAgent instanceof Utf8 ? (Utf8)this.userAgent : null);
+          this.userAgent = in.readString();
           break;
 
         default:
